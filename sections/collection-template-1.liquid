@@ -231,9 +231,11 @@
          <div id="js-product-ajax"><!-- ONLY HAVE LIST OF PRODUCTS AND PAGINATION TO LOAD AJAX -->
            <div class="row">
              {%- for product in collection.products -%}
+             {%- unless product.tags contains 'Bundle' or product.tags contains 'Merch' -%}
              <div class="{{gridProduct}}">
                {%- include 'product-card', product: product -%}
              </div>
+             {%- endunless -%}
              {%- else -%}
              {%- include 'collection-blank' -%}
              {%- endfor -%}
