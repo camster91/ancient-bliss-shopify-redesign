@@ -1,0 +1,342 @@
+<!doctype html>
+<html class="no-js " lang="{{ shop.locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_header_bg }}">
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+    <title>
+      {{ page_title }}
+      {% if current_tags -%}
+        {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+      {%- endif %}
+      {% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}
+      {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    {%- include 'social-meta-tags' -%}
+    {%- include 'header-css' -%}
+    {%- if template == 'collection' -%}
+      <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {{ content_for_header }}
+    {% capture boostersnippet %}{% include "booster-apps-common" %}{% endcapture %}
+    {% unless boostersnippet contains 'Liquid error' %}{{ boostersnippet }}{% endunless %}
+    {% render 'subscriptions-now.settings' %}
+
+    <!-- add custom css -->
+    
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
+    
+    {% comment %} {% if template == 'index' %}  {% endif %}{% endcomment %}
+   <style>
+   *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans 3", sans-serif;
+}
+</style>
+   
+{{ 'owl.carousel.min.css' | asset_url | stylesheet_tag }}
+{{ 'owl.theme.default.min.css' | asset_url | stylesheet_tag }}
+
+    <!-- add custom js -->
+    {{ 'custom.js' | asset_url | script_tag }}
+
+    
+    <script src="https://cdn.younet.network/main.js"></script>
+  <script src="https://shopoe.net/app.js"></script>
+
+
+
+
+<!-- Judge.me Product Review Widget -->
+<script type="text/javascript">
+  (function() {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.judge.me/widget/judgeme_widget_v2.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+</script>
+
+
+</head>
+  <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} body-theme {% if settings.productpage == 'product-2' or settings.productpage == 'product-6' or settings.productpage == 'product-7' %} product-hide-breadcrumb {% endif %}">
+    {%- section 'announcement-bar' -%}
+    {%- include 'loading' -%}
+    {%- include 'header' -%}
+    <div class="page-container page-element is-moved-by-drawer">
+      {% comment %} {%- include 'breadcrumb' -%}{% endcomment %}
+
+
+     {% comment %} {% unless template == 'index' or template == 'cart' or template contains 'checkout' %}
+  {% section 'breadcrumb-new' %}
+{% endunless %}
+      {% endcomment %}
+
+  {% unless template == 'index' %}
+  {% section 'breadcrumb-new' %}
+{% endunless %}
+
+      <main class="main-content" id="MainContent" role="main">
+        {%- if settings.enable_animationscroll -%}<div id="js-scroll"></div>{% endif %}
+        {%- if settings.enable_animationscroll -%}<div data-scroll-section></div>{% endif %}
+       {% comment %}
+          {%- include 'slideshow' -%}
+       {% endcomment %}
+        {%- if settings.enable_animationscroll -%}{% endif %}
+        {{ content_for_layout }}
+        {%- if settings.enable_animationscroll -%}{% endif %}
+      </main>
+      {%- section 'image-banner' -%} 
+      {%- section 'newsletter-footer' -%}
+      {%- section 'banner-footer' -%}
+      {%- include 'footer' -%}
+      {%- include 'popup-newsletter' -%}
+      {%- section 'product-suggest' -%}
+      {%- section 'recently-viewed' -%}
+    </div>
+    {%- include 'cookie-policy' -%}
+    {%- include 'back-to-top' -%}
+    {%- include 'menu-mobile' -%}
+    {%- include 'notify-popup' -%}
+    {%- include 'bottom-contents' -%}
+    {%- include 'quickview' -%}
+    {%- include 'popup-compare' -%}
+    {%- include 'header-js' -%}
+    {%- if settings.show_multiple_currencies -%}
+      {{ '/services/javascripts/currencies.js' | script_tag }}
+    {%- endif -%}
+    <!-- PickyStory snippet "main_widget_script", do not modify. Safe to remove after the app is uninstalled -->
+  {% if content_for_header contains 'pickystory' %}
+    <script defer src="https://cdn.pickystory.com/widget/dist/latest/pickystory-widget.min.js"></script>
+  {% endif %}
+  <!-- PickyStory end snippet "main_widget_script" -->
+
+
+
+<!-- Mystery Discount Bottom Banner with Email Capture -->
+<div id="mystery-banner" class="mystery-banner hidden">
+
+  <div class="mystery-banner-content">
+    <span class="mystery-banner-close">&times;</span>
+    <p>🎁 Enter your email to unlock your special discount code.</p>
+    <form id="mystery-form" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center;">
+      <input type="email" id="mystery-email" placeholder="Enter your email" required style="padding:10px; border:1px solid #ddd; border-radius:6px; font-size:16px;">
+      <button type="submit" style="background:#e91e63;color:#fff;padding:10px 16px;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">Reveal Code</button>
+    </form>
+  </div>
+</div>
+
+<style>
+/* Bottom Banner */
+.mystery-banner {
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 3px solid #e91e63;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  z-index: 9999;
+  animation: slideUp 0.4s ease;
+}
+
+.mystery-banner.hidden {
+  display: none;
+}
+
+.mystery-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.mystery-banner-close {
+	position: absolute;
+	top: 0px;
+	right: 12px;
+	cursor: pointer;
+	font-size: 45px;
+	color: #e91e63;
+	display: flex;
+	align-items: center;
+	height: auto;
+	max-height: 50px;
+} 
+#copy-discount-btn,
+.apply-discount-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#copy-discount-btn {
+  background: #444;
+  color: #fff;
+}
+
+.apply-discount-btn {
+  background: #e91e63;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+
+.mystery-banner-content p {
+	font-size: 22px;
+	color: #5c5c5c;
+	margin-bottom: 0px;
+}
+
+.mystery-banner-content-wrapper {
+	max-width: max-content;
+	margin: auto;
+}
+ .mystery-banner-content-wrapper p {
+	font-size: 26px;
+	text-align: center;
+}
+.mystery-banner-content-wrapper .btn-wrapper.flex {
+	justify-content: center;
+	gap: 15px;
+}
+.mystery-banner-content-wrapper .btn-wrapper #copy-discount-btn, .mystery-banner-content-wrapper .btn-wrapper .apply-discount-btn {
+	line-height: 100%;
+	text-transform: uppercase;
+}
+
+.mystery-banner-content-wrapper .btn-wrapper .apply-discount-btn:hover {
+	color: #fff;
+	background: #18661d;
+}
+ 
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const banner = document.getElementById("mystery-banner");
+  const closeBtn = document.querySelector(".mystery-banner-close");
+  const form = document.getElementById("mystery-form");
+
+  // Show banner once per visitor
+  if (!localStorage.getItem("mysteryBannerSeen")) {
+    setTimeout(() => {
+      banner.classList.remove("hidden");
+    }, 3000);
+  }
+
+  // Close the banner
+  closeBtn.addEventListener("click", function() {
+    banner.classList.add("hidden");
+    localStorage.setItem("mysteryBannerSeen", "true");
+  });
+
+  // Handle form submission
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const email = document.getElementById("mystery-email").value;
+
+    // TODO: send email to your provider (Shopify, Omnisend, Mailchimp, etc.)
+    console.log("Captured email:", email);
+
+    // Mark as seen
+    localStorage.setItem("mysteryBannerSeen", "true");
+
+    // Replace form with discount code
+    banner.innerHTML = `
+        <div class="mystery-banner-content-wrapper">
+      <span class="mystery-banner-close">&times;</span>
+      <p>🎉 Your discount code is <strong>MYSTERY</strong></p>
+      <div class="btn-wrapper flex">
+    <button id="copy-discount-btn">Copy Code</button>
+      <a href="https://ancientbliss.com/discount/MYSTERY?redirect=/collections/mega-menu-products" 
+         class="apply-discount-btn">Shop Now</a>
+       </div>
+         </div>
+    `;
+
+    // Add event listeners for new elements
+    document.querySelector(".mystery-banner-close").addEventListener("click", function() {
+      banner.classList.add("hidden");
+    });
+    document.getElementById("copy-discount-btn").addEventListener("click", function() {
+      navigator.clipboard.writeText("MYSTERY");
+      alert("Coupon code copied!");
+    });
+  });
+});
+</script>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+{% comment %} <script>
+  jQuery(document).ready(function($){
+    $('#home-slider').owlCarousel({
+      items: 1,
+      loop: true,
+      margin: 0,
+      {% if settings.enable_rtl %}
+      rtl: true,
+      {% endif %}
+      lazyLoad: true,
+      dots: true,
+      nav: true,
+  
+      animateOut: 'fadeOut',
+      autoplay: {{ section.settings.enable_autoplay | default: true }},
+      autoplayTimeout: {{ section.settings.autoplay_speed | default: 5000 }},
+      autoplayHoverPause: true
+    });
+  });
+</script> {% endcomment %}
+
+<script>
+  $('#home-slider').owlCarousel({
+    loop: true,
+    margin: 0,
+    items: 1,
+    {% if settings.enable_rtl %}
+    rtl: true,
+    {% else %}
+    fade: true,
+    {% endif %}
+    lazyLoad: true,
+    dots: true,
+    autoplay: {{ section.settings.enable_autoplay | default: true }}, // Auto play toggle
+    autoplayTimeout: {{ section.settings.autoplay_speed | default: 5000 }}, // Time in ms
+    autoplayHoverPause: true
+  });
+</script>  
+
+
+{% render 'judgeme_core' %}
+
+</body>
+</html>

@@ -1,0 +1,1145 @@
+<div
+      data-same-height-display-contents
+      style="--jc:start;--o-mobile:0"
+      class="gUR3xNpd4O gp-relative gp-flex gp-flex-col"
+    >
+      
+    
+
+    
+
+    
+    <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"bg-3","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"gzLTVQzsZv"}' data-id="gzLTVQzsZv" id="gzLTVQzsZv" data-same-height-subgrid-container class="gzLTVQzsZv gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:solid;--bw:2px 2px 2px 2px;--bc:#322B85;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:10px;--bbrr:10px;--btlr:10px;--btrr:10px;--pt:var(--g-s-2xl);--pl:var(--g-s-2xl);--pb:var(--g-s-2xl);--pr:var(--g-s-2xl);--pt-mobile:var(--g-s-2xl);--pl-mobile:var(--g-s-xl);--pb-mobile:var(--g-s-2xl);--pr-mobile:var(--g-s-xl);--pt-tablet:21px;--pl-tablet:10px;--pb-tablet:21px;--pr-tablet:10px;--cg:var(--g-s-2xl);--gtc:minmax(0, 12fr);--of:hidden;--of-tablet:hidden;--of-mobile:hidden;--bgc:var(--g-c-bg-3);--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:start"
+      class="gN7l7V9B3K gp-relative gp-flex gp-flex-col"
+    >
+      
+    
+      {%- assign gpBkProduct = product -%}
+      
+      {%- liquid
+        if request.page_type == 'product'
+          if 'static' == 'static'
+            if '8381511434391' == 'latest'
+              paginate collections.all.products by 100000
+                assign product = collections.all.products | sort: 'created_at' | reverse | first
+              endpaginate
+            else
+              assign product = all_products['ultimate-health-bundle']
+              assign productId = '8381511434391' | times: 1
+              if product == empty or product == null
+                paginate collections.all.products by 100000
+                  for item in collections.all.products
+                    if item.id == productId
+                      assign product = item
+                    endif
+                  endfor
+                endpaginate
+              endif
+            endif
+          endif
+        else
+          if '8381511434391' == 'latest'
+            paginate collections.all.products by 100000
+              assign product = collections.all.products | sort: 'created_at'| reverse | first
+            endpaginate
+          else
+            assign product = all_products['ultimate-health-bundle']
+            assign productId = '8381511434391' | times: 1
+            if product == empty or product == null
+              paginate collections.all.products by 100000
+                for item in collections.all.products
+                  if item.id == productId
+                    assign product = item
+                  endif
+                endfor
+              endpaginate
+            endif
+          endif
+        endif
+      -%}
+    
+    
+    {% if product != empty and product != null %}
+      
+      {%- assign initVariantId =  -%}
+      {%- assign product_form_id = 'product-form-' | append: "gl35ePW10E" -%}
+      {%- assign variant = product.selected_or_first_available_variant -%}
+      {%- assign productSelectedVariant = product.selected_or_first_available_variant -%}
+      {%-if productSelectedVariant == empty or productSelectedVariant == null -%}
+        {%- assign productSelectedVariant = product.selected_or_first_available_variant -%}
+      {%- endif -%}
+      {%-if variant == empty or variant == null -%}
+        {%- assign variant = product.selected_or_first_available_variant -%}
+      {%- endif -%}
+    
+      <gp-product
+        data-uid="gl35ePW10E"
+        data-id="gl35ePW10E"
+        
+        
+        gp-context='{"productId": {{ product.id }}, "preSelectedOptionIds": [], "isSyncProduct": "", "variantSelected": {{ variant | json | escape }},  "inventory_management": {{ variant.inventory_management | json | escape  }}, "inventory_policy": {{ variant.inventory_policy | json | escape }}, "inventoryQuantity": {{ variant.inventory_quantity }}, "quantity": 1, "formId": "{{ product_form_id }}" }'
+        gp-data='{"variantSelected": {{ variant | json | escape }}, "quantity": 1, "productUrl":{{ product.url | json | escape }}, "productHandle":{{ product.handle | json | escape }}, "collectionUrl": {{ collection.url | json | escape }}, "collectionHandle": {{ collection.handle | json | escape }}}'
+      >
+        <product-form class="product-form">
+          {%- form 'product', product, id: product_form_id, class: 'form contents', data-type: 'add-to-cart-form', autocomplete: 'off'  -%}
+            <input type="hidden" name="id" value="{{ variant.id }}" />
+            <input type="hidden" name="quantity" value="{{ quantity }}" />
+            <button type="submit" onclick="return false;" style="display:none;"></button>
+            
+    
+
+    
+
+    
+    <gp-row gp-data='{"uid":"gl35ePW10E"}' data-id="gl35ePW10E-row" id="gl35ePW10E" data-same-height-subgrid-container class="gl35ePW10E gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--cg:30px;--gtc:minmax(0, 12fr);--pc:start">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:start"
+      class="g4_JyIAL6a gp-relative gp-flex gp-flex-col"
+    >
+      <div gp-el-wrapper style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px" class="gSN5c6UKop ">
+      {% unless product %}<p>{{ 'gempages.ProductTitle.product_not_found' | t }}</p>{% else %}
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gSN5c6UKop"
+        class="gSN5c6UKop"
+        style="--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658330"
+      >
+      <div  >
+        <h3
+          data-gp-text
+          class=" gp-text-instant"
+          style="--w:100%;--tdt:auto;--ta:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--c:#242424;--ff:var(--g-font-heading, heading);--ls:0px;--size:19px;--size-mobile:17px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ product.title }}
+        </h3>
+      </div>
+    </div>
+    {% endunless %}
+      </div><div gp-el-wrapper style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:var(--g-s-s);--pb:var(--g-s-s)" class="gUBrF4f3QG ">
+      
+    <div data-id="gUBrF4f3QG" class="gp-flex gp-justify-center">
+      <div style="--w:68%;--w-tablet:100%;--w-mobile:68%;--bs:solid;--bbw:1px;--bbw-tablet:1px;--bbw-mobile:undefinedpx;--t:gp-rotate(0deg);--bc:#EEEEEE" class="gp-block tablet:gp-block mobile:gp-block"></div>
+      <div class="gp-items-center gp-hidden tablet:gp-hidden mobile:gp-hidden" style="--w:68%;--w-tablet:100%;--w-mobile:68%;--bc:#EEEEEE;--t:gp-rotate(0deg)">
+        <div class="gp-hidden" style="--bc:#EEEEEE;--bs:solid;--bbw:1px;--bbw-tablet:1px;--bbw-mobile:undefinedpx;--minw:68%;--minw-tablet:100%;--minw-mobile:68%;--w:68%;--w-tablet:100%;--w-mobile:68%"></div>
+        
+            <span
+              class="gp-inline-flex gp-flex-none gp-items-center gp-justify-center"
+              style="--mr:var(--g-s-xs);--w:20px;--h:20px;--t:gp-rotate(0);--c:var(--g-c-text-1, text-1)"
+            >
+              <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6"  viewBox="0 0 512 512" fill="currentColor">              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M428.8 137.6h-86.177a115.52 115.52 0 0 0 2.176-22.4c0-47.914-35.072-83.2-92-83.2-45.314 0-57.002 48.537-75.707 78.784-7.735 12.413-16.994 23.317-25.851 33.253l-.131.146-.129.148C135.662 161.807 127.764 168 120.8 168h-2.679c-5.747-4.952-13.536-8-22.12-8H32c-17.673 0-32 12.894-32 28.8v230.4C0 435.106 14.327 448 32 448h64c8.584 0 16.373-3.048 22.12-8h2.679c28.688 0 67.137 40 127.2 40h21.299c62.542 0 98.8-38.658 99.94-91.145 12.482-17.813 18.491-40.785 15.985-62.791A93.148 93.148 0 0 0 393.152 304H428.8c45.435 0 83.2-37.584 83.2-83.2 0-45.099-38.101-83.2-83.2-83.2zm0 118.4h-91.026c12.837 14.669 14.415 42.825-4.95 61.05 11.227 19.646 1.687 45.624-12.925 53.625 6.524 39.128-10.076 61.325-50.6 61.325H248c-45.491 0-77.21-35.913-120-39.676V215.571c25.239-2.964 42.966-21.222 59.075-39.596 11.275-12.65 21.725-25.3 30.799-39.875C232.355 112.712 244.006 80 252.8 80c23.375 0 44 8.8 44 35.2 0 35.2-26.4 53.075-26.4 70.4h158.4c18.425 0 35.2 16.5 35.2 35.2 0 18.975-16.225 35.2-35.2 35.2zM88 384c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z" /></svg>
+            </span>
+          
+        
+            <span
+              class="gp-inline-flex gp-flex-none gp-items-center gp-justify-center gp-g-paragraph-1"
+              style="--tt:horizontal;--c:var(--g-c-text-1, text-1);--mr:var(--g-s-s);--ml:var(--g-s-s)"
+            >
+              Title
+            </span>
+          
+        <div class="gp-flex" style="--bc:#EEEEEE;--bs:solid;--bbw:1px;--bbw-tablet:1px;--bbw-mobile:undefinedpx;--minw:68%;--minw-tablet:100%;--minw-mobile:68%;--w:68%;--w-tablet:100%;--w-mobile:68%"></div>
+      </div>
+    </div>
+  
+      </div><div gp-el-wrapper style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px" class="gSe4TiKPTp ">
+      
+    {% liquid
+      assign price = variant.price | times: 1.0
+      assign salePrice = variant.compare_at_price | times: 1.0
+      assign priceSave = salePrice | minus: price
+      assign prefixVal = section.settings.ggSe4TiKPTp_customContent_prefix
+      assign suffixVal = 
+    %}
+    {% if salePrice == null or price == null %}{% assign pricePercentage = prefixVal | append: ' 0% ' | append: suffixVal %}{% else %}{% assign salePercent = priceSave | divided_by: salePrice | times: 100  | round %}
+          {% assign pricePercentage = prefixVal | append: ' ' | append: salePercent | append: '% ' | append: suffixVal %}{% endif %}
+
+    <gp-product-tag
+      class="gp-block data-[disabled=true]:gp-hidden"
+      style="--ta:center"
+      data-id="gSe4TiKPTp"
+      data-disabled="{% if salePercent > 0 %}false{% else %}true{% endif %}"
+      gp-data='{"setting":{"customContent":{"prefix":"SAVE","suffix":"","unit":"percentage"},"translate":"customContent"}, "id": "gSe4TiKPTp", "locale": "{{shop.locale}}", "currency": "{{shop.currency}}", "moneyFormat": "{{ shop.money_format | replace: '"', '\"' | escape }}"}'
+      price-save="{{priceSave}}"
+    >
+      <div class="gp-inline-flex gp-flex-wrap gp-items-end gp-gap-3" >
+        <div class="gp-flex gp-items-center gp-w-full gp-h-full " style="--pl:16px;--pr:16px;--pt:16px;--pb:16px;--pl-tablet:16px;--pr-tablet:16px;--pt-tablet:16px;--pb-tablet:16px;--pl-mobile:16px;--pr-mobile:16px;--pt-mobile:16px;--pb-mobile:16px;--bs:none;--bw:0px;--bc:transparent;--c:#242424;--bgc:transparent;--radius:var(--g-radius-large)">
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div id="p-tag-gSe4TiKPTp" data-id
+        
+        style="--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658332"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class=" gp-text-instant"
+          style="--w:100%;--tdt:auto;--ta:center;--c:#EA3335;--fs:normal;--ff:var(--g-font-heading, heading);--weight:700;--ls:normal;--size:23px;--size-tablet:23px;--size-mobile:18px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ pricePercentage }}
+        </div>
+      </div>
+    </div>
+    
+        </div>
+      </div>
+
+  </gp-product-tag>
+  <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-tag-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+      </div>
+    
+
+    
+
+    
+    <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"transparent","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"giY-mx1oCA"}' data-id="giY-mx1oCA" id="giY-mx1oCA" data-same-height-subgrid-container class="giY-mx1oCA gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--pos:relative;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:var(undefined);--pt:var(--g-s-2xl);--z:1;--cg:var(--g-s-2xl);--gtc:minmax(0, 12fr);--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:start"
+      class="gjIUAnFxP_ gp-relative gp-flex gp-flex-col"
+    >
+      
+    
+
+    
+
+    
+    <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"error","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"g3wa6wT5dx"}' data-id="g3wa6wT5dx" id="g3wa6wT5dx" data-same-height-subgrid-container class="g3wa6wT5dx gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--pos:absolute;--right:10px;--bblr:9999px;--bbrr:9999px;--btlr:9999px;--btrr:9999px;--pt:var(--g-s-xl);--pl:var(--g-s-xl);--pb:var(--g-s-xl);--pr:var(--g-s-xl);--top:10px;--z:9;--cg:var(--g-s-2xl);--gtc:minmax(0, 12fr);--w:auto;--w-tablet:auto;--w-mobile:auto;--bgc:var(--g-c-error);--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:start"
+      class="gWQ_QPNDhe gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="g6JHeV_oJC"
+        class="g6JHeV_oJC"
+        style="--ta:center;--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:auto;--mb:auto;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658355"
+      >
+      <div class="gp-flex" style="--jc:center">
+        <div
+          data-gp-text
+          class="gp-text-g-bg-3 gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--ta:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--c:#FFFFFF;--fs:normal;--ff:var(--g-font-body, body);--weight:700;--ls:normal;--size:16px;--size-tablet:16px;--size-mobile:14px;--lh:120%;--lh-tablet:120%;--lh-mobile:120%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.gg6JHeV_oJC_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+      
+    </gp-row>
+  
+  
+  {% if product.media.size > 1 %}<style>
+    .gem-slider-item-gjJhJqc8M5-{{product.id}}.gp-gallery-image-item::after, .gem-slider-item-gp-gallery-gjJhJqc8M5-{{product.id}}.gp-gallery-image-item::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      
+  border-width: 1px 1px 1px 1px;
+  border-color: #000000;
+  
+      
+    }
+    .gem-slider-item-gjJhJqc8M5-{{product.id}}.gp-gallery-image-item[data-outline=active]:after, .gem-slider-item-gp-gallery-gjJhJqc8M5-{{product.id}}.gp-gallery-image-item[data-outline=active]:after {
+      pointer-events: none;
+    }
+  </style>{% endif %}
+  
+    {% assign featured_image = product.featured_image %}
+    {% if variant != null and variant.featured_image != null %}{% assign featured_image = variant.featured_image %}{% endif %}
+  
+    <gp-product-images
+      gp-data='
+    {
+      "id":"gjJhJqc8M5",
+      "pageContext": {"pageType":"GP_STATIC","sectionName":"","isPreviewing":false,"isOptimizePlan":false,"isTranslateWithLocale":false,"isLazyLoadSection":true,"isLazyLoadImage":false,"hasCollectionHandle":true,"numberOfProductOfProductList":0,"pageBackground":"","fontType":"google","primaryLocale":"","showPriceCurrency":false,"enableLazyLoadImage":false},
+      "setting":{"arrowIcon":"","borderActive":{"borderType":"none","borderWidth":"1px","color":"#000000","isCustom":"false","width":"1px 1px 1px 1px"},"clickOpenLightBox":{"desktop":false,"mobile":false,"tablet":false},"dragToScroll":true,"ftArrowIcon":"<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM10.6828 8.13017C10.5266 7.95661 10.2734 7.95661 10.1172 8.13017C9.96095 8.30374 9.96095 8.58515 10.1172 8.75871L13.0343 12L10.1172 15.2413C9.96095 15.4149 9.96095 15.6963 10.1172 15.8698C10.2734 16.0434 10.5266 16.0434 10.6828 15.8698L13.8828 12.3143C14.0391 12.1407 14.0391 11.8593 13.8828 11.6857L10.6828 8.13017Z\" fill=\"currentColor\"/>\n    </svg>","ftArrowIconColor":"#000000","ftClickOpenLightBox":{"desktop":"none"},"ftDotActiveColor":{"desktop":"line-3"},"ftDotColor":{"desktop":"bg-1"},"ftDotGapToCarousel":{"desktop":16},"ftDotSize":{"desktop":12},"ftDotStyle":{"desktop":"none"},"ftNavigationPosition":{"desktop":"none","mobile":"none","tablet":"none"},"hoverEffect":"none","loop":{"desktop":true,"mobile":true,"tablet":true},"navigationPosition":{"desktop":"inside","mobile":"inside","tablet":"inside"},"otherImage":0,"pauseOnHover":true,"speed":1,"type":{"desktop":"images","mobile":"images","tablet":"images"},"typeDisplay":"all-images","zoom":1.5,"zoomType":"default"},
+      "styles":{"align":{"desktop":"center","mobile":"center","tablet":"center"},"aspectHeight":{"desktop":0,"mobile":0,"tablet":0},"aspectWidth":{"desktop":0,"mobile":0,"tablet":0},"dotActiveColor":{"desktop":"highlight"},"dotColor":{"desktop":"bg-1"},"ftAspectHeight":{"desktop":0,"mobile":0,"tablet":0},"ftAspectWidth":{"desktop":0,"mobile":0,"tablet":0},"ftLayout":{"desktop":"cover","mobile":"cover","tablet":"cover"},"ftShape":{"desktop":{"shape":"square","shapeLinked":true,"shapeValue":"1/1","width":"100%"},"mobile":{"shape":"square","shapeLinked":true,"shapeValue":"1/1","width":"100px"},"tablet":{"shape":"square","shapeLinked":true,"shapeValue":"1/1","width":"100%"}},"itemSpacing":{"desktop":"var(--g-s-s)","mobile":"var(--g-s-s)"},"layout":{"desktop":"cover","mobile":"cover","tablet":"cover"},"position":{"desktop":"only-feature","mobile":"only-feature","tablet":"only-feature"},"ratioLayout":{"desktop":{},"mobile":{},"tablet":{}},"ratioLayoutRight":{"desktop":{},"mobile":{},"tablet":{}},"shape":{"desktop":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1","width":"100%"},"mobile":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"},"tablet":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"}},"shapeFor1Col":{"desktop":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1","width":"100%"},"mobile":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"},"tablet":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"}},"shapeFor2Col":{"desktop":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1","width":"50%"},"mobile":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"},"tablet":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"}},"shapeForBottom":{"desktop":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1","width":"20%"},"mobile":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"},"tablet":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"}},"shapeForFtOnly":{"desktop":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"},"mobile":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"},"tablet":{"height":"","shape":"square","shapeLinked":true,"shapeValue":"1/1"}},"spacing":{"desktop":"var(--g-s-s)","mobile":"var(--g-s-s)"},"verticalLayout":{"desktop":false,"mobile":false,"tablet":false},"verticalLayoutRow":{"desktop":true,"mobile":true,"tablet":true}},
+      "productUrl":{{product.url | json | escape}},
+      "product":{{product | json | escape}},
+      "collectionUrl": {{ collection.url | json | escape }},
+      "collection": {{ collection | json | escape}}
+    }
+  '
+      section-id="{{section.id}}" data-id="gjJhJqc8M5"
+      style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt-mobile:var(--g-s-2xl);--pt-tablet:14px"
+      class="gp-relative gp-w-full gjJhJqc8M5 "
+    >
+      <div
+        class="{% if product.media.size > 1 %}gp-grid gp-w-full !gp-m-0 gp-relative{% else %}gp-w-full !gp-m-0 gp-relative{% endif %}"
+        style="{% if product.media.size > 1 %}--gtc: minmax(0, 12fr);--gtc-tablet: minmax(0, 12fr);--gtc-mobile: minmax(0, 12fr);--gg: var(--g-s-s);--gg-mobile: var(--g-s-s);{% else %}--gtc: minmax(0, 12fr);--gg: var(--g-s-s);--gg-mobile: var(--g-s-s);{% endif %}"
+      >
+        
+    {% capture featureImageOnlyOne %}
+      
+        {% assign featureMedia = variant.featured_media %}
+        {% unless featureMedia %}
+        {% assign featureMedia = product.featured_media %}
+        {% endunless %}
+        {% if product.media.size > 1 %}
+          {% assign featureMedia = variant.featured_media %}
+          {% unless featureMedia %}
+          {% assign featureMedia = product.featured_media %}
+          {% endunless %}
+        {% endif %}
+        {% assign largestRatio = 0 %}
+        {% assign height = featureMedia.height | times: 1.0 %}
+        {% assign width = featureMedia.width | times: 1.0 %}
+        {% assign ratio = height | divided_by: width %}
+        {% if ratio > largestRatio %}{% assign largestRatio = ratio %}{% endif %}
+        {% assign productImageWidth = 0 %}
+        {% case featureMedia.media_type %}
+          {% when 'image' %}
+            {% assign productImageWidth = featureMedia.width %}
+          {% else %}
+            {% assign productImageWidth = featureMedia.preview_image.width %}
+        {% endcase %}
+        {% if featureMedia == null %}{% assign productImageWidth = 1600 %}{% endif %}
+        <div
+          class='gp-feature-image-carousel gp-feature-image-only'
+          style="--jc: center;--jc-tablet: center;--jc-mobile: center;--o: 0;--o-tablet: 0;--o-mobile: 0;--d: flex;--d-mobile: flex;--d-tablet: flex;"
+        >
+          <div
+            class="gp-relative"
+            style="--w: 100%;--w-tablet: 100%;--w-mobile: 100px;--h: auto;--h-tablet: auto;--h-mobile: auto;"
+          >
+            
+      
+    
+            <div
+              type="gp-feature-image-only"
+              product-id="{{product.id}}"
+              product-media="{{product.media.size}}"
+              class="gp-group gp-z-0 gp-flex !gp-min-w-full !gp-max-w-full gp-w-full gp-relative gp-items-start gp-justify-center gp-overflow-hidden gp-outline-1 -gp-outline-offset-1 gp-image-item gp-ft-image-item data-[outline=active]:gp-outline gp-featured-image-wrapper"
+              style="max-width: 100%;outline-color: var(--g-c-brand, brand);--h: auto;--h-tablet: auto;--h-mobile: auto;width: {{productImageWidth}}px;"
+            >
+              <div
+                class="gp-w-full gp-relative {% if featureMedia == null or featureMedia.media_type == 'image' %}{{ 'gp-h-0' }}{% else %}{{ 'gp-h-full !gp-pb-0' }}{% endif %}"
+                style="--pb: calc((1/1)*100%);--pb-tablet: calc((1/1)*100%);--pb-mobile: calc((1/1)*100%); {% if featureMedia.media_type == 'video' or featureMedia.media_type == 'external_video' %}{{ 'display: flex; align-items: center; justify-content: center' }}{% endif %}"
+              >
+                
+    {% case featureMedia.media_type %}
+      {% when 'image' %}
+        
+      
+    {% assign src = featureMedia.src %}
+    
+    
+    <img
+      alt="{{featureMedia.alt | escape}}" width="{{featureMedia.width}}" height="{{featureMedia.height}}" draggable="false" quality-type quality-percent data-sizes="auto" sizes="(max-width: 768px) 50vw, 100vw" src="{{src | image_url}}" isNotLazyload="true" srcset="{{src | image_url: width: 480}} 480w, {{src | image_url: width: 768}} 768w, {{src | image_url: width: 1024}} 1024w, {{src | image_url: width: 1440}} 1440w" base-src="{{src | image_url}}" loading="lazy"
+      id="{% if featureMedia != null %}{{featureMedia.id}}{% endif %}"
+      style="--aspect:1/1;--aspect-tablet:1/1;--aspect-mobile:1/1;--objf:cover;--objf-tablet:cover;--objf-mobile:cover"
+      class="gp-w-full gp-h-full gp-absolute gp-top-0 gp-left-0 featured-image-only gp-cursor-pointer !gp-rounded-none gp-w-full gp-transition-opacity {{shouldHidden}}"
+    />
+       
+       
+    
+      {% when 'external_video' %}
+        {% assign mediaSourceVideo = featureMedia | external_video_url %}
+        
+    <iframe
+      src="{{mediaSourceVideo}}" alt="{{featureMedia.alt | escape}}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" width="100%" height="100%" controls="true" allowfullscreen="true"
+      style="--aspect:1/1;--aspect-tablet:1/1;--aspect-mobile:1/1"
+      class="feature-video gp-w-full gp-h-full gp-relative"
+    >
+    </iframe>
+  
+      {% when 'video' %}
+        {% assign mediaSourceVideo = featureMedia.sources.last.url %}
+        
+  <gp-lite-html5-embed is-check-loaded="true">
+    
+    <video
+    id="gp-video-undefined" title="{{featureMedia.alt | escape}}" preload="none" data-src="{{mediaSourceVideo}}" poster="{{featureMedia.preview_image.src | product_img_url: '1024x1024'}}" data-poster="{{featureMedia.preview_image.src | product_img_url: '1024x1024'}}"
+      style="width:100%;max-height:100%"
+      class="gp-w-full gp-invisible gp-lazyload-video"
+      controls
+      
+      
+      
+      playsinline
+      src=""
+    >
+      
+    </video>
+    
+     <div
+        role="presentation"
+        style="width:100%;max-height:100%"
+        class="gp-absolute gp-top-0 gp-left-0  gp-w-full gp-thumbnail-video gp-h-full"
+        >
+           
+    <img
+      width="2237" height="1678" draggable="false" quality-type quality-percent data-sizes="auto" sizes="100vw" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIzNyIgaGVpZ2h0PSIxNjc4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPGRlZnM+CiAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZy0yMjM3LTE2NzgiPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iMjAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNTAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNzAlIiAvPgogICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjIyMzciIGhlaWdodD0iMTY3OCIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iMjIzNyIgaGVpZ2h0PSIxNjc4IiBmaWxsPSJ1cmwoI2ctMjIzNy0xNjc4KSIgLz4KICAgIDxhbmltYXRlIHhsaW5rOmhyZWY9IiNyIiBhdHRyaWJ1dGVOYW1lPSJ4IiBmcm9tPSItMjIzNyIgdG89IjIyMzciIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4=" base-src="{{featureMedia.preview_image.src | product_img_url: '1024x1024'}}" data-src="{{featureMedia.preview_image.src | product_img_url: '1024x1024'}}" data-srcset="{{featureMedia.preview_image.src | product_img_url: '1024x1024'}}"
+      id="video-thumbnail"
+      
+      class="gp-w-full gp-h-full gp-object-cover gp_lazyload"
+    />
+          <button type="button" class="gp-absolute gp-left-1/2 gp-top-1/2 gp-flex gp-aspect-[56/32] gp-w-14 -gp-translate-x-1/2 -gp-translate-y-1/2 gp-items-center gp-justify-center gp-rounded gp-bg-black/80 gp-transition-colors hover:gp-bg-[#ef0800]" aria-label="Play">
+            <svg class="gp-w-5 gp-text-white" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M5 5.274c0-1.707 1.826-2.792 3.325-1.977l12.362 6.726c1.566.853 1.566 3.101 0 3.953L8.325 20.702C6.826 21.518 5 20.432 5 18.726V5.274Z"
+              />
+            </svg>
+          </button>
+        </div>
+  
+  </gp-lite-html5-embed>
+        <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-lite-html5-embed-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+      {% when 'model' %}
+        
+    <model-viewer
+      src="{% if featureMedia.sources.first.url contains '.glb' %}{{ featureMedia.sources.first.url }}{% else %}{{featureMedia.sources.last.url}}{% endif %}" alt="{{featureMedia.preview_image.alt}}" data-shopify-feature="1.12" width="100%" poster="{{featureMedia.preview_image.src | product_img_url: '1024x1024'}}" ar-status="not-presenting" camera-controls="true"
+      class="gp-w-full gp-h-full model-viewer gp-z-[90]"
+      style="--aspect:1/1;--aspect-tablet:1/1;--aspect-mobile:1/1">
+    </model-viewer>
+  
+      {% else %}
+        
+    
+    <img
+      alt="No Image" width="2237" height="1678" draggable="false" quality-type quality-percent data-sizes="auto" sizes="(max-width: 768px) 50vw, 100vw" src isNotLazyload="true" srcset loading="lazy"
+      id=""
+      style="--aspect:1/1;--aspect-tablet:1/1;--aspect-mobile:1/1;--objf:cover;--objf-tablet:cover;--objf-mobile:cover"
+      class="gp-w-full gp-h-full gp-absolute gp-top-0 gp-left-0 featured-image-only gp-cursor-pointer !gp-rounded-none"
+    />
+    {% endcase %}
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    {% endcapture %}
+    {% if product.media.size > 1 %}
+         
+        {{ featureImageOnlyOne }}
+      {% else %}{{ featureImageOnlyOne }}{% endif %}
+  
+        
+      </div>
+    </gp-product-images>
+    <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-images-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+    </div>
+
+      
+    </gp-row>
+  
+  
+    
+
+    
+
+    
+    <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"transparent","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"gLg7ELMx--"}' data-id="gLg7ELMx--" id="gLg7ELMx--" data-same-height-subgrid-container class="gLg7ELMx-- gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:var(--g-s-2xl);--pt-mobile:var(--g-s-2xl);--pt-tablet:21px;--cg:var(--g-s-s);--gtc:minmax(0, auto) minmax(0, auto) minmax(0, auto);--gtc-mobile:minmax(0, auto) minmax(0, auto) minmax(0, auto);--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start;--pc-tablet:center">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:center"
+      class="gRL5IN7Gl0 gp-relative gp-flex gp-flex-col"
+    >
+      
+      <gp-product-price
+        id="shopify-text-element-gqzFu185QN" data-id="gqzFu185QN"
+        class="gp-product-price group-data-[state=loading]:gp-invisible data-[hidden=true]:gp-hidden gqzFu185QN"
+        style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px"
+        gp-data='{"uid":"gqzFu185QN","locale":"{{shop.locale}}","currency":"{{shop.currency}}","moneyFormat":"{{ shop.money_format | replace: '"', '\\"' | escape }}"}'
+      >
+        
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div id="p-price-gqzFu185QN" data-id
+        
+        style="--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658420"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-price gp-money gp-decoration-g-text-1  gp-text-instant"
+          style="--w:100%;--tdc:var(--g-c-text-1, text-1);--tdt:1px;--ta:left;--c:#242424;--ff:var(--g-font-heading, heading);--weight:700;--size:19px;--size-mobile:17px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          
+     {% if variant.price %}
+       {{ variant.price | money}}
+     {% endif %}
+   
+        </div>
+      </div>
+    </div>
+    
+      </gp-product-price>
+      <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-price-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+    </div><div
+      data-same-height-display-contents
+      style="--jc:center"
+      class="gg2DVSuSBv gp-relative gp-flex gp-flex-col"
+    >
+      
+      <gp-product-price
+        id="shopify-text-element-gvVq1ZSAR5" data-id="gvVq1ZSAR5"
+        class="gp-product-price group-data-[state=loading]:gp-invisible data-[hidden=true]:gp-hidden gvVq1ZSAR5"
+        style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px"
+        gp-data='{"uid":"gvVq1ZSAR5","locale":"{{shop.locale}}","currency":"{{shop.currency}}","moneyFormat":"{{ shop.money_format | replace: '"', '\\"' | escape }}"}'
+      >
+        
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div id="p-price-gvVq1ZSAR5" data-id
+        
+        style="--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658421"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-price gp-money  gp-text-instant"
+          style="--w:100%;--tdc:#B4B4B4;--tdt:1px;--ta:left;--c:#B4B4B4;--ff:var(--g-font-heading, heading);--ls:0px;--size:16px;--size-mobile:14px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          
+     {% if variant.price %}
+       {{ variant.price | money}}
+     {% endif %}
+   
+        </div>
+      </div>
+    </div>
+    
+      </gp-product-price>
+      <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-price-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+    </div><div
+      data-same-height-display-contents
+      style="--jc:center"
+      class="gVs1QeYsgl gp-relative gp-flex gp-flex-col"
+    >
+      <div gp-el-wrapper style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:none;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px" class="gkSd3fCdNs ">
+      
+    {% liquid
+      assign price = variant.price | times: 1.0
+      assign salePrice = variant.compare_at_price | times: 1.0
+      assign priceSave = salePrice | minus: price
+      assign prefixVal = section.settings.ggkSd3fCdNs_customContent_prefix
+      assign suffixVal = 
+    %}
+    {% if salePrice == null or price == null %}{% assign pricePercentage = prefixVal | money | append: ' ' | append: suffixVal %}{% else %}{% if priceSave > 0 %}{% assign priceSaveMoney = priceSave | money %}
+           {% assign pricePercentage = prefixVal | append: ' ' | append: priceSaveMoney | append: ' ' | append: suffixVal %}{% else %}{% assign priceSaveMoney = 0 | money %}
+           {% assign pricePercentage = prefixVal | append: ' ' | append: priceSaveMoney | append: ' ' | append: suffixVal %}{% endif %}{% endif %}
+
+    <gp-product-tag
+      class="gp-block data-[disabled=true]:gp-hidden"
+      style="--ta:left"
+      data-id="gkSd3fCdNs"
+      data-disabled="{% if priceSave > 0 %}false{% else %}true{% endif %}"
+      gp-data='{"setting":{"customContent":{"prefix":"You saved","suffix":"","unit":"price"},"translate":"customContent"}, "id": "gkSd3fCdNs", "locale": "{{shop.locale}}", "currency": "{{shop.currency}}", "moneyFormat": "{{ shop.money_format | replace: '"', '\"' | escape }}"}'
+      price-save="{{priceSave}}"
+    >
+      <div class="gp-inline-flex gp-flex-wrap gp-items-end gp-gap-3" >
+        <div class="gp-flex gp-items-center gp-w-full gp-h-full  gp-text-g-error" style="--pl:8px;--pr:8px;--pt:8px;--pb:8px;--pl-tablet:8px;--pr-tablet:8px;--pt-tablet:8px;--pb-tablet:8px;--pl-mobile:8px;--pr-mobile:8px;--pt-mobile:8px;--pb-mobile:8px;--bs:solid;--bw:1px 1px 1px 1px;--bc:#EA3335;--bgc:transparent;--radius:var(--g-radius-medium)">
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div id="p-tag-gkSd3fCdNs" data-id
+        
+        style="--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658423"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-text-g-error gp-text-instant"
+          style="--w:100%;--tdt:auto;--ta:left;--c:#EA3335;--fs:normal;--ff:var(--g-font-heading, heading);--weight:600;--ls:normal;--size:13px;--size-tablet:13px;--size-mobile:18px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ pricePercentage }}
+        </div>
+      </div>
+    </div>
+    
+        </div>
+      </div>
+
+  </gp-product-tag>
+  <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-tag-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+      </div>
+    </div>
+
+      
+    </gp-row>
+  
+  <div gp-el-wrapper style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:none;--d-mobile:none;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:var(--g-s-s)" class="geSNljQQvA ">
+      
+    {% liquid
+      assign price = variant.price | times: 1.0
+      assign salePrice = variant.compare_at_price | times: 1.0
+      assign priceSave = salePrice | minus: price
+      assign prefixVal = section.settings.ggeSNljQQvA_customContent_prefix
+      assign suffixVal = 
+    %}
+    {% if salePrice == null or price == null %}{% assign pricePercentage = prefixVal | money | append: ' ' | append: suffixVal %}{% else %}{% if priceSave > 0 %}{% assign priceSaveMoney = priceSave | money %}
+           {% assign pricePercentage = prefixVal | append: ' ' | append: priceSaveMoney | append: ' ' | append: suffixVal %}{% else %}{% assign priceSaveMoney = 0 | money %}
+           {% assign pricePercentage = prefixVal | append: ' ' | append: priceSaveMoney | append: ' ' | append: suffixVal %}{% endif %}{% endif %}
+
+    <gp-product-tag
+      class="gp-block data-[disabled=true]:gp-hidden"
+      style="--ta:center"
+      data-id="geSNljQQvA"
+      data-disabled="{% if priceSave > 0 %}false{% else %}true{% endif %}"
+      gp-data='{"setting":{"customContent":{"prefix":"You saved","suffix":"","unit":"price"},"translate":"customContent"}, "id": "geSNljQQvA", "locale": "{{shop.locale}}", "currency": "{{shop.currency}}", "moneyFormat": "{{ shop.money_format | replace: '"', '\"' | escape }}"}'
+      price-save="{{priceSave}}"
+    >
+      <div class="gp-inline-flex gp-flex-wrap gp-items-end gp-gap-3" >
+        <div class="gp-flex gp-items-center gp-w-full gp-h-full  gp-text-g-error" style="--pl:8px;--pr:8px;--pt:8px;--pb:8px;--pl-tablet:8px;--pr-tablet:8px;--pt-tablet:8px;--pb-tablet:8px;--pl-mobile:8px;--pr-mobile:8px;--pt-mobile:8px;--pb-mobile:8px;--bs:solid;--bw:1px 1px 1px 1px;--bc:#EA3335;--bgc:transparent;--radius:var(--g-radius-medium)">
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div id="p-tag-geSNljQQvA" data-id
+        
+        style="--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658424"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-text-g-error gp-text-instant"
+          style="--w:100%;--tdt:auto;--ta:center;--c:#EA3335;--fs:normal;--ff:var(--g-font-heading, heading);--weight:600;--ls:normal;--size:18px;--size-tablet:13px;--size-mobile:18px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ pricePercentage }}
+        </div>
+      </div>
+    </div>
+    
+        </div>
+      </div>
+
+  </gp-product-tag>
+  <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-tag-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+      </div><div gp-el-wrapper  class="gNatxcO_CY ">
+      
+    
+    <div class="gp-flex" >
+    <div
+      data-id="gNatxcO_CY"
+       style="--bs:solid;--bw:1px 0px 0px 0px;--bc:#EEEEEE;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:var(--g-s-xl);--pt:var(--g-s-xl);--mt-mobile:var(--g-s-xl);--pt-mobile:var(--g-s-xl);--mt-tablet:14px;--pt-tablet:14px;--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:left;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll">
+     
+     <ul
+        class="gp-inline-flex gp-flex-col"
+        style="--gg:var(--g-s-l);--gg-tablet:var(--g-s-s);--gg-mobile:var(--g-s-l)"
+        >
+        
+    <li
+      data-index="0" data-id="ghjVI6GffX"
+      class="gp-icon-list-item gp-flex gp-w-full gp-items-center gp-child-item-gNatxcO_CY"
+      style="--cg:var(--g-s-l);--cg-tablet:var(--g-s-s);--cg-mobile:var(--g-s-l)"
+    >
+    <div
+      data-same-height-display-contents
+      
+      class="gEW0HQu_lz gp-relative gp-flex gp-flex-col"
+    >
+      
+    <div id="g8RfXGEQ_Z" class="gp-leading-[0] g8RfXGEQ_Z" style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left">
+      <div data-id="g8RfXGEQ_Z" class="icon-wrapper gp-inline-flex gp-overflow-hidden g8RfXGEQ_Z " style="--bs:none;--bw:0px;--bc:transparent;--bg:transparent">
+      
+        <div >
+          <span style="--c:#322B85;--t:rotate(0deg);--w:24px;--w-tablet:16px;--w-mobile:20px;--h:24px;--h-tablet:16px;--h-mobile:20px;--minw:24px;--minw-tablet:16px;--minw-mobile:20px;--height-desktop:24px;--height-tablet:16px;--height-mobile:20px" class="gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden [&>svg]:!gp-h-[var(--height-desktop)] [&>svg]:!gp-w-auto tablet:[&>svg]:!gp-h-[var(--height-tablet)] mobile:[&>svg]:!gp-h-[var(--height-mobile)] "><svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6"  viewBox="0 0 512 512" fill="currentColor">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M512 256A256 256 0 1 1 0 256a256 256 0 0 1 512 0zm-127.04 -96.96a24 24 0 0 0 -34.56 0.704L239.264 301.344 172.288 234.336a24 24 0 0 0 -33.92 33.92L223.04 352.96a24 24 0 0 0 34.528 -0.64l127.744 -159.68a24 24 0 0 0 -0.32 -33.6z" /></svg></span>
+        </div>
+      </div>
+    </div>
+    
+    </div><div
+      data-same-height-display-contents
+      
+      class="gnA8U4_1O8 gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gwuuwjuVd5"
+        class="gwuuwjuVd5"
+        style="--ta:left;--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658440"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class="gp-g-paragraph-1  gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--ta:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--c:#242424;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggwuuwjuVd5_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </li>
+    <li
+      data-index="1" data-id="gCRyJ65sFf"
+      class="gp-icon-list-item gp-flex gp-w-full gp-items-center gp-child-item-gNatxcO_CY"
+      style="--cg:var(--g-s-l);--cg-tablet:var(--g-s-s);--cg-mobile:var(--g-s-l)"
+    >
+    <div
+      data-same-height-display-contents
+      
+      class="g9bZjPWfzR gp-relative gp-flex gp-flex-col"
+    >
+      
+    <div id="g_NxITwSP2" class="gp-leading-[0] g_NxITwSP2" style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left">
+      <div data-id="g_NxITwSP2" class="icon-wrapper gp-inline-flex gp-overflow-hidden g_NxITwSP2 " style="--bs:none;--bw:0px;--bc:transparent;--bg:transparent">
+      
+        <div >
+          <span style="--c:#322B85;--t:rotate(0deg);--w:24px;--w-tablet:16px;--w-mobile:20px;--h:24px;--h-tablet:16px;--h-mobile:20px;--minw:24px;--minw-tablet:16px;--minw-mobile:20px;--height-desktop:24px;--height-tablet:16px;--height-mobile:20px" class="gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden [&>svg]:!gp-h-[var(--height-desktop)] [&>svg]:!gp-w-auto tablet:[&>svg]:!gp-h-[var(--height-tablet)] mobile:[&>svg]:!gp-h-[var(--height-mobile)] "><svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6"  viewBox="0 0 512 512" fill="currentColor">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M512 256A256 256 0 1 1 0 256a256 256 0 0 1 512 0zm-127.04 -96.96a24 24 0 0 0 -34.56 0.704L239.264 301.344 172.288 234.336a24 24 0 0 0 -33.92 33.92L223.04 352.96a24 24 0 0 0 34.528 -0.64l127.744 -159.68a24 24 0 0 0 -0.32 -33.6z" /></svg></span>
+        </div>
+      </div>
+    </div>
+    
+    </div><div
+      data-same-height-display-contents
+      
+      class="gjeCixF2Cm gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gM_P2u5jOv"
+        class="gM_P2u5jOv"
+        style="--ta:left;--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658451"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class="gp-g-paragraph-1  gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--ta:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--c:#242424;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggM_P2u5jOv_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </li>
+    <li
+      data-index="2" data-id="gLDBTOK8R3"
+      class="gp-icon-list-item gp-flex gp-w-full gp-items-center gp-child-item-gNatxcO_CY"
+      style="--cg:var(--g-s-l);--cg-tablet:var(--g-s-s);--cg-mobile:var(--g-s-l)"
+    >
+    <div
+      data-same-height-display-contents
+      
+      class="g0MKRQ5shJ gp-relative gp-flex gp-flex-col"
+    >
+      
+    <div id="g5spx7-rBi" class="gp-leading-[0] g5spx7-rBi" style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left">
+      <div data-id="g5spx7-rBi" class="icon-wrapper gp-inline-flex gp-overflow-hidden g5spx7-rBi " style="--bs:none;--bw:0px;--bc:transparent;--bg:transparent">
+      
+        <div >
+          <span style="--c:#322B85;--t:rotate(0deg);--w:24px;--w-tablet:16px;--w-mobile:20px;--h:24px;--h-tablet:16px;--h-mobile:20px;--minw:24px;--minw-tablet:16px;--minw-mobile:20px;--height-desktop:24px;--height-tablet:16px;--height-mobile:20px" class="gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden [&>svg]:!gp-h-[var(--height-desktop)] [&>svg]:!gp-w-auto tablet:[&>svg]:!gp-h-[var(--height-tablet)] mobile:[&>svg]:!gp-h-[var(--height-mobile)] "><svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6"  viewBox="0 0 512 512" fill="currentColor">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M512 256A256 256 0 1 1 0 256a256 256 0 0 1 512 0zm-127.04 -96.96a24 24 0 0 0 -34.56 0.704L239.264 301.344 172.288 234.336a24 24 0 0 0 -33.92 33.92L223.04 352.96a24 24 0 0 0 34.528 -0.64l127.744 -159.68a24 24 0 0 0 -0.32 -33.6z" /></svg></span>
+        </div>
+      </div>
+    </div>
+    
+    </div><div
+      data-same-height-display-contents
+      
+      class="gDBEIRS0CU gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gB3JztJNm7"
+        class="gB3JztJNm7"
+        style="--ta:left;--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658457"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class="gp-g-paragraph-1  gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--ta:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--c:#242424;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggB3JztJNm7_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </li>
+    <li
+      data-index="3" data-id="gt4iaJtEqr"
+      class="gp-icon-list-item gp-flex gp-w-full gp-items-center gp-child-item-gNatxcO_CY"
+      style="--cg:var(--g-s-l);--cg-tablet:var(--g-s-s);--cg-mobile:var(--g-s-l)"
+    >
+    <div
+      data-same-height-display-contents
+      
+      class="gts7D0IXA5 gp-relative gp-flex gp-flex-col"
+    >
+      
+    <div id="gVxS36rfde" class="gp-leading-[0] gVxS36rfde" style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left">
+      <div data-id="gVxS36rfde" class="icon-wrapper gp-inline-flex gp-overflow-hidden gVxS36rfde " style="--bs:none;--bw:0px;--bc:transparent;--bg:transparent">
+      
+        <div >
+          <span style="--c:#322B85;--t:rotate(0deg);--w:24px;--w-tablet:16px;--w-mobile:20px;--h:24px;--h-tablet:16px;--h-mobile:20px;--minw:24px;--minw-tablet:16px;--minw-mobile:20px;--height-desktop:24px;--height-tablet:16px;--height-mobile:20px" class="gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden [&>svg]:!gp-h-[var(--height-desktop)] [&>svg]:!gp-w-auto tablet:[&>svg]:!gp-h-[var(--height-tablet)] mobile:[&>svg]:!gp-h-[var(--height-mobile)] "><svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6"  viewBox="0 0 512 512" fill="currentColor">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M512 256A256 256 0 1 1 0 256a256 256 0 0 1 512 0zm-127.04 -96.96a24 24 0 0 0 -34.56 0.704L239.264 301.344 172.288 234.336a24 24 0 0 0 -33.92 33.92L223.04 352.96a24 24 0 0 0 34.528 -0.64l127.744 -159.68a24 24 0 0 0 -0.32 -33.6z" /></svg></span>
+        </div>
+      </div>
+    </div>
+    
+    </div><div
+      data-same-height-display-contents
+      
+      class="ghs05L1T9j gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gdOgbxH87J"
+        class="gdOgbxH87J"
+        style="--ta:left;--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658511"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class="gp-g-paragraph-1  gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--ta:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--c:#242424;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggdOgbxH87J_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </li>
+      </ul>
+  </div>
+  </div>
+  
+      </div>
+    {%- liquid
+      assign inventory_quantity = variant.inventory_quantity | default: 0
+      assign is_in_stock = variant.available
+    -%}
+    <gp-product-button
+      
+      gp-data-wrapper="true"
+      gp-href="{{ request.origin }}{{ routes.root_url | split: '/' | join: '/' }}/cart"
+      class="gp-product-button"
+      gp-label-out-of-stock="{{ section.settings.ggcwh-mqwZO_outOfStockLabel }}"
+      gp-label-unavailable="{{ section.settings.ggcwh-mqwZO_unavailableLabel }}"
+      gp-data='{"styles":{"errorTypo":{"attrs":{"color":"error"},"type":"paragraph-2"},"successTypo":{"attrs":{"color":"success"},"type":"paragraph-2"}},"setting":{"errorType":"built-in","actionEffect":"open-cart-drawer","label":"Get mine now","errorMessage":"Cannot add product to cart","successMessage":"Add product to cart successfully","outOfStockLabel":"Out of stocks","customURL":{"link":"/cart","target":"_self"}},"variantID":"{{variant.id}}","disabled":"{{variant.available}}","totalVariant":"{{total_combinations}}"}'
+      data-variant-selection-required-message=""
+    >
+      
+    <gp-button
+      gp-data='{}'
+      
+      class="gp-flex gp-flex-col"
+    >
+      <div style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:var(--g-s-2xl);--mt-mobile:var(--g-s-2xl);--mt-tablet:21px;--ta:center" class="{% unless variant.available %} !gp-hidden {% endunless %}">
+        <style>[data-id="gcwh-mqwZO"].gp-button-base::before, [data-id="gcwh-mqwZO-interaction"].gp-button-base::before {
+      
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    
+    
+  
+    }
+  
+      
+  [data-id="gcwh-mqwZO"]:hover::before, [data-id="gcwh-mqwZO-interaction"]:hover::before {
+    
+    
+  }</style>
+        
+        <button
+          data-id="gcwh-mqwZO" dataId="gcwh-mqwZO" data-state="idle" aria-label="Get mine now"
+          name="add" gp-data-hidden="{% unless variant.available %}true{% endunless %}"
+          type="submit"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:8px;--pb:8px;--pl-tablet:24px;--pr-tablet:24px;--pt-tablet:8px;--pb-tablet:8px;--pl-mobile:24px;--pr-mobile:24px;--pt-mobile:8px;--pb-mobile:8px;--shadow:2.4492935982947064e-16px 4px 8px 0px rgba(0, 0, 0, 0.25);--bgi:;--size:19px;--lh:130%;--fs:normal;--weight:600;--ls:normal;--size-tablet:19px;--lh-tablet:130%;--size-mobile:17px"
+          class="gp-button-atc tcustomizer-submit-button gcwh-mqwZO gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 hover:gp-text-g-bg-3 gp-text-g-bg-3 undefined"
+        >
+        
+  <svg
+    class="gp-invisible gp-absolute gp-h-5 gp-w-5 group-data-[state=loading]:gp-animate-spin group-data-[state=loading]:gp-visible"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      class="gp-opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      stroke-width="4"
+    ></circle>
+    <path
+      class="gp-opacity-75"
+      fill="currentColor"
+      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+    ></path>
+  </svg>
+
+        <div class="gp-inline-flex gp-flex-row-reverse">
+          
+          
+    <span
+      data-gp-text
+      style="--size:19px;--lh:130%;--fs:normal;--weight:600;--ls:normal;--size-tablet:19px;--lh-tablet:130%;--size-mobile:17px;word-break:break-word"
+      class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text"
+    >
+      {{ section.settings.ggcwh-mqwZO_label }}
+    </span>
+        </div>
+        
+    
+    
+  
+        </button>
+      </div>
+      <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+    </gp-button>
+  
+      
+    <gp-button
+      gp-data='{}'
+      
+      class="gp-flex gp-flex-col"
+    >
+      <div style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:var(--g-s-2xl);--mt-mobile:var(--g-s-2xl);--mt-tablet:21px;--ta:center" class="{% if variant.available %} !gp-hidden {% endif %}">
+        <style>[data-id="gcwh-mqwZO-sold-out"].gp-button-base::before, [data-id="gcwh-mqwZO-sold-out-interaction"].gp-button-base::before {
+      
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    
+    
+  
+    }
+  
+      
+  [data-id="gcwh-mqwZO-sold-out"]:hover::before, [data-id="gcwh-mqwZO-sold-out-interaction"]:hover::before {
+    
+    
+  }</style>
+        
+        <button
+          data-id="gcwh-mqwZO-sold-out" dataId="gcwh-mqwZO-sold-out" data-state="idle" aria-label="{{ section.settings.ggcwh-mqwZO_outOfStockLabel }}"
+          gp-data-hidden="{% if variant.available %}true{% endif %}"
+          type="button"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:8px;--pb:8px;--pl-tablet:24px;--pr-tablet:24px;--pt-tablet:8px;--pb-tablet:8px;--pl-mobile:24px;--pr-mobile:24px;--pt-mobile:8px;--pb-mobile:8px;--bgi:;--size:19px;--lh:130%;--fs:normal;--weight:600;--ls:normal;--size-tablet:19px;--lh-tablet:130%;--size-mobile:17px"
+          class="gp-cursor-default gp-opacity-30 btn-disabled gp-button-sold-out gcwh-mqwZO-sold-out gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30  undefined"
+        >
+        
+        <div class="gp-inline-flex gp-flex-row-reverse">
+          
+          
+    <span
+      data-gp-text
+      style="--size:19px;--lh:130%;--fs:normal;--weight:600;--ls:normal;--size-tablet:19px;--lh-tablet:130%;--size-mobile:17px;word-break:break-word"
+      class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text"
+    >
+      {{ section.settings.ggcwh-mqwZO_outOfStockLabel }}
+    </span>
+        </div>
+        
+    
+    
+  
+        </button>
+      </div>
+      <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+    </gp-button>
+  
+    </gp-product-button>
+    <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-button-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+    </div>
+
+      
+    </gp-row>
+  
+  
+          {%- endform -%}
+        </product-form>
+      </gp-product>
+      {%- assign product = gpBkProduct -%}
+    {% else %}
+      <div class="gp-text-center">{{ 'gempages.Product.product_not_found' | t }}</div>
+    {% endif %}
+    <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="g9GNYlbedW"
+        class="g9GNYlbedW"
+        style="--ta:center;--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:var(--g-s-2xl);--mb:var(--g-s-s);--mt-mobile:var(--g-s-2xl);--mb-mobile:7px;--mt-tablet:21px;--mb-tablet:2px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658626"
+      >
+      <div class="gp-flex" style="--jc:center">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--ta:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--c:#575757;--fs:normal;--ff:var(--g-font-body, body);--weight:600;--ls:normal;--size:13px;--size-tablet:13px;--size-mobile:12px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.gg9GNYlbedW_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    <div gp-el-wrapper style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px" class="gE3DW9rN-D ">
+      
+    {%- liquid
+      assign standardEndDate = 1686049015248
+      assign typeCountdown = "daily"
+      assign autoHideWhenTimeout = false
+      assign current_time = 'now' | date: '%s' | times: 1000
+
+    -%}
+   {% if standardEndDate == nil or current_time <= standardEndDate or typeCountdown != "standard" or autoHideWhenTimeout != true %}
+      <gp-countdown-timer
+        data-id="gE3DW9rN-D"
+        gp-href
+        class="gp-flex"
+        style="--jc:center"
+        gp-data='{"behaviour":"daily","dateStandard":1686074215248,"dayLabel":"Day","enableDay":true,"enableHour":true,"enableMinute":true,"enableSecond":true,"enableWeek":false,"hourLabel":"Hrs","loopAfterFinish":true,"minuteLabel":"Min","redirectUrl":{"link":"","target":"_self"},"secondLabel":"Sec","timeZone":"UTC+7","timerDaily":{"format":"am","hours":10,"mins":30},"timerEverygreen":{"days":1,"endTime":1685570353657,"hours":3,"mins":0,"startTime":1685469415248},"translate":"dayLabel,hourLabel,minuteLabel,secondLabel,weekLabel","weekLabel":"Weeks","uid":"gE3DW9rN-D","builderData":{"advanced":{"border":{"desktop":{"normal":{"border":"none","borderType":"none","borderWidth":{},"color":"transparent","isCustom":false,"width":"0px"}}},"boxShadow":{"desktop":{"normal":{"angle":90,"blur":"4px","color":"rgba(18, 18, 18, 0.12)","distance":"2px","spread":"0px","type":"shadow-1"}}},"d":{"desktop":true,"mobile":true,"tablet":true},"hasBoxShadow":{"desktop":{"normal":false}},"op":{"desktop":"100%"},"pageType":"GP_STATIC","rounded":{"desktop":{"normal":{"bblr":"0px","bbrr":"0px","btlr":"0px","btrr":"0px","radiusType":"none"}}},"spacing-setting":{"desktop":{"margin":{},"padding":""},"mobile":{"margin":"","padding":""},"tablet":{"margin":"","padding":""}}},"label":"CountDown Timer","settings":{"behaviour":"daily","dateStandard":1686074215248,"dayLabel":"Day","enableDay":true,"enableHour":true,"enableMinute":true,"enableSecond":true,"enableWeek":false,"hourLabel":"Hrs","loopAfterFinish":true,"minuteLabel":"Min","redirectUrl":{"link":"","target":"_self"},"secondLabel":"Sec","timeZone":"UTC+7","timerDaily":{"format":"am","hours":10,"mins":30},"timerEverygreen":{"days":1,"endTime":1685570353657,"hours":3,"mins":0,"startTime":1685469415248},"translate":"dayLabel,hourLabel,minuteLabel,secondLabel,weekLabel","weekLabel":"Weeks"},"styles":{"backgroundItemColor":"transparent","borderState":{"normal":{"border":"none","borderType":"none","color":"transparent","isCustom":false,"width":"0px"}},"colorLabel":"#575757","colorNumber":"text-2","horizontalGap":"auto","itemPadding":{"custom":{"desktop":{"horizontal":"16px","vertical":"0px"}}},"labelTypo":{"attrs":{"color":"#575757"},"custom":{"fontSize":{"desktop":"13px","mobile":"12px","tablet":"13px"},"fontStyle":"normal","fontWeight":"400","letterSpacing":"normal","lineHeight":{"desktop":"150%","mobile":"150%","tablet":"150%"}},"type":"paragraph-1"},"labelTypography":{"type":"paragraph-2"},"numTypo":{"attrs":{"color":"#242424"},"custom":{"fontSize":{"desktop":"23px","mobile":"23px","tablet":"23px"},"fontStyle":"normal","fontWeight":"700","letterSpacing":"normal","lineHeight":{"desktop":"130%","mobile":"130%","tablet":"130%"}},"type":"heading-2"},"numTypography":{"custom":{"desktop":{"fontSize":"23px","fontStyle":"normal","fontWeight":"700","letterSpacing":"normal","lineHeight":"130%"},"mobile":{"fontSize":"20px","fontWeight":"700"},"tablet":{"fontSize":"20px","fontWeight":"700"}}},"roundedState":{"normal":{"radiusType":"none"}},"textAlign":{"desktop":"center"}},"tag":"Countdown","uid":"gE3DW9rN-D","childrens":[],"type":"component"}}'>
+        <div id="section-countdown" class="gp-flex gp-flex-wrap gp-w-max gp-relative" style="gap:auto;--jc:center">
+          
+          
+          
+    <div style="--bs:none;--bw:0px;--bc:transparent;--bg:transparent" class="gp-flex-1 gp-text-center gp-min-w-max !gp-max-w-max">
+    
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gE3DW9rN-D-text" id="day"
+        class="gE3DW9rN-D"
+        style="--c:var(--g-c-text-2, text-2);--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658627"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-countdown-number gp-text-g-text-2  gp-text-instant"
+          style="--w:100%;--tdt:auto;--fs:normal;--ff:var(--g-font-heading, heading);--weight:700;--ls:normal;--size:23px;--size-tablet:23px;--size-mobile:23px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;--c:#242424;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          00
+        </div>
+      </div>
+    </div>
+    
+    
+    </div>
+    
+          
+    <div style="--bs:none;--bw:0px;--bc:transparent;--bg:transparent" class="gp-flex-1 gp-text-center gp-min-w-max !gp-max-w-max">
+    
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gE3DW9rN-D-text" id="hour"
+        class="gE3DW9rN-D"
+        style="--c:var(--g-c-text-2, text-2);--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658627"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-countdown-number gp-text-g-text-2  gp-text-instant"
+          style="--w:100%;--tdt:auto;--fs:normal;--ff:var(--g-font-heading, heading);--weight:700;--ls:normal;--size:23px;--size-tablet:23px;--size-mobile:23px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;--c:#242424;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          00
+        </div>
+      </div>
+    </div>
+    
+    
+    </div>
+    
+          
+    <div style="--bs:none;--bw:0px;--bc:transparent;--bg:transparent" class="gp-flex-1 gp-text-center gp-min-w-max !gp-max-w-max">
+    
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gE3DW9rN-D-text" id="minute"
+        class="gE3DW9rN-D"
+        style="--c:var(--g-c-text-2, text-2);--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658627"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-countdown-number gp-text-g-text-2  gp-text-instant"
+          style="--w:100%;--tdt:auto;--fs:normal;--ff:var(--g-font-heading, heading);--weight:700;--ls:normal;--size:23px;--size-tablet:23px;--size-mobile:23px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;--c:#242424;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          00
+        </div>
+      </div>
+    </div>
+    
+    
+    </div>
+    
+          
+    <div style="--bs:none;--bw:0px;--bc:transparent;--bg:transparent" class="gp-flex-1 gp-text-center gp-min-w-max !gp-max-w-max">
+    
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gE3DW9rN-D-text" id="second"
+        class="gE3DW9rN-D"
+        style="--c:var(--g-c-text-2, text-2);--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1758799658628"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-countdown-number gp-text-g-text-2  gp-text-instant"
+          style="--w:100%;--tdt:auto;--fs:normal;--ff:var(--g-font-heading, heading);--weight:700;--ls:normal;--size:23px;--size-tablet:23px;--size-mobile:23px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;--c:#242424;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          00
+        </div>
+      </div>
+    </div>
+    
+    
+    </div>
+    
+        </div>
+     </gp-countdown-timer>
+    {% endif %}
+    <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-countdown-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+      </div>
+    </div>
+
+      
+    </gp-row>
+  
+  
+    </div>

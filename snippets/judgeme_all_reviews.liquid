@@ -1,0 +1,12 @@
+<div class="jdgm-all-reviews-page">
+  {% if content_for_header contains 'judgeme' %}
+    <div data-url="{{ shop.url }}"></div>
+    <script>
+      if(window.jdgm && window.jdgm.ALL_REVIEWS_PAGE) {
+        window.jdgm.ALL_REVIEWS_PAGE.init();
+      }
+    </script>
+  {% else %}
+    <p>Please ensure Judge.me app is installed and published on your theme.</p>
+  {% endif %}
+</div>

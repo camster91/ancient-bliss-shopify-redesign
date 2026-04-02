@@ -1,0 +1,123 @@
+{% assign product = product %}
+
+<div class="max-w-xl mx-auto p-6 bg-white border rounded-md shadow">
+
+  <!-- Step 1: Quantity Selection -->
+  <h2 class="font-semibold text-lg mb-2">1. Select quantity</h2>
+  <div class="space-y-3 mb-6" id="quantity-options">
+    {% for variant in product.variants %}
+      {% assign qty = variant.title | split: ' ' | first %}
+      <label class="flex items-center p-3 border rounded cursor-pointer hover:border-green-500 transition {% if forloop.first %}border-green-600 bg-green-50{% else %}border-gray-300{% endif %}">
+        <input type="radio"
+               name="quantity"
+               value="{{ variant.id }}"
+               data-price="{{ variant.price | money_without_currency }}"
+               data-title="{{ variant.title }}"
+               {% if forloop.first %}checked{% endif %}
+               class="mr-3">
+        <div class="flex flex-col">
+          <span class="font-semibold">{{ qty }} Bottles</span>
+          <span class="text-sm line-through text-gray-400">${{ variant.compare_at_price | money_without_currency }}</span>
+          <span class="text-green-600 font-bold text-sm">${{ variant.price | money_without_currency }}</span>
+        </div>
+      </label>
+    {% endfor %}
+  </div>
+
+  <!-- Step 2: Frequency Selection -->
+  <h2 class="font-semibold text-lg mb-2">2. Select frequency</h2>
+  <div id="frequency-options" class="space-y-3">
+    <label class="block border p-3 rounded cursor-pointer border-green-600 bg-green-50">
+      <input type="radio" name="frequency" value="subscribe" checked class="mr-2">
+      <strong>Subscribe & Save</strong>
+      <span class="ml-2 text-sm bg-green-100 text-green-700 px-2 py-1 rounded">Save up to 42%</span>
+
+      <!-- Subscription Benefits -->
+      <div id="subscription-benefits" class="mt-2 text-sm text-gray-700">
+        <ul class="grid grid-cols-2 gap-1">
+          <li>✅ Delivery Every 1 or 2 Months</li>
+          <li>✅ FREE SHIPPING on every delivery</li>
+          <li>✅ VIP group access</li>
+          <li>✅ Cancel anytime</li>
+          <li>✅ <strong>FREE Detox Guide (PDF)</strong> on first order</li>
+        </ul>
+        <p class="italic text-xs mt-1">Includes instructions, food tips & usage guidance</p>
+      </div>
+    </label>
+
+    <label class="block border p-3 rounded cursor-pointer border-gray-300">
+      <input type="radio" name="frequency" value="onetime" class="mr-2">
+      <strong>One-Time Purchase</strong>
+    </label>
+  </div>
+
+  <!-- Add to Cart -->
+  <button id="customAddToCart"
+          class="w-full mt-6 bg-green-700 hover:bg-green-800 text-white font-semibold py-3 rounded text-center">
+    Add To Cart
+  </button>
+
+  <p class="text-xs text-center text-gray-500 mt-2">🛡️ 60 Day Money Back Guarantee</p>
+</div>
+
+<!-- Script to handle selection and cart -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const variantRadios = document.querySelectorAll("input[name='quantity']");
+    const frequencyRadios = document.querySelectorAll("input[name='frequency']");
+    const benefits = document.getElementById("subscription-benefits");
+    const addToCartBtn = document.getElementById("customAddToCart");
+
+    let selectedVariantId = document.querySelector("input[name='quantity']:checked").value;
+
+    // Update selection
+    variantRadios.forEach(radio => {
+      radio.addEventListener("change", () => {
+        selectedVariantId = radio.value;
+      });
+    });
+
+    // Toggle subscription benefits
+    function toggleBenefits() {
+      const selected = document.querySelector("input[name='frequency']:checked").value;
+      benefits.style.display = selected === "subscribe" ? "block" : "none";
+    }
+    frequencyRadios.forEach(radio => radio.addEventListener("change", toggleBenefits));
+    toggleBenefits(); // On load
+
+    // Add to Cart Logic
+    addToCartBtn.addEventListener("click", function () {
+      const isSubscribe = document.querySelector("input[name='frequency']:checked").value === "subscribe";
+
+      const formData = {
+        items: [
+          {
+            id: selectedVariantId,
+            quantity: 1,
+            {% if product.selling_plan_groups.size > 0 %}
+            {% assign plan_id = product.selling_plan_groups.first.selling_plans.first.id %}
+            selling_plan: isSubscribe ? "{{ plan_id }}" : null
+            {% endif %}
+          }
+        ]
+      };
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to add");
+        return response.json();
+      })
+      .then(data => {
+        window.location.href = '/cart';
+      })
+      .catch(err => alert('Something went wrong. Try again.'));
+    });
+  });
+</script>

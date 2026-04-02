@@ -1,0 +1,236 @@
+{% schema %}
+{
+  "name": "Brand Story",
+  "tag": "section",
+  "class": "brand-story-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom CSS Class",
+      "default": "brand-story-default"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Brand Story"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Paragraph",
+      "default": "Your brand story goes here..."
+    },
+    {
+      "type": "richtext",
+      "id": "list_content",
+      "label": "Optional Bullet Points",
+      "default": "<ul><li>Clean Supplements</li><li>Inspired by Nature</li><li>Rooted in Truth</li></ul>"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text Alignment",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Image"
+    },
+    {
+      "type": "text",
+      "id": "left_image_alt",
+      "label": "Left Image Alt Text",
+      "default": "Brand founder image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image_top",
+      "label": "Right Image Top"
+    },
+    {
+      "type": "text",
+      "id": "right_image_top_alt",
+      "label": "Right Image Top Alt Text",
+      "default": "Supplement badge or logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image_bottom",
+      "label": "Right Image Bottom"
+    },
+    {
+      "type": "text",
+      "id": "right_image_bottom_alt",
+      "label": "Right Image Bottom Alt Text",
+      "default": "Supplement capsule image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Story",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+.brand-story-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-story-section__left,
+.brand-story-section__right {
+  flex: 1 1 300px;
+  max-width: 100%;
+}
+.brand-story-section-wrapper {
+	width: 100%;
+} 
+
+.brand-story-section__content {
+  flex: 1 1 500px;
+  text-align: var(--text-align);
+}
+
+
+.brand-story-section .brand-story-section__title {
+	font-size: 56px;
+	font-weight: 700 !important;
+	letter-spacing: -0.2px;
+	margin-bottom: 40px;
+} 
+.brand-story-section .brand-story-section__paragraph {
+	font-size: 18px;
+	letter-spacing: -0.1px;
+	line-height: 150%;
+	color: rgba(163, 60, 63, 1);
+}
+.brand-story-section__content ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.brand-story-section__right img {
+	margin-bottom: 1rem;
+	width: 100%;
+	height: auto;
+	max-width: 140px;
+}
+
+.brand-story-section .two_images {
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
+	padding-left: 0px;
+	padding-top: 0px;
+	max-width: 540px;
+	margin: 0 auto;
+} 
+
+
+
+@media screen and (max-width: 1024px) {
+  .brand-story-section {
+	flex-direction: column-reverse;
+} 
+.brand-story-section-wrapper {
+	width: 100%;
+	position: relative;
+	padding-top: 110px !important;
+	margin-top: 60px;
+} 
+.brand-story-section .two_images img:nth-child(2) {
+	position: absolute;
+	top: 0;
+	max-width: 95px;
+	left: 20px;
+} 
+.brand-story-section .brand-story-section__title {
+	font-size: 32px;
+	letter-spacing: -0.2px;
+	margin-bottom: 20px;
+} 
+.brand-story-section .brand-story-section__paragraph {
+	font-size: 16px;
+	color: rgba(24,27,24,0.8);
+}
+/* .brand-story-section__right {
+	position: relative;
+}  */
+.brand-story-section .two_images img:nth-child(1) {
+	max-width: 100px;
+	margin-bottom: -82px;
+	margin-left: auto;
+	padding-right: 10px;
+}
+.mt-110 {
+	margin-top: 65px !important;
+} 
+}
+{% endstyle %}
+
+{% assign alignment = section.settings.text_align | default: 'left' %}
+
+<div class="brand-story-section-wrapper {{ section.settings.custom_class }}">
+<div class="container">
+<div class="brand-story-section">
+  <!-- Left Image -->
+  {% if section.settings.left_image %}
+    <div class="brand-story-section__left">
+      <img
+        src="{{ section.settings.left_image | image_url: width: 600 }}"
+        alt="{{ section.settings.left_image_alt | escape }}"
+        loading="lazy"
+      >
+    </div>
+  {% endif %}
+
+    <!-- Right Column with 2 Images -->
+   <div class="brand-story-section__right">
+  <!-- Content -->
+  <div class="brand-story-section__content" style="--text-align: {{ alignment }};">
+    {% if section.settings.title != blank %}
+      <h2 class="brand-story-section__title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.text != blank %}
+      <p class="brand-story-section__paragraph">{{ section.settings.text }}</p>
+    {% endif %}
+    {% if section.settings.list_content != blank %}
+      {{ section.settings.list_content }}
+    {% endif %}
+  </div>
+
+  <!-- 2 Images -->
+  <div class="two_images">
+    {% if section.settings.right_image_top %}
+      <img
+        src="{{ section.settings.right_image_top | image_url: width: 300 }}"
+        alt="{{ section.settings.right_image_top_alt | escape }}"
+        loading="lazy"
+      >
+    {% endif %}
+    {% if section.settings.right_image_bottom %}
+      <img
+        src="{{ section.settings.right_image_bottom | image_url: width: 300 }}"
+        alt="{{ section.settings.right_image_bottom_alt | escape }}"
+        loading="lazy"
+      >
+    {% endif %}
+  </div>
+</div>
+</div>
+</div> 

@@ -1,0 +1,444 @@
+<!-- advanced-content.liquid -->
+<style>
+  .customstyle{{ section.id }}{
+    position: relative;
+    z-index: {{section.settings.zindex}};
+    background-position:center !important;
+    background-repeat:{{ section.settings.e_repeat }} !important;
+    background-size:{{ section.settings.e_size }} !important;
+  }
+  .customstyle{{section.id}}::before{
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    content: "";
+    height: {{section.settings.rangebg}}%;
+    background-color: {{section.settings.bgbefore}};
+  }
+</style>
+<div class="{{ section.settings.custom_class }} customstyle{{ section.id }} {% if section.settings.image_bg != blank %} lazyload {% endif %}" 
+style="{% if section.settings.image_bg != blank %}background-image:url({%- include 'srcBlank' -%}){% endif %}"  
+data-section-id="{{ section.id }}"  data-bg="{{ section.settings.image_bg | img_url:"1920x" }}" >
+  {%- include 'style-section' -%}
+<div class="{{ section.settings.setwidth }}">
+  <div class="section-block">
+    {%- include 'section-heading' -%}
+    <div class="row {% unless section.settings.padding %} m-0{% endunless %} {% if section.settings.col_center %} justify-content-center {% endif %}">
+      <div class="col-lg-5 {% unless section.settings.padding %} p-0{% endunless %}" {{ block.shopify_attributes }}>
+        <div class="grid__item-inner grid__item-inner--{{ block.type }}">
+      {%- if section.settings.image != blank -%}
+       
+            <a href="{{section.settings.image_link | default:'#'}}" class="d-block" data-aos="{{section.settings.animation}}" data-aos-duration="1200">
+              <img src="{%- include 'srcBlank' -%}" class="lazyload transition" data-src="{{section.settings.image | img_url : '1920x'}}" />
+            </a>
+            {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+        </div>
+      </div>
+       <div class="col-lg-7 {% unless section.settings.padding %} p-0{% endunless %}" {{ block.shopify_attributes }}>
+        <div class="grid__item-inner grid__item-inner--{{ block.type }}">
+            <div class="pr-lg-5">
+      {%- for block in section.blocks -%}
+     
+          {%- case block.type -%}
+        
+          {%- when 'content_with_icon' -%}
+           
+        <style>
+.media i { font-size:50px; width:auto;height:auto;}
+</style>
+            {%  if forloop.first  %}
+              {%  if section.settings.inner_heading != blank %}
+               <h3 class="section-title-0 text-center mb-5 font-family-2">
+    <span>{{section.settings.inner_heading}}</span>
+  </h3>
+                {% endif %}
+              {% endif %}
+               {% if block.settings.icon != blank or block.settings.icon_content != blank or block.settings.icon_heading != blank %} 
+              <div class="media mb-5">
+                 {% if block.settings.block_style == 'horizontal' %}
+                <div class="media-body horizontal">
+                 <div class="media-body-inner">
+                  <div class="svg_icon">
+                  {{ block.settings.icon }}
+                  </div>
+                  <h4 class="mt-0 mb-2">{{ block.settings.icon_heading }}</h4>
+                 </div>
+               {{ block.settings.icon_content }}
+                </div>
+                   {% else %}
+                   <div class="media-body vertical">
+                 <div class="media-body-inner">
+                  <div class="svg_icon">
+                  {{ block.settings.icon }}
+                  </div>
+                   <div class="content-items-custom">
+                  <h4 class="mt-0 mb-2">{{ block.settings.icon_heading }}</h4>
+               {{ block.settings.icon_content }}
+                    </div>
+                    </div>
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+              {%  if forloop.last %}
+              {%- assign show_link_button = false -%}
+              {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+              {%- assign show_link_button = true -%}
+              {%- endif -%}
+        <div class="banner-slider-btn-wrapper">
+              {%- if show_link_button -%}
+              <!-- <style>
+                .image_content_btn{
+                  
+                  color:{{section.settings.color_button}};
+                  border: 1px solid {{section.settings.solid_button}};
+                }
+                .image_content_btn:before{
+                  background-color:{{section.settings.bg_button}};
+                }
+                .image_content_btn:hover{
+                  color:{{section.settings.color_button_hover}};
+                  border-color:{{section.settings.solid_button_hover}};
+                }
+                .image_content_btn:hover:before{
+                  background-color:{{section.settings.bg_button_hover}};
+                } 
+              </style>-->
+              <div class="slideshow__btn-wrapper {% if section.settings.slide_title != blank or section.settings.subheading != blank %} slideshow__btn-wrapper--push{% endif %}" >
+                <a href="{{ section.settings.button_link }}" class="btn gradient-theme slideshow__btn slideshow__btn{{block.id}} image_content_btn {%if section.settings.stylebtns == 'default' %} btn-theme {% elsif section.settings.stylebtns == 'underline' %}  btn-underline {% else %} btn-before {% endif %}">
+                  <span>{{ section.settings.button_label | escape }}</span>
+                </a>
+              </div>
+              {%- endif -%}
+        </div>
+              {% endif %}
+            
+          {%- endcase -%}
+        
+      {%- endfor -%}
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Image With Content",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class Add"
+    },
+    {
+      "type":"image_picker",
+      "id":"image",
+        "label":"Image"
+    },
+        {
+      "type": "text",
+      "id":"inner_heading",
+      "label": "Inner Content Heading"
+    },
+    {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+
+        {
+          "type": "select",
+          "id": "stylebtns",
+          "label": "Style Button",
+          "default": "default",
+          "options": [
+            {
+              "label": "Default",
+              "value": "default"
+            },
+            {
+              "label": "Underline",
+              "value": "underline"
+            },
+            {
+              "label": "Line Before",
+              "value": "linebefore"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "bg_button",
+          "label": "Background Button",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "solid_button",
+          "label": "Border Button",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "color_button",
+          "label": "Color Button",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "bg_button_hover",
+          "label": "Background Button Hover",
+          "default": "#b6813c"
+        },
+        {
+          "type": "color",
+          "id": "solid_button_hover",
+          "label": "Border Button Hover",
+          "default": "#b6813c"
+        },
+        {
+          "type": "color",
+          "id": "color_button_hover",
+          "label": "Color Button Hover",
+          "default": "#fff"
+        },
+  {
+    "type": "select",
+    "id": "animation",
+    "options": [
+      { "value": "", "label": "None"},
+      { "value": "fade", "label": "Fade"},
+      { "value": "fade-up", "label": "Fade Up"},
+      { "value": "fade-down", "label": "Fade Down"},
+      { "value": "fade-left", "label": "Fade Left"},
+      { "value": "fade-right", "label": "Fade Right"},
+      { "value": "fade-up-right", "label": "Fade Up Right"},
+      { "value": "fade-up-left", "label": "Fade Up Left"},
+      { "value": "fade-down-right", "label": "Fade Down Right"},
+      { "value": "fade-down-left", "label": "Fade Down Left"},
+      { "value": "flip-up", "label": "Flip Up"},
+      { "value": "flip-down", "label": "Flip Down"},
+      { "value": "flip-left", "label": "Flip Left"},
+      { "value": "flip-right", "label": "Flip Right"},
+      { "value": "slide-up", "label": "Slide Up"},
+      { "value": "slide-down", "label": "Slide Down"},
+      { "value": "slide-left", "label": "Slide Left"},
+      { "value": "slide-right", "label": "Slide Right"},
+      { "value": "zoom-in", "label": "Zoom In"},
+      { "value": "zoom-in-up", "label": "Zoom In Up"},
+      { "value": "zoom-in-down", "label": "Zoom In Down"},
+      { "value": "zoom-in-left", "label": "Zoom In Left"},
+      { "value": "zoom-in-right", "label": "Zoom In Right"},
+      { "value": "zoom-out", "label": "Zoom Out"},
+      { "value": "zoom-out-up", "label": "Zoom Out Up"},
+      { "value": "zoom-out-down", "label": "Zoom Out Down"},
+      { "value": "zoom-out-left", "label": "Zoom Out Feft"},
+      { "value": "zoom-out-right", "label": "Zoom Out Right"}
+    ],
+    "label": "Select Animation"
+},
+  {
+    "type": "text",
+    "id": "paddingsection",
+    "label": "Padding Section",
+    "default": "0px 0px 0px 0px",
+    "info": "Padding: Top Right Bottom Left"
+  },
+  {
+    "type": "text",
+    "id": "paddingmobile",
+    "label": "Padding Section Mobile",
+    "default": "60px 0px 60px 0px",
+    "info": "Padding: Top Right Bottom Left"
+  },
+  {
+    "type": "text",
+    "id": "marginsection",
+    "label": "Margin Section",
+    "default": "0px 0px 0px 0px",
+    "info": "Margin: Top Right Bottom Left"
+  },
+  {
+    "type": "text",
+    "id": "marginmobile",
+    "label": "Margin Mobile",
+    "default": "0px 0px 0px 0px",
+    "info": "Margin: Top Right Bottom Left"
+  },
+  {
+    "type": "text",
+    "id": "zindex",
+    "label": "Z Index Section",
+    "default": "0"
+  },
+  {
+    "type": "text",
+    "id": "title_top",
+    "label": "Sub Title Top",
+    "default": "Sub Title Top"
+  },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Custom content"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "HTML / Description"
+    },
+    {
+      "type": "select",
+      "id": "setwidth",
+      "label": "Full Width",
+      "default": "container",
+      "options": [
+        {
+          "value": "container",
+          "label": "Box"
+        },
+        {
+          "value": "container-fluid",
+          "label": "Container Fluid"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "padding",
+      "label": "Enable Padding",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "col_center",
+      "label": "Enable Center Column",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "bgsection",
+        "label": "Background Section",
+        "default": "#fefefe"
+    },
+    {
+      "type": "range",
+      "id": "rangebg",
+      "label": "Height Background sub",
+      "max": 100,
+      "min": 0,
+      "step": 10,
+      "unit": " %",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "bgbefore",
+        "label": "Background sub ",
+        "default": "transparent"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bg",
+      "label": "Background image"
+    },
+    {
+      "type": "select",
+      "id": "e_size",
+      "label": "Backgroudn Size",
+      "default": "auto",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Auto"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "e_repeat",
+      "label": "Backgroudn Repeat",
+      "default": "no-repeat",
+      "options": [
+        {
+          "value": "no-repeat",
+          "label": "No-repeat"
+        },
+        {
+          "value": "repeat",
+          "label": "Repeat"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+  {
+    "type":"content_with_icon",
+    "name":"Content With Icon",
+    "settings":[
+       {
+      "type": "select",
+      "id": "block_style",
+      "label": "Block Style",
+      "default": "horizontal",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "Horizontal"
+        },
+        {
+          "value": "vertical",
+          "label": "Vertical"
+        }
+      ]
+      }, 
+      {
+      "type": "html",
+      "id":"icon",
+      "label": "Icon"
+      },
+       {
+      "type": "text",
+      "id":"icon_heading",
+      "label": "Icon Heading"
+    },
+       {
+      "type": "richtext",
+      "id":"icon_content",
+      "label": "Icon Content"
+    }
+    ]
+  }
+  ],
+  "presets": [
+    {
+      "name": "Image With Content",
+    }
+  ]
+}
+{% endschema %}

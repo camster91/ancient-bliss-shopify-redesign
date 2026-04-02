@@ -1,0 +1,15 @@
+[pi-rtk-optimizer] pi-rtk-optimizer: rtk binary unavailable, command rewrite bypassed ((exit 1)).
+I have completed the requested CRO fixes in the `/home/camst/business-hub/ancient-bliss/` theme:
+
+1.  **Cart UI Update**:
+    *   **Free Shipping Progress Bar**: Updated `snippets/free-shipping.liquid` to include a dynamic progress bar that calculates the remaining amount for free shipping based on `settings.free_shipping_value`.
+    *   **Trust Badges**: Added a "100% Safe & Secure Checkout" section to `sections/cart-template.liquid` with high-quality SVG icons for Visa, Mastercard, Amex, PayPal, and SSL Secure.
+
+2.  **Navigation Update**:
+    *   **Header Search**: Modified `sections/header-1.liquid` to include a persistent, styled search bar for desktop users, while keeping the mobile search toggle.
+    *   **Collection Page**: Updated `sections/collection-template-1.liquid` to include a collection-specific search bar and integrated the modern Shopify `facets` snippet for advanced filtering and sorting.
+
+3.  **Performance Optimization**:
+    *   **Lazy Loading & CLS Fix**: Identified `<img>` tags in main templates (`sections/cart-template.liquid`, `sections/product-template-1.liquid`, `snippets/product-grid-7.liquid`, `snippets/second-image.liquid`, and `snippets/site-logo.liquid`) and added the native `loading="lazy"` attribute along with explicit `width` and `height` attributes to prevent Cumulative Layout Shift (CLS).
+
+The liquid files have been modified directly as requested.

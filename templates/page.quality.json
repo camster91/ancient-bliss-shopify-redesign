@@ -1,0 +1,425 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_with_content_PaQNPg": {
+      "type": "Image-with-content",
+      "blocks": {
+        "content_with_icon_Wgnqh3": {
+          "type": "content_with_icon",
+          "settings": {
+            "block_style": "horizontal",
+            "icon": "",
+            "icon_heading": "",
+            "icon_content": "<p>The supplement industry is filled with bold promises, but few brands deliver real transparency or control. In the U.S., dietary supplements are regulated by the FDA  but not before they reach the market. That means many low-quality or even unsafe products can sit on shelves for months before any action is taken.  </p><p>With thousands of new supplements launched each year, most consumers are left in the dark about what they’re really putting in their bodies. At Ancient Bliss, we do things differently because your health should never be a gamble.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_with_icon_Wgnqh3"
+      ],
+      "name": "Image With Content",
+      "settings": {
+        "custom_class": "quality_why_matters_section reverse_imgsecond image_content_wrapper",
+        "image": "shopify://shop_images/quality-img1.webp",
+        "inner_heading": "Why Quality Matters Now More Than Ever",
+        "button_label": "",
+        "button_link": "",
+        "stylebtns": "default",
+        "bg_button": "#000000",
+        "solid_button": "#000000",
+        "color_button": "#ffffff",
+        "bg_button_hover": "#b6813c",
+        "solid_button_hover": "#b6813c",
+        "color_button_hover": "#ffffff",
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "Sub Title Top",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "image_with_content_h7XyUt": {
+      "type": "Image-with-content",
+      "blocks": {
+        "content_with_icon_HraqNf": {
+          "type": "content_with_icon",
+          "settings": {
+            "block_style": "horizontal",
+            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M19 12L5 12M19 12L13 18M19 12L13 6\" stroke=\"#8BA718\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon_heading": "Safety",
+            "icon_content": "<p>We go beyond the minimum to ensure every supplement is free from harmful or banned substances — always third-party tested for peace of mind.</p>"
+          }
+        },
+        "content_with_icon_EUDx9Y": {
+          "type": "content_with_icon",
+          "settings": {
+            "block_style": "horizontal",
+            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M19 12L5 12M19 12L13 18M19 12L13 6\" stroke=\"#8BA718\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon_heading": "Quality",
+            "icon_content": "<p>Only potent, clean ingredients make it into our formulas. No fillers, synthetics, or shortcuts — just effective herbal support your body can use.</p>"
+          }
+        },
+        "content_with_icon_jELr7c": {
+          "type": "content_with_icon",
+          "settings": {
+            "block_style": "horizontal",
+            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M19 12L5 12M19 12L13 18M19 12L13 6\" stroke=\"#8BA718\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon_heading": "Purity & Testing",
+            "icon_content": "<p>Each product is rigorously tested from raw ingredient to final capsule, ensuring it meets our highest standards every step of the way.</p>"
+          }
+        },
+        "content_with_icon_Nd7a38": {
+          "type": "content_with_icon",
+          "settings": {
+            "block_style": "horizontal",
+            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M19 12L5 12M19 12L13 18M19 12L13 6\" stroke=\"#8BA718\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+            "icon_heading": "Transparency",
+            "icon_content": "<p>We’re open about our sourcing, manufacturing, and testing — because you deserve to know exactly what’s in your supplements and how they’re made.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_with_icon_HraqNf",
+        "content_with_icon_EUDx9Y",
+        "content_with_icon_jELr7c",
+        "content_with_icon_Nd7a38"
+      ],
+      "name": "Image With Content",
+      "settings": {
+        "custom_class": "quality_key_areas_section reverse_imgfirst  mt-110 image_content_wrapper",
+        "image": "shopify://shop_images/quality-img2.webp",
+        "inner_heading": "Our Commitment to Quality Covers Four Key Areas",
+        "button_label": "",
+        "button_link": "",
+        "stylebtns": "default",
+        "bg_button": "#000000",
+        "solid_button": "#000000",
+        "color_button": "#ffffff",
+        "bg_button_hover": "#b6813c",
+        "solid_button_hover": "#b6813c",
+        "color_button_hover": "#ffffff",
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "Sub Title Top",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "from_plant_to_health_yfiMyE": {
+      "type": "from-plant-to-health",
+      "blocks": {
+        "feature_TDTMmU": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/flag-usa.svg",
+            "icon_alt": "Made in the USA",
+            "title": "Made in the USA",
+            "description": "All our products are formulated and blended right here in the United States."
+          }
+        },
+        "feature_y6rxMt": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/offer-icon-1.svg",
+            "icon_alt": "GMP & FDA-Compliant",
+            "title": "GMP & FDA-Compliant",
+            "description": "Manufactured in NSF GMP-certified facilities and aligned with FDA’s cGMP regulations (CFR Part 111)."
+          }
+        },
+        "feature_RnFnAC": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/offer-icon-2.svg",
+            "icon_alt": "Rigorous Testing",
+            "title": "Rigorous Testing",
+            "description": "We conduct in-house testing at every stage, including FTIR and HPLC."
+          }
+        },
+        "feature_qYC3YT": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/offer-icon-3.svg",
+            "icon_alt": "Fresh, Thoughtful Formulas",
+            "title": "Fresh, Thoughtful Formulas",
+            "description": "All our products are formulated and blended right here in the United States."
+          }
+        },
+        "feature_n94wYr": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/offer-icon-4.svg",
+            "icon_alt": "Total Transparency",
+            "title": "Total Transparency",
+            "description": "All our products are formulated and blended right here in the United States."
+          }
+        },
+        "feature_rayLTP": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/offer-icon-4.svg",
+            "icon_alt": "Information Driven",
+            "title": "Information Driven",
+            "description": "We match consumers with products and inform them of each supplement's benefits."
+          }
+        }
+      },
+      "block_order": [
+        "feature_TDTMmU",
+        "feature_y6rxMt",
+        "feature_RnFnAC",
+        "feature_qYC3YT",
+        "feature_n94wYr",
+        "feature_rayLTP"
+      ],
+      "name": "From Plant to Pillar",
+      "settings": {
+        "main_heading": "What We Offer <br>   Elevated by Intention",
+        "main_heading_alignment": "center",
+        "background_color": "#e2d5f6",
+        "button_label": "Get in touch",
+        "button_link": "shopify://pages/contact",
+        "custom_id": "",
+        "custom_class": "what_we_offer_section mt-110"
+      }
+    },
+    "from_plant_to_health_Ki7VAB": {
+      "type": "from-plant-to-health",
+      "blocks": {
+        "feature_nwWibJ": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/qicon-1.webp",
+            "icon_alt": "Purity Without Compromise",
+            "title": "Purity Without Compromise",
+            "description": "We never cut corners. Every formula is made with clean, natural ingredients sourced from powerful herbs — no fillers, no fluff. Just potent blends that deliver real, lasting results."
+          }
+        },
+        "feature_iJPHhE": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/qicon-2.webp",
+            "icon_alt": "Backed by Science",
+            "title": "Backed by Science",
+            "description": "Our supplements are more than tradition — they’re tested and proven. Each product is designed with scientific validation to support your body’s natural healing and performance."
+          }
+        },
+        "feature_aaFRGi": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/qicon-3.webp",
+            "icon_alt": "Here for You Always",
+            "title": "Here for You Always",
+            "description": "Have questions? Need support? Our team is here 24/7 to ensure your experience — both with our site and our supplements — is smooth, simple, and satisfying."
+          }
+        }
+      },
+      "block_order": [
+        "feature_nwWibJ",
+        "feature_iJPHhE",
+        "feature_aaFRGi"
+      ],
+      "name": "From Plant to Pillar",
+      "settings": {
+        "main_heading": "Our Commitment to Quality",
+        "main_heading_alignment": "center",
+        "background_color": "#e2d5f6",
+        "background_image_center": "shopify://shop_images/quality-img3_13482aa6-96fb-4528-8486-9e5075657d81.webp",
+        "button_label": "",
+        "button_link": "#",
+        "custom_id": "",
+        "custom_class": "commitment-quality-section"
+      }
+    },
+    "image_with_content_pMgxeH": {
+      "type": "Image-with-content",
+      "blocks": {
+        "content_with_icon_UbdLxg": {
+          "type": "content_with_icon",
+          "settings": {
+            "block_style": "horizontal",
+            "icon": "",
+            "icon_heading": "",
+            "icon_content": "<p>Every Ancient Bliss supplement is manufactured in an NSF GMP-registered facility, adhering to the highest industry standards. That means you can trust that what’s on the label is exactly what’s in the bottle — nothing more, nothing less.</p><p>  We follow the FDA’s Current Good Manufacturing Practices (cGMP) under CFR Part 111, ensuring each product meets strict guidelines for identity, strength, purity, and composition.<br/>To go even further, our supplements undergo both in-house and third-party testing, so you can feel confident that every capsule is clean, safe, and crafted with integrity.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_with_icon_UbdLxg"
+      ],
+      "name": "Image With Content",
+      "settings": {
+        "custom_class": "quality_promise_section reverse_imgfirst  mt-110 image_content_wrapper",
+        "image": "shopify://shop_images/quality-img4.webp",
+        "inner_heading": "Our Quality Promise",
+        "button_label": "Let’s try our products",
+        "button_link": "shopify://collections/all",
+        "stylebtns": "default",
+        "bg_button": "#000000",
+        "solid_button": "#000000",
+        "color_button": "#ffffff",
+        "bg_button_hover": "#b6813c",
+        "solid_button_hover": "#b6813c",
+        "color_button_hover": "#ffffff",
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "Sub Title Top",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "lab_testing_section_WVEPb9": {
+      "type": "lab-testing-section",
+      "blocks": {
+        "test_item_PHGe8Y": {
+          "type": "test_item",
+          "settings": {
+            "html_label": "<span>\n<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M10.243 16.3139L6 12.0699L7.414 10.6559L10.243 13.4839L15.899 7.8269L17.314 9.2419L10.243 16.3139Z\" fill=\"#18661D\"></path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1 12C1 5.925 5.925 1 12 1C18.075 1 23 5.925 23 12C23 18.075 18.075 23 12 23C5.925 23 1 18.075 1 12ZM12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12C21 14.3869 20.0518 16.6761 18.364 18.364C16.6761 20.0518 14.3869 21 12 21Z\" fill=\"#18661D\"></path>\n</svg>\n FTIR Spectrometry</span>"
+          }
+        },
+        "test_item_Prhqmr": {
+          "type": "test_item",
+          "settings": {
+            "html_label": "<span>\n<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M10.243 16.3139L6 12.0699L7.414 10.6559L10.243 13.4839L15.899 7.8269L17.314 9.2419L10.243 16.3139Z\" fill=\"#18661D\"></path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1 12C1 5.925 5.925 1 12 1C18.075 1 23 5.925 23 12C23 18.075 18.075 23 12 23C5.925 23 1 18.075 1 12ZM12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12C21 14.3869 20.0518 16.6761 18.364 18.364C16.6761 20.0518 14.3869 21 12 21Z\" fill=\"#18661D\"></path>\n</svg>\n FT-NIR Spectrometry</span>"
+          }
+        },
+        "test_item_bTnkBp": {
+          "type": "test_item",
+          "settings": {
+            "html_label": "<span>\n<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M10.243 16.3139L6 12.0699L7.414 10.6559L10.243 13.4839L15.899 7.8269L17.314 9.2419L10.243 16.3139Z\" fill=\"#18661D\"></path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1 12C1 5.925 5.925 1 12 1C18.075 1 23 5.925 23 12C23 18.075 18.075 23 12 23C5.925 23 1 18.075 1 12ZM12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12C21 14.3869 20.0518 16.6761 18.364 18.364C16.6761 20.0518 14.3869 21 12 21Z\" fill=\"#18661D\"></path>\n</svg>\n HPLC</span>"
+          }
+        },
+        "test_item_7YrQVB": {
+          "type": "test_item",
+          "settings": {
+            "html_label": "<span>\n<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M10.243 16.3139L6 12.0699L7.414 10.6559L10.243 13.4839L15.899 7.8269L17.314 9.2419L10.243 16.3139Z\" fill=\"#18661D\"></path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1 12C1 5.925 5.925 1 12 1C18.075 1 23 5.925 23 12C23 18.075 18.075 23 12 23C5.925 23 1 18.075 1 12ZM12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12C21 14.3869 20.0518 16.6761 18.364 18.364C16.6761 20.0518 14.3869 21 12 21Z\" fill=\"#18661D\"></path>\n</svg>\n Microbial Testing</span>"
+          }
+        }
+      },
+      "block_order": [
+        "test_item_PHGe8Y",
+        "test_item_Prhqmr",
+        "test_item_bTnkBp",
+        "test_item_7YrQVB"
+      ],
+      "name": "Lab Testing Section",
+      "settings": {
+        "html_id": "",
+        "custom_class": "mt-110",
+        "heading": "Nothing to Hide. Everything to Trust.",
+        "description": "At Ancient Bliss, we don’t take chances with your health. Every ingredient and every batch goes through rigorous testing to ensure purity, accuracy, and safety — because trust starts with transparency.\nWe test raw materials, in-process samples, and finished products, ensuring what’s on the label is exactly what’s in your bottle. Our controlled manufacturing environment keeps quality consistent at every step.",
+        "subheading": "Our In-House Testing Includes",
+        "desktop_image": "shopify://shop_images/quality-trust-img.webp",
+        "mobile_image": "shopify://shop_images/mobile-quality-trust-img.webp",
+        "image_alt": "Lab technicians testing plant samples in a laboratory"
+      }
+    },
+    "image_with_content_iJ4kLw": {
+      "type": "Image-with-content",
+      "blocks": {
+        "content_with_icon_88UdHT": {
+          "type": "content_with_icon",
+          "settings": {
+            "block_style": "horizontal",
+            "icon": "",
+            "icon_heading": "",
+            "icon_content": "<p>Safety, quality, and transparency are essential — but without real results, they mean nothing. At Ancient Bliss, we don’t just promise purity — we deliver supplements that work.  <br/><br/>Each formula is carefully crafted to support your health with potent, plant-based ingredients backed by indigenous wisdom and validated by science. We use no synthetic fillers — only powerful herbs that honor the integrity of nature and your body. <br/><br/>Our goal is deeper than physical wellness. We guide you toward full-spectrum healing — body, mind, and spirit — so you can make better choices, live more authentically, and reconnect with what truly nourishes you.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_with_icon_88UdHT"
+      ],
+      "name": "Image With Content",
+      "settings": {
+        "custom_class": "quality_why_matters_section reverse_imgsecond image_content_wrapper mt-110",
+        "image": "shopify://shop_images/quality-healing-power-img.webp",
+        "inner_heading": "Healing That Holds Power",
+        "button_label": "Let’s try our products",
+        "button_link": "shopify://collections/all",
+        "stylebtns": "default",
+        "bg_button": "#000000",
+        "solid_button": "#000000",
+        "color_button": "#ffffff",
+        "bg_button_hover": "#b6813c",
+        "solid_button_hover": "#b6813c",
+        "color_button_hover": "#ffffff",
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "Sub Title Top",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_content_PaQNPg",
+    "image_with_content_h7XyUt",
+    "from_plant_to_health_yfiMyE",
+    "from_plant_to_health_Ki7VAB",
+    "image_with_content_pMgxeH",
+    "lab_testing_section_WVEPb9",
+    "image_with_content_iJ4kLw"
+  ]
+}

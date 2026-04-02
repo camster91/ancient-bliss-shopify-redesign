@@ -1,0 +1,205 @@
+{% if section.blocks.size > 0 %}
+<section class="health-wellness-section" style="background-color: {{ section.settings.bg_color }};">
+  <div class="container">
+    <div class="content-grid">
+  {% for block in section.blocks %}
+        {% if block.type == 'content_block' %}
+          {% if block.settings.title != blank %}
+              <h2 class="hw-heading d-none-custom">{{ block.settings.title }}</h2>
+            {% endif %}
+        {% endif %}
+      {% endfor %}
+           
+  <div class="hw-wrapper">
+      {% for block in section.blocks %}
+        {% if block.type == 'content_block' %}
+           
+          <div class="hw-inner">
+         
+            {% unless block.settings.image != blank and block.settings.show_image_last == true %}
+              <div class="hw-image dsk-none-custom">
+                <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.image.alt | escape }}">
+                <div class="hw-logo">
+                <img src="{{ section.settings.logo | img_url: 'master' }}" alt="Logo" />
+              </div>
+              </div>
+            
+            {% endunless %}
+         
+          <div class="right-column">
+          <div class="hw-content-main">
+            {% if block.settings.title != blank %}
+              <h2 class="hw-heading  mob-none-custom">{{ block.settings.title }}</h2>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <div class="hw-desc">{{ block.settings.text }}</div>
+            {% endif %}
+          </div>
+            <div class="hw-images-main ">
+              {% if block.settings.image != blank and block.settings.show_image_last == true %}
+              <div class="hw-image">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}">
+              </div>
+              {% endif %}
+              {% if section.settings.logo != blank and forloop.first %}
+              <div class="hw-logo mob-none-custom">
+                <img src="{{ section.settings.logo | img_url: 'master' }}" alt="Logo" />
+              </div>
+              {% endif %}
+            </div>
+            
+            {% if block.settings.button_text != blank and block.settings.button_url != blank %}
+              <a href="{{ block.settings.button_url }}"
+                 class="hw-button"
+                 style="background-color: {{ block.settings.button_bg_color }}; color: {{ block.settings.button_text_color }};">
+                {{ block.settings.button_text }}
+              </a>
+            {% endif %}
+          </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+  </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Health & Wellness Section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content_block",
+      "name": "Content Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Your Source for Health and Wellness"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "At Ancient Bliss, we’re more than a supplement brand — we’re a movement for better living..."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_image_last",
+          "label": "Show Image In Last"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "LEARN ABOUT US"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#00501c"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Health & Wellness Info",
+      "blocks": [
+        {
+          "type": "content_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  .hw-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.health-wellness-section {
+  padding: 60px 20px;
+}
+/* .health-wellness-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+} */
+/* .content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+} */
+.hw-heading {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.hw-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.hw-logo {
+  margin: 20px 0;
+}
+.hw-logo img {
+  max-width: 80px;
+}
+.hw-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
+.hw-image img {
+  border-radius: 16px;
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+{% endstyle %}

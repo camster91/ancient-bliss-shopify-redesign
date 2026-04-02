@@ -1,0 +1,149 @@
+
+    {%- liquid
+      assign inventory_quantity = variant.inventory_quantity | default: 0
+      assign is_in_stock = variant.available
+    -%}
+    <gp-product-button
+      style="--bottom-mobile:15px;--left-mobile:15px;--pos-mobile:fixed;--right-mobile:15px;--z-mobile:9999"
+      gp-data-wrapper="true"
+      gp-href="{{ request.origin }}{{ routes.root_url | split: '/' | join: '/' }}/cart"
+      class="gp-product-button"
+      gp-label-out-of-stock="{{ section.settings.ggS0oCw9kGa_outOfStockLabel }}"
+      gp-label-unavailable="{{ section.settings.ggS0oCw9kGa_unavailableLabel }}"
+      gp-data='{"styles":{"errorTypo":{"attrs":{"color":"error"},"type":"paragraph-2"},"successTypo":{"attrs":{"color":"success"},"type":"paragraph-2"}},"setting":{"errorType":"built-in","actionEffect":"open-cart-drawer","label":"REVEAL OFFER","errorMessage":"Cannot add product to cart","successMessage":"Add product to cart successfully","outOfStockLabel":"Out of stocks","customURL":{"link":"/cart","target":"_self"}},"variantID":"{{variant.id}}","disabled":"{{variant.available}}","totalVariant":"{{total_combinations}}"}'
+      data-variant-selection-required-message=""
+    >
+      
+    <gp-button
+      gp-data='{}'
+      
+      class="gp-flex gp-flex-col"
+    >
+      <div style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:none;--d-mobile:block;--d-tablet:none;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:var(--g-s-xl);--mb:var(--g-s-l);--mr:var(--g-s-3xl);--mt-mobile:auto;--ml-mobile:0px;--mb-mobile:auto;--mr-mobile:0px;--ta:left" class="{% unless variant.available %} !gp-hidden {% endunless %}">
+        <style>[data-id="gS0oCw9kGa"].gp-button-base::before, [data-id="gS0oCw9kGa-interaction"].gp-button-base::before {
+      
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    
+    
+  
+    }
+  
+      
+  [data-id="gS0oCw9kGa"]:hover::before, [data-id="gS0oCw9kGa-interaction"]:hover::before {
+    
+    
+  }</style>
+        
+        <button
+          data-id="gS0oCw9kGa" dataId="gS0oCw9kGa" data-state="idle" aria-label="REVEAL OFFER"
+          name="add" gp-data-hidden="{% unless variant.available %}true{% endunless %}"
+          type="submit"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:32px;--pr:32px;--pt:14px;--pb:14px;--pl-tablet:32px;--pr-tablet:32px;--pt-tablet:12px;--pb-tablet:12px;--pl-mobile:32px;--pr-mobile:32px;--pt-mobile:11px;--pb-mobile:11px;--shadow:2.4492935982947064e-16px 4px 8px 0px rgba(0, 0, 0, 0.25);--bgi:;--size:19px;--lh:130%;--fs:normal;--weight:600;--ls:normal;--size-tablet:19px;--size-mobile:17px"
+          class="gp-button-atc tcustomizer-submit-button gS0oCw9kGa gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30 gp-text-g-bg-3 undefined"
+        >
+        
+  <svg
+    class="gp-invisible gp-absolute gp-h-5 gp-w-5 group-data-[state=loading]:gp-animate-spin group-data-[state=loading]:gp-visible"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      class="gp-opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      stroke-width="4"
+    ></circle>
+    <path
+      class="gp-opacity-75"
+      fill="currentColor"
+      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+    ></path>
+  </svg>
+
+        <div class="gp-inline-flex gp-flex-row-reverse">
+          
+          
+    <span
+      data-gp-text
+      style="--size:19px;--lh:130%;--fs:normal;--weight:600;--ls:normal;--size-tablet:19px;--size-mobile:17px;word-break:break-word"
+      class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text"
+    >
+      {{ section.settings.ggS0oCw9kGa_label }}
+    </span>
+        </div>
+        
+    
+    
+  
+        </button>
+      </div>
+      <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+    </gp-button>
+  
+      
+    <gp-button
+      gp-data='{}'
+      
+      class="gp-flex gp-flex-col"
+    >
+      <div style="--bs:none;--bw:0px;--bc:transparent;--shadow:none;--d:none;--d-mobile:block;--d-tablet:none;--op:100%;--pageType:GP_STATIC;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mt:var(--g-s-xl);--mb:var(--g-s-l);--mr:var(--g-s-3xl);--mt-mobile:auto;--ml-mobile:0px;--mb-mobile:auto;--mr-mobile:0px;--ta:left" class="{% if variant.available %} !gp-hidden {% endif %}">
+        <style>[data-id="gS0oCw9kGa-sold-out"].gp-button-base::before, [data-id="gS0oCw9kGa-sold-out-interaction"].gp-button-base::before {
+      
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    
+    
+  
+    }
+  
+      
+  [data-id="gS0oCw9kGa-sold-out"]:hover::before, [data-id="gS0oCw9kGa-sold-out-interaction"]:hover::before {
+    
+    
+  }</style>
+        
+        <button
+          data-id="gS0oCw9kGa-sold-out" dataId="gS0oCw9kGa-sold-out" data-state="idle" aria-label="{{ section.settings.ggS0oCw9kGa_outOfStockLabel }}"
+          gp-data-hidden="{% if variant.available %}true{% endif %}"
+          type="button"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:32px;--pr:32px;--pt:14px;--pb:14px;--pl-tablet:32px;--pr-tablet:32px;--pt-tablet:12px;--pb-tablet:12px;--pl-mobile:32px;--pr-mobile:32px;--pt-mobile:11px;--pb-mobile:11px;--bgi:;--size:19px;--lh:130%;--fs:normal;--weight:600;--ls:normal;--size-tablet:19px;--size-mobile:17px"
+          class="gp-cursor-default gp-opacity-30 btn-disabled gp-button-sold-out gS0oCw9kGa-sold-out gp-button-base gp-group gp-relative gp-inline-flex gp-max-w-full gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-200 disabled:gp-btn-disabled disabled:gp-opacity-30  undefined"
+        >
+        
+        <div class="gp-inline-flex gp-flex-row-reverse">
+          
+          
+    <span
+      data-gp-text
+      style="--size:19px;--lh:130%;--fs:normal;--weight:600;--ls:normal;--size-tablet:19px;--size-mobile:17px;word-break:break-word"
+      class="gp-content-product-button group-active/button:!gp-text-inherit gp-relative gp-flex gp-h-full gp-items-center gp-overflow-hidden gp-break-words group-data-[state=loading]:gp-invisible [&_p]:gp-whitespace-pre-line gp-text button-text"
+    >
+      {{ section.settings.ggS0oCw9kGa_outOfStockLabel }}
+    </span>
+        </div>
+        
+    
+    
+  
+        </button>
+      </div>
+      <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-button-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+    </gp-button>
+  
+    </gp-product-button>
+    <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-product-button-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  

@@ -1,0 +1,2 @@
+#!/bin/bash
+pi -p "You are an expert Shopify developer. Go into /home/camst/business-hub/ancient-bliss/ and complete the following CRO fixes: 1) Cart UI: update the cart snippet to include a 'Free Shipping' progress bar and trust badges. 2) Navigation: update header/collection templates to include a search bar and collection filters. 3) Performance: find <img> tags in main templates and add loading='lazy' and explicit width/height attributes to fix CLS. Modify the liquid files directly. Do not ask for permission, just write the code."

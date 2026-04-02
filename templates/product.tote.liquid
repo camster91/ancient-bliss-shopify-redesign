@@ -1,0 +1,16 @@
+{%- section 'template-tote' -%}
+
+{% comment %} {%- section 'template-gut-support' -%} {% endcomment %}
+{% comment %} {%- section 'quotes' -%} {% endcomment %}
+{% comment %} {%- section 'tiktok-carousel' -%} {% endcomment %}
+{%- section 'brand-list' -%}
+{% comment %} {%- section 'image-text-benefits' -%} {% endcomment %}
+{% comment %} {%- section 'heading-with-image' -%} {% endcomment %}
+{%- section 'product-tab' -%}  
+
+<!-- Start of Judge.me code -->
+<div style='clear:both'></div>
+<div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-product-title='{{ product.title | escape }}' data-id='{{ product.id }}'>
+  {{ product.metafields.judgeme.widget }}
+</div>
+<!-- End of Judge.me code --> 

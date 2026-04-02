@@ -1,0 +1,231 @@
+{% schema %}
+{
+  "name": "Dynamic Breadcrumb Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID",
+      "default": "breadcrumb-banner"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class",
+      "default": "breadcrumb-custom"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Default Sub Title",
+      "default": "OUR STORY",
+      "info": "If dynamic detection fails, this sub-title will be used."
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Default Main Title",
+      "default": "About Us",
+      "info": "If dynamic detection fails, this main title will be used."
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Gradient Start",
+      "default": "#fff9f2"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient End",
+      "default": "#f0f9f4"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_leaf",
+      "label": "Left Leaf Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_leaf",
+      "label": "Right Leaf Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dynamic Breadcrumb Banner",
+      "category": "Banners"
+    }
+  ]
+}
+{% endschema %}
+
+{% comment %}
+  Determine dynamic subtitle and title based on template/page.handle/blog/collection/product
+{% endcomment %}
+{% assign dynamic_sub = "" %}
+{% assign dynamic_title = "" %}
+
+{% if template contains 'page' %}
+  {% if page.handle == "about-us" %}
+    {% assign dynamic_sub = "OUR STORY" %}
+    {% assign dynamic_title = "About Us" %}
+  {% elsif page.handle == "quality" %}
+    {% assign dynamic_sub = "QUALITY" %}
+    {% assign dynamic_title = "Quality You Deserve" %}
+  {% elsif page.handle == "supplements" %}
+    {% assign dynamic_sub = "OUR SHOP" %}
+    {% assign dynamic_title = "Supplements" %}
+  {% elsif page.handle == "contact" %}
+    {% assign dynamic_sub = "CONTACT" %}
+    {% assign dynamic_title = "Contact Us" %}
+   {% elsif page.handle == "influencers" %}
+    {% assign dynamic_sub = "Influencers" %}
+    {% assign dynamic_title = "Trusted by Influencers" %}
+    
+  {% else %}
+    {% assign dynamic_sub = page.title | upcase %}
+    {% assign dynamic_title = page.title %}
+  {% endif %}
+{% elsif template contains 'collection' and collection %}
+  {% assign dynamic_sub = "COLLECTION" %}
+  {% assign dynamic_title = collection.title %}
+{% elsif template contains 'product' and product %}
+  {% assign dynamic_sub = collection.title | default: "PRODUCT" %}
+  {% assign dynamic_title = product.title %}
+{% elsif template contains 'blog' %}
+  {% assign dynamic_sub = "BLOG" %}
+  {% assign dynamic_title = "Our Blogs" %}
+{% elsif template contains 'article' %}
+  {% assign dynamic_sub = "BLOG" %}
+  {% assign dynamic_title = "New & Insights" %}
+{% else %}
+  {% assign dynamic_sub = page_title | upcase %}
+  {% assign dynamic_title = page_title %}
+{% endif %}
+
+<section 
+  id="{{ section.settings.custom_id | default: 'breadcrumb-banner' }}" 
+  class="custom-breadcrumb-banner {{ section.settings.custom_class | escape }}">
+  <div class="container">
+    <div class="sub-title">{{ dynamic_sub }}</div>
+    <h2>{{ dynamic_title }}</h2>
+  </div>
+</section>
+
+<style>
+.custom-breadcrumb-banner {
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	background: -webkit-linear-gradient(120deg, #fdf7eb 0%, #e9f7f0 100%); 
+	background: -moz-linear-gradient(120deg, #fdf7eb 0%, #e9f7f0 100%); 
+	background: linear-gradient(120deg, #fdf7eb 0%, #e9f7f0 100%);
+	padding: 100px 0 140px !important;
+}
+.breadcrumb-custom::before {
+	content: "";
+	position: absolute;
+	background-image: url("https://cdn.shopify.com/s/files/1/0618/4543/8615/files/nature-left-leaf.webp?v=1754217539");
+	width: 206px;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	bottom: 0;
+	z-index: 99;
+	left: -60px;
+	transform: rotate(-35deg);
+} 
+
+.breadcrumb-custom::after {
+	content: "";
+	position: absolute;
+	background-image: url("https://cdn.shopify.com/s/files/1/0618/4543/8615/files/nature-right-leaf.webp?v=1754218476");
+	width: 114px;
+	height: 151px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	bottom: 50%;
+	z-index: 99;
+	right: 0px;
+	transform: rotate(0deg);
+} 
+
+
+
+
+  
+.custom-breadcrumb-banner h2 {
+  font-size: 80px;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin: 10px 0 0;
+  line-height: 100%; 
+}
+.custom-breadcrumb-banner .sub-title {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #b24b3f;
+  text-transform: uppercase;
+}
+
+/* Left Leaf */
+{% if section.settings.left_leaf != blank %}
+.custom-breadcrumb-banner::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 120px;
+  height: 120px;
+  background: url('{{ section.settings.left_leaf | img_url: "200x" }}') no-repeat center;
+  background-size: contain;
+  z-index: 1;
+}
+{% endif %}
+
+/* Right Leaf */
+{% if section.settings.right_leaf != blank %}
+.custom-breadcrumb-banner::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  width: 120px;
+  height: 120px;
+  background: url('{{ section.settings.right_leaf | img_url: "200x" }}') no-repeat center;
+  background-size: contain;
+  z-index: 1;
+}
+{% endif %}
+
+
+@media (max-width: 767px) {
+.breadcrumb-custom::before {
+	background-image: url(/cdn/shop/files/mobile-left-leaf-img.webp?v=1754272612);
+	width: 106px;
+	height: 117px;
+	bottom: 0;
+	left: 0;
+	transform: rotate(0deg);
+}
+.breadcrumb-custom::after {
+	background-image: url(/cdn/shop/files/mobile-right-leaf-img.webp?v=1754272613);
+	width: 53px;
+	height: 113px;
+	top: 0;
+	right: 0;
+	transform: rotate(0deg);
+}
+.custom-breadcrumb-banner h2 {
+	font-size: 60px;
+}
+
+}
+@media (max-width: 576px) {
+.custom-breadcrumb-banner h2 {
+	font-size: 48px;
+}
+}
+
+</style>

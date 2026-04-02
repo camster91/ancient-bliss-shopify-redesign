@@ -1,0 +1,586 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumb_new_BpiQef": {
+      "type": "breadcrumb-new",
+      "disabled": true,
+      "name": "Custom Breadcrumb Banner",
+      "settings": {
+        "custom_id": "breadcrumb-banner",
+        "custom_class": "breadcrumb-custom",
+        "sub_title": "OUR STORY",
+        "main_title": "About Us",
+        "gradient_start": "#fff9f2",
+        "gradient_end": "#f0f9f4"
+      }
+    },
+    "inspired_nature_LmnLca": {
+      "type": "inspired-nature",
+      "name": "Inspired by Nature Block",
+      "settings": {
+        "custom_class": "custom_class",
+        "text_tag": "h2",
+        "left_heading": "<p>Inspired by Nature.<br/>Guided by Tradition.</p>",
+        "main_text": "<p><strong>Founded in 2021</strong>, Ancient Bliss was born from a simple but powerful revelation: the human body is capable of healing itself—when supported by authentic, ethically sourced herbs and clean science.</p>",
+        "desktop_image": "shopify://shop_images/inspired-nature.webp",
+        "mobile_image": "shopify://shop_images/mobile-inspired-nature.webp",
+        "image_alt": "",
+        "bottom_left": "<p>Macy Schuchart’s journey began during a transformative six-month stay in Hawaii, where she learned from native healers about preventive healthcare and herbalism.</p>",
+        "bottom_right": "<p>That wisdom led her to launch a brand centered on purity and potency, inspired by Pele—the Hawaiian Goddess of transformation and fire</p>"
+      }
+    },
+    "wellness_content_RVKfHB": {
+      "type": "wellness-content",
+      "blocks": {
+        "content_block_3hfqGX": {
+          "type": "content_block",
+          "settings": {
+            "title": "",
+            "text": "",
+            "image": "shopify://shop_images/brand-story.webp",
+            "show_image_last": false,
+            "button_text": "LEARN ABOUT US",
+            "button_url": "",
+            "button_bg_color": "#00501c",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "content_block_8dx3Rk": {
+          "type": "content_block",
+          "settings": {
+            "title": "Brand Story",
+            "text": "Ancient Bliss was born from a journey of unlearning and rediscovery. After realizing much of what I had been taught about health was incomplete, I traveled to Hawaii, where I immersed myself in native practices and learned the power of preventative care and herbalism.",
+            "image": "shopify://shop_images/capsules.webp",
+            "show_image_last": true,
+            "button_text": "LEARN ABOUT US",
+            "button_url": "",
+            "button_bg_color": "#00501c",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "content_block_3hfqGX",
+        "content_block_8dx3Rk"
+      ],
+      "disabled": true,
+      "name": "Health & Wellness Info",
+      "settings": {
+        "bg_color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "16401917158cf2d87f": {
+      "type": "advanced-content",
+      "blocks": {
+        "f43bf903-a4ef-4509-ab7f-39244f730c3e": {
+          "type": "image",
+          "settings": {
+            "width": "100%",
+            "align": "auto",
+            "image": "shopify://shop_images/bottles-pills.png",
+            "image_link": ""
+          }
+        },
+        "e329a91d-3e91-4c84-aba0-281a4f227243": {
+          "type": "html",
+          "settings": {
+            "code": "<h3 class=\"text-center my-5\">\nThe Ancient Bliss community aims to educate and empower you through herbal supplements that honor indigenous wisdom, inspiring you to reconnect with your body’s natural state and take care of your temple.\n</h3>",
+            "width": "75%",
+            "align": "center"
+          }
+        },
+        "18c84b0d-74ee-4d45-8ce4-a2a0ac189f66": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "width": "33%",
+            "align": "auto",
+            "image": "shopify://shop_images/macy.png",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "f43bf903-a4ef-4509-ab7f-39244f730c3e",
+        "e329a91d-3e91-4c84-aba0-281a4f227243",
+        "18c84b0d-74ee-4d45-8ce4-a2a0ac189f66"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "60px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "We know more",
+        "title": "TAKE CARE OF YOUR TEMPLE",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": true,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "image_bg": "shopify://shop_images/bg-verlay.png",
+        "e_size": "contain",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "16401930874092dd8f": {
+      "type": "advanced-content",
+      "blocks": {
+        "642cdf11-f81a-419d-911c-84ae32e1678e": {
+          "type": "image",
+          "settings": {
+            "width": "20%",
+            "align": "end",
+            "image": "shopify://shop_images/our-store_b8d1d06a-b27f-4e43-b3ef-d1e5134b45bf.png",
+            "image_link": ""
+          }
+        },
+        "ca1f6851-5332-44d9-9ad1-70c8f9b6dfcd": {
+          "type": "image",
+          "settings": {
+            "width": "25%",
+            "align": "center",
+            "image": "shopify://shop_images/macy.png",
+            "image_link": ""
+          }
+        },
+        "164019308781fb4c92-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div>\n<span class=\"subtop\">The Path to Purity</span>\n<h2 class=\"text-left my-5\">Brand Story</h2>\n<p class=\"mt-4\">Something that sounds so ethereal should not be so difficult for me to obtain, right? Unfortunately, my path was disrupted by numerous obstacles and pitfalls that hindered my progress, with the education system being a prominent contributor. After discovering my passion for health and wellness, I immersed myself in studies and quickly came to realize that much of what I had been taught as a child was either false or presented an incomplete picture.\n</p>\n<p class=\"mt-4\">\nDetermined to bridge the gap between my past knowledge and the present reality, I embarked on a journey to Hawaii, where I resided for six months, fully embracing the culture around me. During this transformative period, I had the privilege of engaging with new people and practices. Natives shared their wisdom with me, revealing insights about preventative healthcare and herbalism that expanded my understanding.\n</p>\n<p class=\"mt-4\">\nThe revelation that the body holds the innate ability to heal itself when supported by natural supplements ignited a thirst for further education within me. At that juncture, I knew I needed to share this newfound awareness with others, and I was driven to devise a solution that could ultimately benefit everyone. And so, Ancient Bliss was brought into existence. Drawing inspiration from Pele, the Ancient Hawaiian Goddess of volcanoes symbolizing transformative power, Ancient Bliss was conceived with the aim of encouraging everyone to nurture themselves in the pure, wholesome manner they rightfully deserve.\n</p>\n<img src=\"\">\n</div>",
+            "width": "50%",
+            "align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "642cdf11-f81a-419d-911c-84ae32e1678e",
+        "ca1f6851-5332-44d9-9ad1-70c8f9b6dfcd",
+        "164019308781fb4c92-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "120px 0px 120px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": true,
+        "bgsection": "#f8f4f0",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "image_bg": "shopify://shop_images/testimonial-bg.png",
+        "e_size": "cover",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "1640193768119372bb": {
+      "type": "advanced-content",
+      "blocks": {
+        "09697fe7-f3ea-4ea3-8c9d-fc93dec82f7a": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"px-lg-5\">\n<h4 class=\"mb-4\">In the commotion</h4>\n<p> of everyday life, we understand you don’t always have the time to dedicate hours to learning natural remedies or potent blends – that’s why we’ve taken the reins. </p>\n</div>",
+            "width": "33%",
+            "align": "center"
+          }
+        },
+        "09fc32e1-9bbc-44f0-8916-6eafa40892d2": {
+          "type": "image",
+          "settings": {
+            "width": "33%",
+            "align": "center",
+            "image": "shopify://shop_images/bowl-with-herbal-capsules-and-leaves-on-white-wood-2021-09-02-19-15-22-utc.png",
+            "image_link": ""
+          }
+        },
+        "164019376868a7ca5d-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"px-lg-5\">\n<h4 class=\"mb-4\">Natural Remedies </h4>\n<p>After extensive research and preparation, We founded Ancient Bliss to supply products that fit seamlessly into your lifestyle, allowing you to practice safe, natural habits with ease.</p>\n</div>",
+            "width": "33%",
+            "align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "09697fe7-f3ea-4ea3-8c9d-fc93dec82f7a",
+        "09fc32e1-9bbc-44f0-8916-6eafa40892d2",
+        "164019376868a7ca5d-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "120px 0px 30px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "OUR SUCCESS",
+        "title": "About Us",
+        "des": "<b>Ancient Bliss </b> Founded in 2021, specializes in herbal <br>supplements that are guaranteed to improve your health and happiness.",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "cover",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "1640193971985229b9": {
+      "type": "advanced-content",
+      "blocks": {
+        "a3f53bb3-c496-4e5b-86c6-648bf85148ff": {
+          "type": "image",
+          "settings": {
+            "width": "33%",
+            "align": "center",
+            "image": "shopify://shop_images/doctor-woman-scientist-making-herbal-medicine-in-l-2021-09-03-12-22-49-utc1.png",
+            "image_link": ""
+          }
+        },
+        "16401939719014de03-0": {
+          "type": "html",
+          "settings": {
+            "code": "<h4 class=\"mb-4\">Everyday is a Fresh Start </h4>\nLife is Complicated - Your Health Shouldn’t Be.\nThe impactful supplements we provide are a testament to our passion for the craft and our breadth of health and wellness knowledge.",
+            "width": "33%",
+            "align": "center"
+          }
+        },
+        "65344d43-026e-48c0-9767-246a28f09159": {
+          "type": "image",
+          "settings": {
+            "width": "33%",
+            "align": "auto",
+            "image": "shopify://shop_images/natural-cap.png",
+            "image_link": ""
+          }
+        },
+        "4e5e89a3-8475-4e53-b2c3-6639e39406f8": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"px-lg-5\">\n<h4 class=\"mb-4\">Natural Remedies </h4>\n<p>After extensive research and preparation, We founded Ancient Bliss to supply products that fit seamlessly into your lifestyle, allowing you to practice safe, natural habits with ease.</p>\n</div>",
+            "width": "33%",
+            "align": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "a3f53bb3-c496-4e5b-86c6-648bf85148ff",
+        "16401939719014de03-0",
+        "65344d43-026e-48c0-9767-246a28f09159",
+        "4e5e89a3-8475-4e53-b2c3-6639e39406f8"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "cover",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "16401946038d3179cf": {
+      "type": "advanced-content",
+      "blocks": {
+        "b126ea88-1ce1-4cc2-ba30-9fd13a8c23bd": {
+          "type": "image",
+          "settings": {
+            "width": "41%",
+            "align": "center",
+            "image": "shopify://shop_images/Rosemary-dry.png",
+            "image_link": ""
+          }
+        },
+        "1640194603f33108fb-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"pl-lg-5 ml-lg-5\">\n<h2 class=\"mb-3\">Crafted with Intention\n</h2>\n<p>We are committed to educating you about the capabilities of your body, effectively dispelling the misleading information imparted by large corporations that show more concern for their earnings rather than their impact. We recognize the gravity of our role and always craft our products with intention. Supported by indigenous wisdom and science, our products are sourced from powerful herbs rather than the synthetic ingredients you’ll find in other supplements. Ancient Bliss maintains the integrity of these plants, so they retain potency and deliver transformative results, embodying the essence of their origins.<br></p>\n<hr>At Ancient Bliss, we do more than simply provide supplements – we guide you along the path of restoration and healing, encouraging you to grow your body, mind, and spirit. We are honored to aid you in your health and spiritual journey; this responsibility is not one we take lightly. You’ll find these supplements, which enhance and improve your diet, promote authentic living. We hope our formulations invite you to pause and reflect on the significance of self-care and gain a deeper understanding of what it means to be present and alive in a truly natural way.\n<!--<h5 class=\"mt-4\">\nRikke Thomsen\n</h5>\nCEO & CTO-->\n</div>",
+            "width": "58%",
+            "align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "b126ea88-1ce1-4cc2-ba30-9fd13a8c23bd",
+        "1640194603f33108fb-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "120px 0px 120px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "120px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "image_bg": "shopify://shop_images/ab5.png",
+        "e_size": "cover",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "1640194879aa08c1d1": {
+      "type": "advanced-content",
+      "blocks": {
+        "16401948795068e847-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"pr-lg-5\">\n<span class=\"subtop\">what we are</span>\n<h3 class=\"mt-3 mb-5\">A Connected Community\n</h3>\n<p>Unlike other health and wellness companies that are virtually removed from their products, our team at Ancient Bliss is passionate about the amazing work we do. We have manifested a tight-knit community composed of knowledgeable and empathetic individuals who always put your well-being first. \n\n</p>\n<hr>Our signature transparent approach ensures our customers are aware of our process – you know your body best, so you deserve to know exactly what you consume, making Ancient Bliss a brand you can trust.\n<!--<div class=\"row\">\n<div class=\"col-lg-6 mb-4\">\n<h1>98%</h1>\n<p>Satisfaction des clients</p>\n</div>\n<div class=\"col-lg-6 mb-4\">\n<h1>205M+</h1>\n<p>Utilisateurs actifs mensuels</p>\n</div>\n<div class=\"col-lg-6\">\n<h1>100K+</h1>\n<p>Nouveaux utilisateurs par semaine</p>\n</div>\n<div class=\"col-lg-6\">\n<h1>55%</h1>\n<p>Croissance d'une année sur l'autre</p>\n</div>\n</div>-->\n</div>",
+            "width": "50%",
+            "align": "center"
+          }
+        },
+        "e5315759-7249-4f52-94d3-9e1a963b0e7e": {
+          "type": "image",
+          "settings": {
+            "width": "50%",
+            "align": "center",
+            "image": "shopify://shop_images/Connected.png",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16401948795068e847-0",
+        "e5315759-7249-4f52-94d3-9e1a963b0e7e"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "100px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "brand_story_kjQ4fK": {
+      "type": "brand-story",
+      "name": "Brand Story",
+      "settings": {
+        "custom_class": "brand-story-default pt-80",
+        "title": "Brand Story",
+        "text": "\"Nature itself is the best physician.\" - Hippocrates",
+        "list_content": "<p>Ancient Bliss was born from a deeply personal journey—one of healing, awakening, and a return to the wisdom of nature. Inspired by indigenous traditions and the transformative energy of Hawaii, we create herbal supplements that do more than support your health—they help you come home to yourself. Since 2021, over 350,000 people have experienced the power of our formulas, crafted with zero fillers, additives, or anything artificial. Just pure, potent herbs—chosen with care, made with purpose. At Ancient Bliss, we believe your body is sacred. Let nature lead, and let your wellness be as pure as your intention. <br/><br/>Inspired by Pele, the Hawaiian goddess of transformation, Ancient Bliss was created to ignite powerful change—guiding you to care for yourself with the purity and intention you deserve.<br/><br/></p>",
+        "text_align": "left",
+        "left_image": "shopify://shop_images/brand-story.webp",
+        "left_image_alt": "Brand founder image",
+        "right_image_top": "shopify://shop_images/radient-wellness.webp",
+        "right_image_top_alt": "Supplement badge or logo",
+        "right_image_bottom": "shopify://shop_images/capsules.webp",
+        "right_image_bottom_alt": "Supplement capsule image"
+      }
+    },
+    "image_banner_qqzEkL": {
+      "type": "image-banner",
+      "name": "Image Banner",
+      "settings": {
+        "custom_class": "nature_wisdom_section pt-80 mt-110",
+        "bg_color": "rgba(0,0,0,0)",
+        "right_side_image": "shopify://shop_images/nature-wisdome-img.webp",
+        "useout_side": false,
+        "useout_side_mob": false,
+        "vertical_align": "align-middle",
+        "horizontal_align": "align-center",
+        "heading_line1": "Nature’s Wisdom in Every Dose",
+        "description": "<p>At Ancient Bliss, we believe wellness begins with awareness. Our mission is to help you reconnect with your body’s natural wisdom, free from corporate-driven misinformation. Every formula is crafted with powerful herbs, rooted in indigenous knowledge, and backed by science — no fillers, no shortcuts. We preserve nature’s integrity to deliver supplements that truly support healing and transformation. These aren’t just capsules; they’re invitations to slow down, nourish yourself, and live in alignment. With each dose, you’re not just improving your health — you’re embracing a deeper, more intentional way of living.<br/><br/></p>",
+        "button_text_1": "SHOP NOW",
+        "button_url_1": "",
+        "button_bg_color_1": "#ffffff",
+        "button_text_color_1": "#000000",
+        "button_text_2": "",
+        "button_url_2": "",
+        "button_bg_color_2": "#000000",
+        "button_text_color_2": "#ffffff",
+        "content_color": "#ffffff"
+      }
+    },
+    "image_with_content_hnMnqA": {
+      "type": "Image-with-content",
+      "blocks": {
+        "content_with_icon_VtFtVE": {
+          "type": "content_with_icon",
+          "settings": {
+            "block_style": "horizontal",
+            "icon": "",
+            "icon_heading": "",
+            "icon_content": "<p>At Ancient Bliss, we’re not just selling supplements — we’re cultivating a conscious community. Every product is born from the passion of a team deeply connected to its purpose, united by a shared belief in natural healing and intentional living.</p><p>We’re proud to lead with transparency. From sourcing to formulation, we keep you informed — because you know your body best, and we believe you deserve to know exactly what you’re putting into it.</p><p>Here, you’re not just a customer. You’re part of a movement that puts your well-being first.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_with_icon_VtFtVE"
+      ],
+      "name": "Image With Content",
+      "settings": {
+        "custom_class": "brand_community_section mt-110",
+        "image": "shopify://shop_images/brand-community.webp",
+        "inner_heading": "More Than a Brand — A Community",
+        "button_label": "EXPLORE PRODUCTS",
+        "button_link": "shopify://collections/all",
+        "stylebtns": "default",
+        "bg_button": "#000000",
+        "solid_button": "#000000",
+        "color_button": "#ffffff",
+        "bg_button_hover": "#b6813c",
+        "solid_button_hover": "#b6813c",
+        "color_button_hover": "#ffffff",
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "quotes_GhRRAk": {
+      "type": "quotes",
+      "blocks": {
+        "quote_W6ppT3": {
+          "type": "quote",
+          "settings": {
+            "title": "Happy with Ancient Bliss Products",
+            "avatar": "shopify://shop_images/t1.png",
+            "author": "Maeve B",
+            "info": "",
+            "rate": 5,
+            "quote": "Ancient Bliss has given me what so many other brands couldn’t – an honest, simple way to make sure"
+          }
+        },
+        "quote_gcnCC8": {
+          "type": "quote",
+          "settings": {
+            "title": "Value of Money",
+            "avatar": "shopify://shop_images/t2.png",
+            "author": "Jemina P",
+            "info": "",
+            "rate": 5,
+            "quote": "Their blends are so unique yet so universal to help with many different health"
+          }
+        },
+        "quote_hnAqHi": {
+          "type": "quote",
+          "settings": {
+            "title": "Works for me",
+            "avatar": "shopify://shop_images/t3.png",
+            "author": "Brian B",
+            "info": "",
+            "rate": 4,
+            "quote": "From searching their online selection to ordering and receiving my purchase, my experience with <br>Ancient Bliss has been nothing short of amazing."
+          }
+        }
+      },
+      "block_order": [
+        "quote_W6ppT3",
+        "quote_gcnCC8",
+        "quote_hnAqHi"
+      ],
+      "disabled": true,
+      "name": "Testimonials",
+      "settings": {
+        "cstm_class": "cstm-testimonial-sct",
+        "show_rating_first": true,
+        "animation": "fade",
+        "paddingsection": "120px 0px 96px 0px",
+        "paddingmobile": "80px 0px 80px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#fefefe",
+        "title_top": "",
+        "title": "What Customers Are Saying",
+        "des": "",
+        "setwidth": "container",
+        "aligntext": "text-center",
+        "show": 2,
+        "arrows": true,
+        "draggable": true,
+        "dots": true,
+        "infinite": true
+      }
+    }
+  },
+  "order": [
+    "breadcrumb_new_BpiQef",
+    "inspired_nature_LmnLca",
+    "wellness_content_RVKfHB",
+    "main",
+    "16401917158cf2d87f",
+    "16401930874092dd8f",
+    "1640193768119372bb",
+    "1640193971985229b9",
+    "16401946038d3179cf",
+    "1640194879aa08c1d1",
+    "brand_story_kjQ4fK",
+    "image_banner_qqzEkL",
+    "image_with_content_hnMnqA",
+    "quotes_GhRRAk"
+  ]
+}

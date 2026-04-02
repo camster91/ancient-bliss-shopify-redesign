@@ -1,0 +1,788 @@
+<style>
+  {{ global_product_widget_css }}
+</style>
+
+{% if product.selling_plan_groups.size > 0 %}
+  <div id='sn-product-widget'>
+    <section id='sn-product-widget__purchase-options'>
+      <h4>Purchase Options</h4>
+
+      {% comment %} <div class="btn_wrapper">
+        <button type='button' class='selected'>
+          <span class='group-name'>One-time Purchase</span>
+        </button>
+
+        {% for selling_plan_group in product.selling_plan_groups %}
+          <button
+            type='button'
+            data-selling-plan-group-id='{{ selling_plan_group.id }}'
+          >
+            <span class='subscription_max_discount'>-</span>
+            <span class='group-name'>{{ selling_plan_group.name }}</span>
+          </button>
+        {% endfor %}
+      </div> {% endcomment %}
+
+
+        <div class="btn_wrapper">
+        <button type='button'>
+          <span class='group-name'>One time purchase</span>
+        </button>
+
+        {% for selling_plan_group in product.selling_plan_groups %}
+          <button
+            type='button' class='selected' 
+            data-selling-plan-group-id='{{ selling_plan_group.id }}'
+          >
+            {% comment %} <span class='subscription_max_discount'>-</span> {% endcomment %}
+            <span class='group-name'>{{ selling_plan_group.name }}</span>
+          </button>
+        {% endfor %}
+      </div>
+
+    </section>
+
+
+    <!-- One-time purchase content -->
+<section class="sn-product-widget__one-time" style="display:none;">
+  {% comment %} <p>Test Content for One-Time Purchase</p> {% endcomment %}
+
+<!-- Display calculated total price -->
+<div id="calculated-price" class="checkout-total" style="margin:10px 0; font-size:16px; font-weight:bold;"> 
+ <span class="price_label"> Total:</span> {{ product.price | money }}
+</div>
+
+<!-- Direct checkout button -->
+<button id="direct-checkout" class="direct-checkout-btn shopify-payment-button__button shopify-payment-button__button--unbranded" style="
+  background:#5a31f4; 
+  color:#fff; 
+  border:none; 
+  padding:12px 20px; 
+  font-size:16px; 
+  border-radius:6px; 
+  cursor:pointer;
+">
+  Buy It Now
+</button>
+
+</section>
+
+
+    {% for selling_plan_group in product.selling_plan_groups %}
+      <section
+        class='sn-product-widget__delivery-frequency'
+        data-selling-plan-group-id='{{ selling_plan_group.id }}'
+      >
+        <h4>Delivery Frequency</h4>
+
+        {% for selling_plan in selling_plan_group.selling_plans %}
+          <div id='selling_plan_{{ selling_plan.id }}' class='selling_plan'>
+            <label class='radio'>
+              <div class='radio__header'>
+                <span class='radio__input'>
+                  <input
+                    type='radio'
+                    name='selling_plan'
+                    value='{{ selling_plan.id }}'
+                  >
+                  <span class='radio__control'></span>
+                </span>
+                <span class='radio__label'>
+                  {% if false %}
+                    {{ selling_plan.name }}
+                  {% else %}
+                    {{ selling_plan.options[0].value }}
+                  {% endif %}
+                </span>
+              </div>
+
+              <div
+                class='radio__price'
+                data-discount-value='{{ selling_plan.price_adjustments[0].value }}'
+                data-discount-type='{{ selling_plan.price_adjustments[0].value_type }}'
+                data-after-cycle='{{ selling_plan.price_adjustments[0].order_count }}'
+                data-next-discount-value='{{ selling_plan.price_adjustments[1].value }}'
+                data-next-discount-type='{{ selling_plan.price_adjustments[1].value_type }}'
+              >
+                <span class='first-discount'>-</span>
+                <span class='second-discount'>-</span>
+              </div>
+            </label>
+          </div>
+        {% endfor %}
+
+        <a
+          class='policy-link'
+          href='/policies/subscription-policy'
+          target='_blank'
+        >
+          View Subscription Policy
+        </a>
+        <!-- test -->
+      </section>
+    {% endfor %}
+
+    <a id='powered-by' href='https://propelcommerce.io' target='_blank'>Powered by Propel Subscriptions</a>
+  </div>
+
+  <style>
+    #sn-product-widget {
+      font-size: 14px;
+      margin-bottom: 16px;
+      flex-direction: column;
+    }
+
+    #sn-product-widget section h4 {
+      color: #202223;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      text-align: left;
+      text-transform: none;
+    }
+
+    #sn-product-widget__purchase-options div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      margin-bottom: 15px;
+    }
+
+    #sn-product-widget__purchase-options button {
+      height: 70px;
+      width: 48%;
+
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      background: transparent;
+      color: #6d7175;
+      border: 1px solid #d2d2d2;
+      border-radius: 2px;
+      box-sizing: border-box;
+      font-size: 14px;
+
+      position: relative;
+    }
+    .policy-link {
+      font-size: 0.9em;
+      text-decoration: underline !important;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: 480px) {
+      #sn-product-widget__purchase-options button {
+        width: 100%;
+      }
+    }
+
+    #sn-product-widget__purchase-options button.selected {
+      border-color: #6d7175;
+      color: #000000;
+    }
+
+    #sn-product-widget__purchase-options button svg {
+      margin-right: 5px;
+      width: 25%;
+    }
+
+    #sn-product-widget__purchase-options button svg path {
+      fill: #6d7175;
+    }
+
+    #sn-product-widget__purchase-options button.selected svg path {
+      fill: #000000;
+    }
+
+    #sn-product-widget__purchase-options button span.group-name {
+      width: 75%;
+      text-align: left;
+    }
+
+    #sn-product-widget__purchase-options .subscription_max_discount {
+      display: none;
+
+      position: absolute;
+      top: -15px;
+      right: -5px;
+
+      background: #000000;
+      border-radius: 2px;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+    }
+
+    .sn-product-widget__delivery-frequency {
+      display: none;
+      margin-bottom: 5px;
+    }
+
+    .sn-product-widget__delivery-frequency .selling_plan {
+      color: #6d7175;
+      font-size: 14px;
+      margin: 0.15em 0;
+      padding: 1em 0.25em;
+      width: 100%;
+    }
+
+    .sn-product-widget__delivery-frequency .radio {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1em;
+      height: 1em;
+      line-height: 1;
+      margin-bottom: 0;
+    }
+
+    .sn-product-widget__delivery-frequency .radio__header {
+      display: flex;
+      align-items: center;
+    }
+
+    .sn-product-widget__delivery-frequency .radio__input {
+      display: flex;
+      align-items: center;
+    }
+
+    .sn-product-widget__delivery-frequency .radio__input input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .sn-product-widget__delivery-frequency .radio__label {
+      margin-left: 4px;
+    }
+
+    .sn-product-widget__delivery-frequency .radio__input input:focus + .radio__control {
+      box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
+    }
+
+    .sn-product-widget__delivery-frequency .radio__input input:checked + .radio__control {
+      background: radial-gradient(currentColor 50%, rgba(255, 0, 0, 0) 51%);
+    }
+
+    .sn-product-widget__delivery-frequency .radio__control {
+      display: block;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      border: 0.1em solid currentColor;
+      transform: translateY(-0.05em);
+    }
+
+    .sn-product-widget__delivery-frequency .radio__price {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+    }
+
+    .sn-product-widget__delivery-frequency .radio__price > span {
+      display: inline-block;
+    }
+
+    .sn-product-widget__delivery-frequency .radio__price .second-discount {
+      margin-top: 4px;
+    }
+
+    #sn-product-widget #powered-by {
+      color: #6d7175;
+      font-size: 12px;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+
+    #sn-product-widget.active-one-time ~ .product-form__quantity-submit.pt-4 {
+	display: none;
+}
+
+.shopify-payment-button__button.shopify-payment-button__button--unbranded {
+	background: #5a31f4 !important;
+	color: #fff;
+	border: none;
+	padding: 12px 20px;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 100%;
+	max-width: max-content;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-family: var(--g-font-family_btn);
+	letter-spacing: var(--g-font-spacing-btn);
+}
+div .shopify-payment-button .shopify-payment-button__button--unbranded:hover {
+	background-color: #5a31f4 !important;
+	color: #fff !important;
+} 
+.shopify-payment-button .shopify-payment-button__button--unbranded::before{
+	content: "";
+	background: #5a31f4 !important;
+	height: 101%;
+} 
+
+#calculated-price {
+	font-weight: 600 !important;
+	color: #222;
+	font-size: 24px !important;
+	line-height: 100%;
+	margin-bottom: 20px !important;
+}
+
+  </style>
+
+  <script type='text/javascript'>
+  (function() {
+    if (typeof window.sn === 'undefined') window.sn = {}
+    var selectors = window.sn.datastore.shop.selectors || {}
+
+    function Helper() {
+      var self = this;
+      self.log = function(message) {
+        if (window.sn.settings.logInConsole) {
+          console.log(message);
+        } else {
+          window.sn.debug.push(message);
+        }
+      };
+      self.formatMoney = function(amount, decimalDigits) {
+        if (!amount) return null;
+        var moneyFormat = '{{shop.money_format}}';
+        var firstCurly = moneyFormat.indexOf('{')
+        var lastCurly = moneyFormat.lastIndexOf('}')
+        var prefix = moneyFormat.substring(0,firstCurly)
+        var suffix = moneyFormat.substring(lastCurly+1,moneyFormat.length)
+        var moneyFormatSwitch = moneyFormat.substring(firstCurly,lastCurly+1)
+        moneyFormatSwitch = moneyFormatSwitch.replace(/ /g, ''); // Remove spaces
+        var localeOptions = {
+          minimumFractionDigits: decimalDigits,
+          maximumFractionDigits: decimalDigits,
+        };
+        switch(moneyFormatSwitch) {
+          case '{% raw %}{{amount}}{% endraw %}': {
+            return prefix + amount.toLocaleString('en-US', localeOptions) + suffix
+          }
+          case '{% raw %}{{amount_no_decimals}}{% endraw %}': {
+            return prefix + parseInt(amount).toLocaleString() + suffix
+          }
+          case '{% raw %}{{amount_with_comma_separator}}{% endraw %}': {
+            return prefix + amount.toLocaleString('en-US', localeOptions).replace(/[.,]/g, (punc) => { return punc === '.' ? ',' : '.' }) + suffix
+          }
+          case '{% raw %}{{amount_no_decimals_with_comma_separator}}{% endraw %}': {
+            return prefix + amount.toLocaleString('en-US', {maximumFractionDigits:0}) + suffix
+          }
+          case '{% raw %}{{amount_with_apostrophe_separator}}{% endraw %}': {
+            return prefix + amount.toLocaleString('en-US', localeOptions).replace(/,/g, '\'') + suffix
+          }
+          default: {
+            return prefix + moneyFormat.replace("{% raw %}{{amount}}{% endraw %}", amount.toFixed(decimalDigits)) + suffix
+          }
+        }
+      };
+    }
+
+    function ProductPage() {
+      var self = this;
+      self.variantElement = document.querySelector(selectors.variant_element || '[name=id]');
+      self.variantPrices = {};
+      self.variantSellingPlanGroupIds = {};
+      {% for variant in product.variants %}
+        self.variantPrices[{{ variant.id }}] = {
+          price: {{ variant.price | divided_by: 100.0 }},
+          compareAtPrice:
+            {%- if variant.compare_at_price -%}
+              {{ variant.compare_at_price | divided_by: 100.0 }},
+            {%- else -%}
+              null
+            {% endif %}
+        };
+        self.variantSellingPlanGroupIds[{{ variant.id }}] = {{
+          variant.selling_plan_allocations |
+          map: "selling_plan_group_id" |
+          json
+        }};
+      {% endfor %}
+
+      self.getCurrentVariantId = function() {
+        {% if adminPreview %}
+          return Object.keys(self.variantPrices)[0];
+        {% else %}
+        var currentVariant = window.location.search.match(/variant=([0-9]+)/)
+          if (currentVariant != null) {
+            return currentVariant[1]
+          } else {
+            var curVariantId = null;
+            var elems = document.getElementsByClassName(selectors.variant_selector || "product-variant__input product-variant-value");
+            if (elems) {
+              for (var i = 0; i < elems.length; i++) {
+                if (elems[i].checked === true) {              
+                  {% for variant in product.variants %}
+                    if (`{{ variant.title }}` === elems[i].value) {
+                      curVariantId = {{ variant.id }}
+                    }
+                  {% endfor %}
+                }
+              }
+            }
+            if (curVariantId) return curVariantId;
+            if (self.variantElement) return parseInt(self.variantElement.value);
+            if (self.variantPrices && Object.keys(self.variantPrices)) return Object.keys(self.variantPrices)[0];
+          }
+          return null; 
+        {% endif %}
+      }
+
+      self.updatePriceWithSellingPlanDiscount = function() {}
+      function setupVariantChangeListener() {
+        var previousVariantId = null;
+        setInterval(function() {
+          if (self.getCurrentVariantId() !== previousVariantId) {
+            previousVariantId = self.getCurrentVariantId();
+            var variantId;
+            if (typeof self.variantPrices[self.getCurrentVariantId()] === 'undefined') {
+              variantId = Object.keys(self.variantPrices)[0];
+            } else {
+              variantId = self.getCurrentVariantId();
+            }
+            window.sn.productWidget.setPrices(self.variantPrices[variantId].price);
+            self.updatePriceWithSellingPlanDiscount();
+            window.sn.productWidget.updateSellingPlanGroupsVisibility(self.variantSellingPlanGroupIds[variantId]);
+          }
+        }, 500);
+      }
+      setupVariantChangeListener();
+    }
+
+    function selectPurchaseOption(context) {
+      context.purchaseOptionButton.classList.add('selected');
+      context.deliveryFrequencySection.style.display = 'block';
+      context.radioButtons[0].checked = true;
+      context.markRowAsSelected(context.radioButtons[0]);
+      window.sn.productPage.updatePriceWithSellingPlanDiscount();
+      context.purchaseOptionButton.style.color = window.sn.color.product_widget_color
+      context.purchaseOptionButton.style.borderColor = window.sn.color.product_widget_color
+      context.purchaseOptionButton.svgGroup = document.querySelectorAll('#sn-product-widget__purchase-options button.selected svg path')
+      context.purchaseOptionButton.svgGroup.forEach(path => {
+        path.style.fill = window.sn.color.product_widget_color
+      })
+    }
+
+    function ProductWidget() {
+      var self = this;
+      function initialize() {
+        self.widgetElement = document.querySelector("#sn-product-widget");
+        self.purchaseOptionsSection = self.widgetElement.querySelector("#sn-product-widget__purchase-options");
+        self.oneTimePurchaseButton = self.purchaseOptionsSection.querySelector("button");
+        urlExists("{{ shop.url }}/policies/subscription-policy").then(function(exists) {
+          self.widgetElement.querySelectorAll(".policy-link").forEach(function(link) {
+            if (exists) {
+              link.style.color = window.sn.color.product_widget_color;
+            } else {
+              link.style.display = "none";
+            }
+          });
+        })
+        self.subscribePurchaseButtons = self.purchaseOptionsSection.querySelectorAll("button[data-selling-plan-group-id]");
+        self.deliveryFrequencySections = self.widgetElement.querySelectorAll(".sn-product-widget__delivery-frequency");
+        self.sellingPlanGroups = Array.from(self.subscribePurchaseButtons)
+          .map(function(subscribePurchaseButton, index) {
+            return new ProductWidgetSellingPlanGroup(
+              subscribePurchaseButton,
+              self.deliveryFrequencySections[index],
+            );
+          });
+
+        // UPDATED: Default to subscription instead of one-time
+        if (self.sellingPlanGroups.length > 0) {
+          self.hideAllSellingPlanGroups();
+          selectPurchaseOption(self.sellingPlanGroups[0]); // Select subscription by default
+          self.oneTimePurchaseButton.classList.remove('selected');
+        } else {
+          // fallback if no subscription plans
+          self.oneTimePurchaseButton.classList.add('selected');
+          self.oneTimePurchaseButton.style.color = window.sn.color.product_widget_color
+          self.oneTimePurchaseButton.style.borderColor = window.sn.color.product_widget_color
+        }
+
+        self.sellingPlanGroups.forEach(function(sellingPlanGroup) {
+          sellingPlanGroup.purchaseOptionButton.addEventListener('click', function() {
+            self.hideAllSellingPlanGroups();
+            self.oneTimePurchaseButton.classList.remove('selected');
+            self.oneTimePurchaseButton.style.color = ''
+            self.oneTimePurchaseButton.style.borderColor = ''
+          });
+          sellingPlanGroup.initializePurchaseButtonListener();
+        });
+
+        self.oneTimePurchaseButton.addEventListener('click', function() {
+  self.hideAllSellingPlanGroups();
+
+  // Show one-time content
+  document.querySelector('.sn-product-widget__one-time').style.display = 'block';
+
+  self.oneTimePurchaseButton.classList.add('selected');
+  window.sn.productPage.updatePriceWithSellingPlanDiscount();
+  self.oneTimePurchaseButton.style.color = window.sn.color.product_widget_color
+  self.oneTimePurchaseButton.style.borderColor = window.sn.color.product_widget_color
+});
+        self.widgetElement.querySelector('#powered-by').style.display = window.sn.datastore.shop.show_powered_by ? 'block' : 'none';
+      }
+      self.hideAllSellingPlanGroups = function() {
+        self.sellingPlanGroups.forEach(function(sellingPlanGroup) {
+          sellingPlanGroup.hideSellingPlan();
+          // hide one-time content too
+var oneTimeSection = document.querySelector('.sn-product-widget__one-time');
+if (oneTimeSection) oneTimeSection.style.display = 'none';
+        });
+      };
+      self.updateSellingPlanGroupsVisibility = function(groupsToShow) {
+        if (groupsToShow.length === 0) {
+          self.widgetElement.style.display = 'none';
+          self.sellingPlanGroups.forEach(function(sellingPlanGroup) {
+            sellingPlanGroup.hideSellingPlan();
+          })
+        } else {
+          self.widgetElement.style.display = 'inherit';
+          self.sellingPlanGroups.forEach(function(sellingPlanGroup) {
+            if (groupsToShow.includes(sellingPlanGroup.getId())) {
+              sellingPlanGroup.purchaseOptionButton.style.display = 'flex';
+            } else {
+              sellingPlanGroup.hideSellingPlan();
+              sellingPlanGroup.purchaseOptionButton.style.display = 'none';
+            }
+          });
+        }
+      };
+      self.setPrices = function(originalPrice) {
+        self.sellingPlanGroups.forEach(function(sellingPlanGroup) {
+          sellingPlanGroup.setPrices(originalPrice);
+        });
+      };
+      initialize();
+    }
+
+    function ProductWidgetSellingPlanGroup(purchaseOptionButton, deliveryFrequencySection) {
+      var self = this;
+      self.purchaseOptionButton = purchaseOptionButton;
+      self.purchaseOptionButtonDiscountBadge = purchaseOptionButton.querySelector(".subscription_max_discount");
+      self.deliveryFrequencySection = deliveryFrequencySection;
+      self.radioButtons = deliveryFrequencySection.querySelectorAll("input[type='radio']");
+      self.priceCells = deliveryFrequencySection.querySelectorAll("[data-discount-value]");
+      self.originalPrice = null;
+      self.maxDiscount = null;
+      self.initializePurchaseButtonListener = function() {
+        self.purchaseOptionButton.addEventListener('click', function() {
+          selectPurchaseOption(self)
+        });
+      };
+      self.initializeRadioButtons = function() {
+        self.radioButtons.forEach(function(radioButton) {
+          radioButton.addEventListener('change', function(e) {
+            self.markRowAsSelected(e.target);
+            window.sn.productPage.updatePriceWithSellingPlanDiscount();
+          });
+        });
+      };
+      self.getId = function() {
+        return self.purchaseOptionButton.getAttribute('data-selling-plan-group-id');
+      };
+      self.hideSellingPlan = function() {
+        purchaseOptionButton.classList.remove('selected');
+        deliveryFrequencySection.style.display = 'none';
+        self.radioButtons.forEach(function(radioButton) {
+          radioButton.parentElement.parentElement.classList.remove('selected');
+          radioButton.checked = false;
+        })
+        purchaseOptionButton.style.color = ''
+        purchaseOptionButton.style.borderColor = ''
+        purchaseOptionButton.svgHead = document.querySelectorAll('#sn-product-widget__purchase-options button svg path')
+        purchaseOptionButton.svgHead.forEach(path => {
+          path.style.fill = ''
+        })
+      };
+      self.markRowAsSelected = function(radioButton) {
+        self.radioButtons.forEach(function(otherRadioButton) {
+          var div = document.querySelector("#selling_plan_" + otherRadioButton.value)
+          div.classList.remove('selected')
+          div.style.backgroundColor = ''
+          div.style.color = ''
+        });
+        var div = document.querySelector("#selling_plan_" + radioButton.value)
+        div.classList.add('selected');
+        div.style.backgroundColor = window.sn.color.product_widget_rgb
+        div.style.color = window.sn.color.product_widget_color
+      };
+      self.setPrices = function(originalPrice) {
+        self.originalPrice = originalPrice;
+        function computeDiscountedPrice(discountType, discountValue) {
+          var discountedPrice;
+          switch(discountType)  {
+            case 'fixed_amount': discountedPrice = originalPrice - discountValue; break;
+            case 'percentage': discountedPrice = originalPrice * (1 - discountValue); break;
+            case 'price': discountedPrice = discountValue; break;
+            case '': discountedPrice = originalPrice; break;
+            default: discountedPrice = '-';
+          }
+          if (discountType && discountValue > 0 && (!self.maxDiscount || self.maxDiscount.price > discountedPrice)) {
+            self.maxDiscount = { price: discountedPrice, value: discountValue, type: discountType };
+          }
+          return window.sn.helper.formatMoney(discountedPrice, 2);
+        }
+        self.priceCells.forEach(function(priceCell) {
+          var discountedPriceText = computeDiscountedPrice(
+            priceCell.getAttribute('data-discount-type'),
+            priceCell.getAttribute('data-discount-value') / 100
+          );
+          var nextDiscountedPriceText = computeDiscountedPrice(
+            priceCell.getAttribute('data-next-discount-type'),
+            priceCell.getAttribute('data-next-discount-value') / 100
+          );
+          var firstDiscountSpan = priceCell.querySelector("span.first-discount");
+          var secondDiscountSpan = priceCell.querySelector("span.second-discount");
+          if (priceCell.getAttribute('data-next-discount-type') === '') {
+            firstDiscountSpan.innerHTML = "{discounted_price} per delivery".replace("{discounted_price}", discountedPriceText);
+            secondDiscountSpan.style.display = 'none';
+          } else {
+            firstDiscountSpan.innerHTML = "{discounted_price}/delivery initially".replace("{discounted_price}", discountedPriceText);
+            secondDiscountSpan.innerHTML = "{discounted_price_after_x_cycles} after {change_discounts_after_x_cycles} deliveries"
+              .replace("{discounted_price_after_x_cycles}", nextDiscountedPriceText)
+              .replace("{change_discounts_after_x_cycles}", priceCell.getAttribute('data-after-cycle'));
+          }
+        });
+        if (self.maxDiscount && !isNaN(self.maxDiscount.value)) {
+          self.updateDiscountBadge();
+        }
+      };
+      self.updateDiscountBadge = function() {
+        var maxDiscountToPrint;
+        switch (self.maxDiscount.type) {
+          case 'fixed_amount': maxDiscountToPrint = window.sn.helper.formatMoney(Math.floor(self.maxDiscount.value), 0); break;
+          case 'price': maxDiscountToPrint = window.sn.helper.formatMoney(Math.floor(self.originalPrice - self.maxDiscount.value), 0); break;
+          case 'percentage': maxDiscountToPrint = Math.floor(self.maxDiscount.value * 100) + '%'; break;
+        }
+        self.purchaseOptionButtonDiscountBadge.innerHTML = "Save {save_value}".replace("{save_value}", maxDiscountToPrint);
+        self.purchaseOptionButtonDiscountBadge.style.display = 'block';
+        self.purchaseOptionButtonDiscountBadge.style.background = window.sn.color.product_widget_color
+      };
+      self.initializeRadioButtons();
+    }
+
+    function urlExists (url) {
+      return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('HEAD', url);
+        xhr.onload = function () {
+          if (xhr.status != 404) { resolve(true); } else { resolve(false); }
+        };
+        xhr.onerror = function () { resolve(false); };
+        xhr.send();
+      });
+    }
+    window.sn.helper = new Helper();
+    window.sn.productPage = new ProductPage();
+    window.sn.productWidget = new ProductWidget();
+  })()
+</script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const quantityInput = document.querySelector("input[name='quantity']") || document.getElementById("Quantity");
+  const checkoutBtn = document.getElementById("direct-checkout");
+  const priceDisplay = document.getElementById("calculated-price");
+
+  // Shopify product price in cents
+  const basePrice = {{ product.price | divided_by: 100.0 }};
+
+  function updatePrice() {
+    const qty = parseInt(quantityInput.value) || 1;
+    const total = basePrice * qty;
+    priceDisplay.innerText = "Total: $" + total.toFixed(2);
+  }
+
+  // Update when quantity changes
+  if (quantityInput) {
+    quantityInput.addEventListener("input", updatePrice);
+  }
+
+  // Handle direct checkout
+  checkoutBtn.addEventListener("click", function() {
+    const qty = parseInt(quantityInput.value) || 1;
+    const variantId = {{ product.selected_or_first_available_variant.id }};
+    const checkoutUrl = `/cart/${variantId}:${qty}?checkout`;
+    window.location.href = checkoutUrl;
+  });
+
+  // Init display
+  updatePrice();
+});
+</script>
+
+
+{% comment %} <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const quantityInput = document.querySelector("input[name='quantity']") || document.getElementById("Quantity");
+  const checkoutBtn = document.getElementById("direct-checkout");
+  const priceDisplay = document.getElementById("calculated-price");
+
+  // Regular price (compare at price) in dollars
+  const regularPrice = {{ product.compare_at_price | divided_by: 100.0 }};
+
+  function updatePrice() {
+    const qty = parseInt(quantityInput.value) || 1;
+    const total = regularPrice * qty;
+    priceDisplay.innerText = "Total: $" + total.toFixed(2);
+  }
+
+  if (quantityInput) {
+    quantityInput.addEventListener("input", updatePrice);
+  }
+
+  checkoutBtn.addEventListener("click", function() {
+    const qty = parseInt(quantityInput.value) || 1;
+    const variantId = {{ product.selected_or_first_available_variant.id }};
+    
+    // Force checkout with regular (compare at) price
+    const checkoutUrl = `/cart/${variantId}:${qty}?checkout`;
+    window.location.href = checkoutUrl;
+  });
+
+  updatePrice();
+});
+</script> {% endcomment %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const widget = document.getElementById("sn-product-widget");
+  const buttons = document.querySelectorAll("#sn-product-widget .btn_wrapper button");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // remove all previously added unique classes
+      widget.classList.remove("active-one-time", "active-subscription");
+
+      // get tab name text
+      const tabName = this.querySelector(".group-name").textContent.trim().toLowerCase();
+
+      // add unique class based on tab name
+      if (tabName.includes("one time")) {
+        widget.classList.add("active-one-time");
+      } else {
+        widget.classList.add("active-subscription");
+      }
+    });
+  });
+});
+</script>
+
+{% endif %}
+

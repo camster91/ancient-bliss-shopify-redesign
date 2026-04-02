@@ -1,0 +1,134 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "influencers_KBJMJP": {
+      "type": "influencers",
+      "blocks": {
+        "influencer_xcKEck": {
+          "type": "influencer",
+          "settings": {
+            "image": "shopify://shop_images/Phil_s_Favorites.webp",
+            "alt_text": "Phil's Favorites",
+            "link": "",
+            "title": "Phil's Favorites",
+            "description": "Meet Phil, Dad of 4. Phil's all about sharing his favorite health tips for busy moms 🦄. He's living his best life and can't wait to share his wellness wisdom with you."
+          }
+        },
+        "influencer_98QNkT": {
+          "type": "influencer",
+          "settings": {
+            "image": "shopify://shop_images/Lyndee_s_Favorites.webp",
+            "alt_text": "Lyndee's Favorites",
+            "link": "",
+            "title": "Lyndee's Favorites",
+            "description": "Meet Lyndee, a wellness influencer who shares her amazing Berberine journey along with other methods that make her truly glow from the inside out, emphasizing natural medicine and overall health"
+          }
+        },
+        "influencer_czY4TC": {
+          "type": "influencer",
+          "settings": {
+            "image": "shopify://shop_images/Cash_s_Favorites.webp",
+            "alt_text": "Cash's Favorites",
+            "link": "",
+            "title": "Cash's Favorites",
+            "description": "CashPCOS, also known as \"Cash,\" is a dedicated influencer on a mission to help women take back control of their lives while living with PCOS (Polycystic Ovary Syndrome). With her infectious energy and commitment, she has become a beacon of support for over 300,000 \"Cysters\" on TikTok. "
+          }
+        },
+        "influencer_PECft6": {
+          "type": "influencer",
+          "settings": {
+            "image": "shopify://shop_images/Dr._Stephanie_s_Favorites.webp",
+            "alt_text": "Dr. Stephanie's Favorites",
+            "link": "",
+            "title": "Dr. Stephanie's Favorites",
+            "description": "Dr.Stephanie is a dedicated Naturopathic Doctor with a passion for holistic health, committed to helping you radiate vitality and GLOW from within. "
+          }
+        }
+      },
+      "block_order": [
+        "influencer_xcKEck",
+        "influencer_98QNkT",
+        "influencer_czY4TC",
+        "influencer_PECft6"
+      ],
+      "name": "Influencers Favorites",
+      "settings": {
+        "custom_id": "influencers-favorites",
+        "custom_class": "influencers-favorites-wrapper"
+      }
+    },
+    "product_tab_i4UyDF": {
+      "type": "product-tab",
+      "blocks": {
+        "collection_fFUHDV": {
+          "type": "collection",
+          "settings": {
+            "title": "Title tab",
+            "collection": "our-shop"
+          }
+        },
+        "collection_3ziR3X": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "title": "Title tab",
+            "collection": ""
+          }
+        },
+        "collection_eAndRp": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "title": "Title tab",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_fFUHDV",
+        "collection_3ziR3X",
+        "collection_eAndRp"
+      ],
+      "name": "Product tab",
+      "settings": {
+        "cstm_class": "cstm-product-tav explore_products_section",
+        "show_price_with_title": false,
+        "add_cart_button_text": "Add To Cart",
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "",
+        "setwidth": "container",
+        "title_top": "Sub Title Top",
+        "title": "Explore Our Products",
+        "des": "<div class=\"view-product\">\n<a href=\"https://ancientbliss.com/collections/mega-menu-products\">View All products</a>\n</div>",
+        "arrows": true,
+        "draggable": true,
+        "dots": true,
+        "infinite": true,
+        "rows": "1",
+        "limit": 10,
+        "show": 3
+      }
+    }
+  },
+  "order": [
+    "main",
+    "influencers_KBJMJP",
+    "product_tab_i4UyDF"
+  ]
+}

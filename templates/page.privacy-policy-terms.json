@@ -1,0 +1,444 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "16401889532c23c742": {
+      "type": "advanced-content",
+      "blocks": {
+        "1640188953d6fef0ca-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"text-center\">  \n<img class=\"lybn-lazyload lazyload\" alt=\"HTML builder image\" data-src=\"https://cdn.shopify.com/s/files/1/0618/4543/8615/files/Layer-1-1.png?v=1663142921\" width=\"100\">\n</div>",
+            "width": "100%",
+            "align": "auto"
+          }
+        },
+        "857d46f8-39b1-43cf-b227-d47585b1aeb0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"mt-5 text-center\">\n\n<h4>Who we are\n</h4>\n<div class=\"row justify-content-center mt-3 mb-5\">\n<p class=\"col-lg-8\"><b>ANCIENT BLISS is taken to protect the privacy of our customers,</b> consumers and online visitors in all our operations. ANCIENT BLISS collects information from some pages of our site to personalize <b>your experience with our site and fulfill </b>your valuable orders and from customers who interested in to our mailing list for email messages about our organic products. All your information is used only to contact customers to provide the best customer service. We never used in any other way.\n<br><br>\nWe also may disclose personally identifiable information in the following instances: <b>ANCIENT BLISS </b>may disclose information about our users, including personally identifiable information, when legally it is needed to do so, at the request of governmental authorities conducting an investigation, to verify or enforce compliance with the policies governing our Web site or applicable laws, or to protect against misuse or unauthorized use of our Web site. We also may disclose user information whenever we believe disclosure is necessary to limit our legal liability;<b> to protect or defend our rights or property; or protect the safety, rights or property of our users.</b>\n</p>\n\n\n\n\n</div>\n</div>",
+            "width": "100%",
+            "align": "center"
+          }
+        },
+        "1044b836-28b9-4b9d-b4c6-2f34b34076a0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"mt-5 text-center\">\n\n<h4>Cookies & Web Beacons\n</h4>\n<div class=\"row justify-content-center mt-3 mb-5\">\n<p class=\"col-lg-8\">To enhance our customer experience with our site, some of our web pages use “cookies.” Cookies are a small piece of data sent from a website and stored in a user’s web browser while the user is browsing that website. We use cookies only certain conditions to improve the content and offerings on our site.<br><br> For example, ANCIENT BLISS may use cookies to personalize your experience at our Web pages (e.g., to recognize you by name when you return to our site), save your password in password-protected areas, and enable you to use shopping carts pages in our sites. We also may use cookies to offer you products, programs or services.\n\n</p>\n\n\n</div>\n</div>",
+            "width": "100%",
+            "align": "center"
+          }
+        },
+        "b9fd1c90-b0ff-4250-b9c9-70e55ed885d9": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"mt-5 text-center\">\n\n<h4>ANCIENT BLISS Commitment to Data Security\n</h4>\n<div class=\"row justify-content-center mt-3 mb-5\">\n<p class=\"col-lg-8\">ANCIENT BLISS have put in place physical, electronic and managerial procedures to safeguard and help prevent unauthorized access to, maintain security of, and correctly use the information we collect. Personally identifiable information and account activity are also protected through the use of e-mail addresses and passwords. In order to maintain the security of your information, you should protect the confidentiality of such information used to log into your account. <br><br>Unfortunately, no data transmission over the Internet can be guaranteed to be 100% secure. As a result, while we strive to protect your personal information and privacy, we cannot guarantee or warrant the security of any information you disclose or transmit to us online and cannot be responsible for the theft, destruction, or inadvertent disclosure of your personal information. To protect your privacy and security, we will take reasonable steps to help verify your identity before granting access or making corrections.\n\n</p>\n\n\n</div>\n</div>",
+            "width": "100%",
+            "align": "center"
+          }
+        },
+        "f5be1dd9-3b6d-4246-88e0-b150abfe45e7": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"mt-5 text-center\">\n\n<h4>Updates to this Privacy Policy\n</h4>\n<div class=\"row justify-content-center mt-3 mb-5\">\n<p class=\"col-lg-8\">From time to time, we reserve the right to make updates to this Privacy Policy. We will notify you about material changes in the way we treat personally identifiable information by, for example: placing a notice on our website. <br><br>We encourage you to periodically check back and review this Privacy Policy so that you always will know what information we collect, how we use it, and to whom we disclose it. Your continued use of our Web site following any changes to this Privacy Policy will be deemed to constitute your acceptance of such change.\n\n</p>\n\n\n</div>\n</div>",
+            "width": "100%",
+            "align": "center"
+          }
+        },
+        "f1ec5710-d887-454f-83bc-e59d549bc251": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"mt-5 text-center\">\n\n<h4> Agreeing to Our Terms\n</h4>\n<div class=\"row justify-content-center mt-3 mb-5\">\n<p class=\"col-lg-8\">If you do not agree to this policy or to ANCIENT BLISS Terms of Use posted on this website, please do not use this site or any services offered by this site. ANCIENT BLISS reserves the right to make changes in this policy. Please check back from time to time to ensure you are aware of any updates or changes in this policy. Your use of this site indicates acceptance of this privacy policy.\n<br><br>\nWe hate spam as much as you do. ANCIENT BLISS is hosted on a secure server and all transactions are made using industry standard encryption to protect your information. Your use of the ANCIENT BLISS website means that you understand and agree with this privacy policy.\n\n</p>\n\n\n</div>\n</div>",
+            "width": "100%",
+            "align": "center"
+          }
+        },
+        "6bffeae2-6814-4c11-890c-3a09a21d76b5": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"mt-5 text-center\">\n\n<h4>Who we share your data with\n\n</h4>\n<div class=\"row justify-content-center mt-3 mb-5\">\n<p class=\"col-lg-8\">If you request a password reset, your IP address will be included in the reset email.\n</p>\n\n</div>\n</div>",
+            "width": "100%",
+            "align": "center"
+          }
+        },
+        "2b24dce1-cd24-44c4-8114-34968c29a8fc": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"mt-5 text-center\">\n\n<h4>How long we retain your data\n\n</h4>\n<div class=\"row justify-content-center mt-3 mb-5\">\n<p class=\"col-lg-8\">If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.<br><br>\nFor users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.\n</p>\n\n</div>\n</div>",
+            "width": "100%",
+            "align": "center"
+          }
+        },
+        "a4159f33-ed12-479e-a642-d1798e91dc1b": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"mt-5 text-center\">\n\n<h4>What rights you have over your data\n\n</h4>\n<div class=\"row justify-content-center mt-3 mb-5\">\n<p class=\"col-lg-8\">If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.\n</p>\n\n</div>\n</div>",
+            "width": "100%",
+            "align": "center"
+          }
+        },
+        "9a962fac-755c-45ef-962a-42bc1d4dbdbf": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"mt-5 text-center\">\n\n<h4>Where we send your data\n</h4>\n<div class=\"row justify-content-center mt-3 mb-5\">\n<p class=\"col-lg-8\">Visitor comments may be checked through an automated spam detection service.\n</p>\n\n</div>\n</div>",
+            "width": "100%",
+            "align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "1640188953d6fef0ca-0",
+        "857d46f8-39b1-43cf-b227-d47585b1aeb0",
+        "1044b836-28b9-4b9d-b4c6-2f34b34076a0",
+        "b9fd1c90-b0ff-4250-b9c9-70e55ed885d9",
+        "f5be1dd9-3b6d-4246-88e0-b150abfe45e7",
+        "f1ec5710-d887-454f-83bc-e59d549bc251",
+        "6bffeae2-6814-4c11-890c-3a09a21d76b5",
+        "2b24dce1-cd24-44c4-8114-34968c29a8fc",
+        "a4159f33-ed12-479e-a642-d1798e91dc1b",
+        "9a962fac-755c-45ef-962a-42bc1d4dbdbf"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "0px 0px 30px 0px",
+        "paddingmobile": "30px 0px 30px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container-fluid",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "image_bg": "shopify://shop_images/bg-verlay.png",
+        "e_size": "contain",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "1640018956d681f39c": {
+      "type": "advanced-content",
+      "disabled": true,
+      "blocks": {
+        "164001895622d433c0-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"pr-lg-5\">\n<span class=\"subtop\">Brand Story</span>\n<h2 class=\"my-3\">The Path to Purity</h2>\n<p>\nSomething that sounds so ethereal should not be so difficult to obtain. Right? Unfortunately, our path was disrupted by many obstacles and pitfalls that hindered our progress, most notably from the education system. After discovering a love for health and wellness, our founder immersed herself in her studies and quickly realized much of what she had been taught as a child was false, or at least painted an incomplete picture.\n<br><br>\nOn a mission to reconcile her prior knowledge with the present, she traveled to Hawaii and remained there for six months and fully embraced the culture. During her stay, she was exposed to new people and practices, interacting with natives who taught her more about preventative healthcare and herbalism.\n<br><br>\nThe revelation that the body could heal itself with the help of natural supplements inspired her to further her education. At this point, she knew she had to spread this awareness and sought to create a solution she knew would ultimately benefit everyone. Thus, Ancient Bliss was born. Inspired by Pele, the Ancient Hawaiian Goddess of volcanoes who represents the transformative power we possess, Ancient Bliss aims to remind you to nourish yourself in the pure, wholesome way you deserve.\n</p>\n</div>",
+            "width": "50%",
+            "align": "center"
+          }
+        },
+        "ee9fb394-694f-4af4-9356-350ce6f5c797": {
+          "type": "image",
+          "settings": {
+            "width": "41%",
+            "align": "center",
+            "image": "shopify://shop_images/our-store_b8d1d06a-b27f-4e43-b3ef-d1e5134b45bf.png",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "164001895622d433c0-0",
+        "ee9fb394-694f-4af4-9356-350ce6f5c797"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "100px 0px 120px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "1640170714625bf900": {
+      "type": "parallax-banner",
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "bgsection": "#ffffff",
+        "setwidth": "full",
+        "align": "center",
+        "padding_desktop": 160,
+        "padding_mobile": 80,
+        "bg_box": "#ffffff",
+        "opacity_bgbox": 0,
+        "bg_overlay": "#000000",
+        "opacity_bg_overlay": 0.3,
+        "title": "",
+        "title_color": "#ffffff",
+        "subtext": "<span class=\"subtop \">Experience</span>\n<h2 class=\"mt-3\">A Premier Producer of <br>Napa Valley Wines</h2>",
+        "overwritecolor": true,
+        "subtitle_color": "#ffffff",
+        "button": "discover now",
+        "link": "",
+        "parrallax_enable": false,
+        "image": "shopify://shop_images/asian-jungle-2021-08-29-05-54-28-utc.jpg"
+      }
+    },
+    "1640170719e0805a8d": {
+      "type": "advanced-content",
+      "disabled": true,
+      "blocks": {
+        "5850d40a-0a41-4c11-8e88-b8cf7465974a": {
+          "type": "bgvideo",
+          "settings": {
+            "width": "50%",
+            "link_video": "https://cdn.shopify.com/s/files/1/0599/1491/1918/files/ID_5106779.mp4?v=1640187225"
+          }
+        },
+        "16401707197c379df7-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"pl-lg-5 py-5 my-5\">\n<span class=\"subtop\">EST. 2021</span>\n<h2 class=\"my-3\">About Us\n</h2>\n<p class=\"mt-4\">\nFounded in 2021, Ancient Bliss specializes in herbal supplements that are guaranteed to improve your health and happiness. The impactful supplements we provide are a testament to our passion for the craft and our breadth of health and wellness knowledge.\n\nIn the commotion of everyday life, we understand you don’t always have the time to dedicate hours to learning natural remedies or potent blends – that’s why we’ve taken the reins. <br><br>After extensive research and preparation, we founded Ancient Bliss to supply products that fit seamlessly into your lifestyle, allowing you to practice safe, natural habits with ease.\n\n\n</p>\n</div>",
+            "width": "50%",
+            "align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "5850d40a-0a41-4c11-8e88-b8cf7465974a",
+        "16401707197c379df7-0"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "120px 0px 120px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "083fdb5c-d073-4726-b885-ed360c1fe382": {
+      "type": "image-content-4",
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#fefefe",
+        "setwidth": "container",
+        "align_center": true,
+        "image": "shopify://shop_images/faq.png",
+        "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "imageright": "shopify://shop_images/coconut-palm-trees-on-beach-during-the-sunrise.png"
+      }
+    },
+    "16401724400eb02a59": {
+      "type": "s_team_member",
+      "disabled": true,
+      "blocks": {
+        "16401724407f8eae93-0": {
+          "type": "member",
+          "settings": {
+            "name": "Barry Lawson",
+            "position": "WINE CLUB MANAGER",
+            "twitter": "https://twitter.com/",
+            "google": "https://plus.google.com",
+            "facebook": "https://www.facebook.com/",
+            "linkedin": "https://www.linkedin.com/"
+          }
+        },
+        "16401724407f8eae93-2": {
+          "type": "member",
+          "settings": {
+            "name": "Abdur Rahman",
+            "position": "WINEMAKER",
+            "twitter": "https://twitter.com/",
+            "google": "https://plus.google.com",
+            "facebook": "https://www.facebook.com/",
+            "linkedin": "https://www.linkedin.com/"
+          }
+        },
+        "16401724407f8eae93-1": {
+          "type": "member",
+          "settings": {
+            "name": "Flora Ortiz",
+            "position": "EVENTS MANAGER",
+            "twitter": "https://twitter.com/",
+            "google": "https://plus.google.com",
+            "facebook": "https://www.facebook.com/",
+            "linkedin": "https://www.linkedin.com/"
+          }
+        }
+      },
+      "block_order": [
+        "16401724407f8eae93-0",
+        "16401724407f8eae93-2",
+        "16401724407f8eae93-1"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "30px 0px 30px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "title_top": "OUR TEAM",
+        "title": "Meet Our Winemakers",
+        "des": "Join our family of wine lovers and be the first to taste our <br>\nnew releases and attend special events.",
+        "setwidth": "container",
+        "items": "3",
+        "layout": "6",
+        "main_color": "#79425f",
+        "bg_color": "",
+        "bg_attachment": false,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1640186585f943e747": {
+      "type": "advanced-content",
+      "disabled": true,
+      "blocks": {
+        "1640186585e5ae59a5-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"text-center\">\n<a href=\"#\" class=\"btn btn-theme\">All Teams</a>\n</div>",
+            "width": "100%",
+            "align": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "1640186585e5ae59a5-0"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "0px 0px 120px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "16401741754ceda94b": {
+      "type": "service",
+      "disabled": true,
+      "blocks": {
+        "16401741757b04c8d5-0": {
+          "type": "service",
+          "settings": {
+            "bgblock": "rgba(0,0,0,0)",
+            "title": "",
+            "description": "<h5>More than 20 years of <br>experiences\n</h5>",
+            "icon": "<svg height=\"511pt\" viewbox=\"0 -4 511.99686 511\" width=\"511pt\" xmlns=\"http://www.w3.org/2000/svg\" data-old_color=\"#000000\" fill=\"#92a06b\"><path d=\"m350.800781 271.742188c46.082031-31.78125 35.242188-110.890626-19.941406-126.097657-3.917969-1.082031-19.441406-.492187-21.324219-2.28125-3.144531-2.984375-4.996094-17.289062-7.417968-21.734375-6.90625-12.6875-17.902344-22.898437-30.890626-29.160156-27.035156-13.03125-59.71875-7.410156-79.855468 15.144531-19.398438-26.257812-53.28125-34.222656-82.585938-20.097656-12.980468 6.257813-24.207031 16.328125-31.5 28.785156-3.742187 6.390625-6.417968 13.371094-7.871094 20.632813-1.75 8.738281.476563 16.734375-.203124 25.242187-.472657 5.878907.882812 4.691407-5.542969 7.15625-3.648438 1.398438-7.160157 3.136719-10.507813 5.15625-7.402344 4.476563-13.820312 10.378907-19 17.300781-9.914062 13.246094-15.035156 29.925782-14.492187 46.449219.25 7.542969 1.671875 15.074219 4.28125 22.15625 1.527343 4.144531 3.460937 8.144531 5.75 11.917969.964843 1.589844 3.308593 4.042969 3.816406 5.613281 1.472656 4.566407 1.546875.949219-.691406 5.304688-4.207031 8.1875-11.878907 14.121093-15.617188 23.191406-3.769531 9.140625-5.640625 18.964844-5.519531 28.855469.113281 9.28125 1.964844 18.542968 5.582031 27.101562 1.722657 4.078125 4.511719 7.628906 6.292969 11.597656 1.5 3.347657 2.722656 2.964844 1.921875 5.84375-.363281 1.3125-5.988281 5.449219-6.8125 6.332032-12.28125 13.179687-18.800781 31.089844-18.671875 49.035156.28125 38.738281 32.1875 71.261719 71.460938 69.214844 17.636718-.917969 34.714843-8.703125 46.746093-21.671875 1.78125-1.917969 6.722657-11.242188 8.796875-11.875 1.691406-.519531 10.4375 4.007812 12.207032 4.472656 9.257812 2.414063 18.925781 2.699219 28.335937 1.03125 17.488281-3.105469 33.535156-13.132813 43.96875-27.507813 2.863281-3.945312 4.488281-8.777343 7.269531-12.640624.65625-.90625 1.175782-4.738282 2.066406-5.203126.4375-.230468 6.539063 1.785157 7.773438 2.027344 10.25 2.011719 20.976562 1.503906 31.023438-1.316406 10.65625-2.988281 20.53125-8.574219 28.609374-16.125 2.21875-2.078125 8.921876-12.953125 11.359376-13.785156 2.75-.941406 11.859374 3.152344 15.066406 3.507812 21.214844 2.34375 42.800781-6.078125 57.367187-21.558594 31.804688-33.800781 20.949219-92.273437-21.25-112.015624 2.710938-1.871094 5.421875-3.738282 8.132813-5.609376-2.710938 1.871094-5.421875 3.738282-8.132813 5.609376zm-56.328125-71.714844c2.46875-2.886719 4.96875-6.304688 6.667969-9.714844.578125-1.007812 1.125-2.03125 1.640625-3.074219 2.425781-4.863281 4.359375-9.921875 5.625-15.21875 1.746094-7.285156.175781-8.355469 7.449219-8.976562 6.875-.585938 15.1875 2.765625 20.976562 6.242187 11.523438 6.914063 19.050781 18.96875 22.019531 31.90625 2.882813 12.582032 1.640626 26.414063-4.363281 37.933594-3.226562 6.1875-7.804687 11.613281-13.460937 15.71875-1.875 1.363281-18.621094 9.394531-18.621094 7.628906.019531-.328125.03125-.660156.03125-.996094.058594-2.351562.011719-4.792968-.207031-7.140624-.019531-.355469-.050781-.710938-.089844-1.066407 0-.046875-.007813-.097656-.007813-.15625-2.148437-20.4375-12.484374-39.195312-29.417968-51 .585937-.695312 1.171875-1.390625 1.757812-2.085937.296875-.347656-.558594.707031 0 0 2.527344-2.957032-.558594.707031 0 0zm-1.425781 29.679687c.15625.195313.296875.382813.421875.582031 2.476562 3.472657 4.453125 7.289063 5.96875 11.269532.175781.453125.34375.90625.492188 1.367187.078124.1875.136718.375.195312.5625.109375.304688.207031.609375.296875.925781 1.101563 3.195313 1.589844 6.585938 2.066406 9.917969.046875.472657.097657.945313.125 1.421875.03125.226563.039063.453125.050781.679688.039063.453125.058594.90625.078126 1.359375.011718.105469.011718.226562.011718.332031.203125 4.273438.085938 9.457031-1.277344 13.554688-.089843.386718-.148437.761718-.179687 1.144531-7.160156 17.226562-18.167969 32.535156-37.429687 36.625-.011719 0-.03125.011719-.039063.011719-12.039063 2.570312-26.515625.398437-36.527344-7.121094-.804687-.523438-1.574219-1.074219-2.289062-1.625-.011719-.011719-.03125-.023438-.039063-.03125-20.550781-15.621094-24.304687-43.796875-12.089844-65.835938 12.660157-22.835937 35.667969-29.558594 59.527344-21.582031.523438.21875 1.03125.453125 1.542969.691406.011719 0 .023437 0 .03125.007813.5.238281 1.003906.472656 1.496094.730468.085937.039063.175781.089844.265625.128907 1.425781.730469 2.8125 1.535156 4.148437 2.410156 1.226563.792969 2.417969 1.636719 3.570313 2.535156 1.09375.84375 2.148437 1.742188 3.152344 2.6875.1875.15625.367187.324219.542968.503907 1.296875 1.125 5.449219 6.136718 5.886719 6.746093.15625.195313-.570313-.796875 0 0zm-104.996094 10.855469c-.632812 2.214844-1.144531 4.460938-1.546875 6.746094-14.210937.386718-26.78125-5.949219-36.605468-15.820313-6.125-6.679687-10.351563-14.933593-12.222657-23.867187-9.355469-24.417969 13.308594-54.101563 36.09375-59.824219-2.574219 24.976563 8.878907 50.527344 29.410157 65.035156-7.082032 7.988281-12.324219 17.597657-15.179688 27.886719.398438-1.425781.8125-2.847656 1.203125-4.277344-.382813 1.375-.769531 2.75-1.152344 4.121094-.632812 2.214844 2.886719-10.304688 0 0zm14.589844 65.980469h-.011719v.011719c-11.335937 7.996093-21.535156 20.425781-25.394531 33.976562h-.011719c-1.617187-.394531-3.210937-.851562-4.789062-1.378906-4.523438-1.511719-9.414063-1.847656-14.15625-1.933594-1.898438-.039062-3.796875-.011719-5.695313.082031-1.46875.253907-2.941406.382813-4.421875.382813-1.207031.058594-2.390625.238281-3.550781.53125-.078125.011718-.167969.019531-.246094.039062-.503906.199219-1.019531.296875-1.542969.296875-16.371093-8.945312-27.152343-27.351562-26.222656-46.0625v-.128906c.023438-.515625.046875-1.03125.066406-1.546875 0-.058594 0-.117188.011719-.167969.019531-.382812.050781-.757812.078125-1.132812 0-.046875.011719-.097657.011719-.148438.125-1.414062.246094-3.269531.609375-4.726562.332031-1.898438.765625-3.761719 1.328125-5.605469.019531-.058594.039063-.128906.058594-.1875.019531-.117188.058593-.226562.097656-.34375.972656-3.453125 2.460937-6.410156 4.039063-9.574219.789062-1.433593 1.640624-2.820312 2.558593-4.167969 2.617188-4.007812 5.929688-7.601562 9.675781-10.582031 1.054688-1.109375 2.246094-1.996093 3.578126-2.660156.410156-.285156.824218-.558594 1.246093-.816406.296875-.195313.59375-.375.886719-.550781l.011719.007812c12.40625 10.886719 28.148437 16.867188 44.570312 16.867188h.292969c.316406 3.8125.746094 9.34375 2.476562 12.816406.203126.722656.421876 1.441406.660157 2.15625.019531.066406.050781.128906.070312.195312.238281.726563.488281 1.449219.746094 2.167969 2.949219 8.125 7.34375 15.609375 12.96875 22.183594zm-3.460937-176.003907c.039062-.089843.085937-.179687.128906-.265624.007812-.019532.027344-.050782.039062-.070313 23.855469-43.65625 90.925782-24.195313 91.457032 24.292969 0 .105468 0 .226562.011718.335937v.144531c0 11.613282-3.996094 22.808594-11.050781 31.957032-.058594.070312-.109375.136718-.167969.207031-1.640625 2.078125-3.496094 4.011719-5.445312 5.792969-13.253906-4.347656-31.417969-5.101563-44.257813 1.339844-1.855469.691406-9.207031 5.398437-10.855469 5.308593-2.585937-.140625-6.589843-4.363281-8.371093-5.894531-5.765625-4.953125-10.394531-11.222656-13.40625-18.210938-.03125-.078124-.058594-.15625-.097657-.234374-6.046874-14.269532-4.585937-32.511719 1.695313-44.117188-.570313 1.058594-.464844.859375.320313-.585938.039062-.089843-1.523438 2.816407 0 0zm-62.464844-31.050781c17.972656 0 34.375 10.1875 42.898437 26.28125-.082031.160157-.148437.316407-.21875.484375-.105469.226563-.207031.453125-.304687.6875-34.933594 3.261719-61.769532 34.5625-62.199219 69.203125-4.027344-1.699219-7.953125-4.210937-11.207031-7.132812-.363282-.292969-.71875-.609375-1.0625-.925781-36.132813-27.125-10.605469-88.597657 32.09375-88.597657zm-59.042969 86.164063c.058594.109375.128906.230468.195313.328125 1.203124 2.089843 3.015624 5.417969 4.828124 7.230469.265626.363281.550782.726562.835938 1.082031.175781.238281.363281.464843.5625.691406.261719.335937.527344.660156.8125.996094 0 .007812 0 .007812.011719.007812 5.320312 6.429688 12.371093 12.550781 19.957031 16.1875 3.960938 2.132813 12.105469 3.148438 15.214844 5.898438 3.160156 2.800781 5.296875 12.964843 7.835937 16.964843-3.453125 2.125-6.683593 4.859376-9.550781 7.730469-.15625.140625-.3125.289063-.460938.445313-.273437.253906-.539062.519531-.796874.796875-4.632813 4.640625-8.441407 9.96875-11.601563 15.703125-.046875.078125-.085937.167968-.125.246094-.980469.839843-1.46875 1.800781-1.464844 2.875-.226562.523437-.464843 1.039062-.71875 1.546874-.011719.019532-.019531.03125-.019531.050782-.707031 1.550781-1.351562 3.125-1.929688 4.726562-.464843 1.28125-1.054687 2.722656-1.347656 4.078125-.121094.394531-.234375.792969-.34375 1.191407-.117187.382812-.222656.769531-.3125 1.164062-.039062.125-.070312.253906-.097656.382812-.089844.304688-.167969.609376-.238281.914063-.007813.058594-.027344.109375-.039063.167969-.539062 2.226562-.726562 4.542968-1.277344 6.757812-.007812.050782-.007812.089844-.019531.140625-.011719.035157-.011719.078125-.011719.117188-.019531.078125-.019531.15625-.027343.234375l-.03125.238281s0 0-.007813 0c-.535156.078125-1.066406.179687-1.59375.304687-3.851562.640626-7.925781.949219-11.808594.542969-.039062 0-.089843-.011719-.128906-.011719-.472656-.039062-.945312-.078124-1.40625-.128906-.097656-.019531-.1875-.027344-.273437-.027344-4.039063-.527343-8.011719-1.503906-11.820313-2.957031-1.796875-.707031-3.542968-1.519531-5.238281-2.433593-.867187-.566407-1.761719-1.082032-2.683594-1.546876-.5-.308593-.992187-.628906-1.476562-.964843-.375-.253907-.757813-.511719-1.132813-.777344-.019531-.019531-.039062-.03125-.058594-.039063-.960937-.78125-1.9375-1.542968-2.929687-2.285156-30.484375-25.617187-18.882813-79.898437 20.71875-88.570312-.164063-.300782-8.636719 1.875-9.804687 2.171875 3.242187-.820313 6.542968-1.457031 9.804687-2.171875.058594.109375-22.183594 4.859375 0 0zm-27.226563 108.261718c3.449219 2.292969 10.074219 7.25 14.316407 7.25 6.058593 2.160157 12.679687 3.753907 19.132812 3.960938h.011719c3.222656.210938 6.988281.464844 10.1875-.175781 2.421875-1.507813 3.628906-1.648438 3.625-.425781 1.585938 10.324218 5.507812 22.820312 12.527344 30.855468 0 .007813.011718.019532.011718.019532 3.082032 4.296874 6.578126 8.265624 10.605469 11.703124.039063.027344.070313.066407.121094.097657-10.066406 6.164062-29.027344 22.675781-29.027344 35.90625-2.34375.585937-4.777343 1.078125-7.195312 1.28125-.199219.03125-.394531.046875-.589844.058593-48.230469 4.402344-70.789063-61.472656-33.726563-90.53125.082032.054688-4.5 4.78125-5.183593 4.328126-.117188-.078126 6.648437-5.476563 5.183593-4.328126 1.621094 1.078126-12.074218 9.46875 0 0zm17.777344 191.277344c-25.398437 0-44.796875-20.144531-47.828125-44.695312-1.417969-11.515625.777344-23.445313 6.878907-33.382813 2.507812-4.082031 7.152343-11.394531 11.808593-12.976562 5.480469-1.863281 15.6875 5.355469 22.269531 7.558593 7.230469 2.066407 15.125 3.199219 22.660157 2.511719 1.273437-.109375 2.542969-.21875 3.816406-.324219-.5 8.488282.558594 17.734376 3.460937 25.738282 1.09375 3.476562 2.402344 7.3125 4.335938 10.410156 2.621094 5.15625 5.882812 10.484375 9.988281 14.601562 5.042969 5.828126 5.585938 5.527344.574219 11.921876-2.878906 3.671874-6.238281 6.867187-10.023438 9.585937-8.140624 5.847656-17.902343 9.050781-27.941406 9.050781zm136.234375-69.34375c0 .019532-.007812.03125-.007812.050782-6.21875 37.96875-52.851563 55.195312-81.019531 28.324218-12.667969-12.078125-20.039063-30-15.414063-47.320312 4.371094-16.371094 17.835937-35.816406 36.121094-38.433594 9.078125-2.410156 27.535156-3.1875 34.964843 4.253906.019532.011719.03125.019532.050782.03125h.007812c.011719 0 .011719.011719.019532.011719 18.820312 10.324219 28.511718 33.730469 25.382812 52.476563.167969-1.027344.136719-.824219-.105469.605468 0 .019532.464844-2.765625 0 0zm37.316407-1.191406c-5.839844 0-11.640626-1.082031-17.082032-3.171875.15625-2.699219.285156-5.816406-.019531-8.550781-.171875-2.929688-.648437-5.785156-1.0625-8.6875-.117187-.613282-.234375-1.222656-.363281-1.832032-.007813-.019531-.007813-.039062-.019532-.058593-.109374-.535157-.226562-1.066407-.355468-1.585938-.007813-.050781-.019532-.089843-.027344-.140625-2.460938-9.25-7.523438-24.964844-16.007812-30.644531-.394532-.453125-.796876-.894531-1.21875-1.332031-.199219-.226563-.414063-.453125-.648438-.679688-2.96875-3.203125-6.417969-5.988281-9.960938-8.519531.03125-.109375.058594-.207031.097657-.304687.078125-.296876.167969-.582032.265625-.867188.914062-3.050781 2.261718-6.207031 3.863281-8.984375 2.230469-4.214844 5.125-8.089844 8.554687-11.40625.265626-.277344.539063-.542969.816407-.796875.253906-.257812.511719-.496094.777343-.730469.214844-.207031.441407-.402343.667969-.589843.117188-.121094.234375-.226563.355469-.316407.234375-.207031.460938-.402343.695312-.589843 2.148438-1.878907 4.609376-3.546876 7.109376-4.9375 10.839843 6.789062 23.082031 10.195312 35.859374 10.265624-.011718.128907-.019531.265626-.039062.40625-.648438 9.984376.804688 20.027344 4.207031 29.429688 1.902344 5.257812 7.082031 19.085938 12.605469 21.863281.148438.175781.296875.355469.460938.53125 0 .011719.011718.03125.039062.039063l.011719.011718c.304687.355469.617187.707032.945312 1.050782v.011718c1.992188 2.21875 4.136719 4.289063 6.421875 6.207032 4.273438 1.46875 4.648438 3.492187 1.128906 6.066406-1.460937 3.683594-6.992187 7.433594-10.101562 9.675781-8.136719 5.871094-17.910156 9.167969-27.976562 9.167969zm80.632812-28.554688c-30.460938 0-52.78125-29.753906-48.167969-59.046874 8.886719-2.804688 20.191407-8.046876 26.164063-15.535157.695312-.65625 1.371094-1.324219 2.035156-2.011719.117188-.105468.226562-.214843.324219-.332031.921875-.949219 1.804687-1.925781 2.652343-2.9375.265626-.296875.511719-.589843.757813-.894531.109375-.121094.207031-.238281.304687-.367188 1.464844-1.765624 3.550782-4.199218 4.621094-6.34375 2.550782-3.863281 4.808594-8.128906 6.429688-12.46875.121094-.265624.21875-.542968.324218-.820312 27.90625-2.738281 52.414063 20.898438 53.363282 48.390625.9375 27.191406-21.078125 52.367187-48.808594 52.367187zm0 0\"></path><path d=\"m436.164062 144.464844c-5.429687 0-9.835937-4.410156-9.835937-9.851563 0-5.4375 4.398437-9.847656 9.828125-9.847656h.007812c5.433594 0 9.832032 4.410156 9.832032 9.847656 0 5.441407-4.398438 9.851563-9.832032 9.851563zm0 0\"></path><path d=\"m507.773438 167.695312c-8.789063-36.222656-35.160157-67.203124-78.429688-92.183593 6.222656-9.453125 38.347656-71.0625 15.484375-74.859375-13.910156-2.308594-13.835937 21.902344-16.429687 30.492187-4.378907 14.5-10.917969 28.492188-20.304688 40.4375-.007812 0-.007812 0-.019531.007813-18.230469 23.917968-48.546875 37.472656-78.3125 37.472656-8.421875-.457031-13.558594 10.085938-7.871094 16.394531 3.921875 4.351563 10.558594 3.425781 15.78125 3.09375 19.242187-1.210937 38.539063-7.289062 54.976563-17.359375-18.984376 70.296875 27.625 122.894532 83.113281 158.519532 0 0 .007812.011718.019531.011718.097656.058594.1875.117188.292969.175782 1.621093 1.003906 3.902343 1.542968 5.761719 1.332031.148437 0 .296874-.019531.453124-.050781.359376-.035157.710938-.097657 1.0625-.1875.605469-.121094 1.226563-.367188 1.789063-.621094.070313-.019532.136719-.058594.199219-.089844.066406-.027344.136718-.058594.195312-.097656 1.371094-.6875 2.5625-1.726563 3.472656-2.964844.035157-.046875.078126-.105469.117188-.15625 1.292969-1.863281 31.578125-46.09375 18.648438-99.367188-8.789063-36.222656 12.929687 53.273438 0 0zm-24.511719 67.578126c-5.246094-16.757813-10.542969-33.507813-16.21875-50.125-2.734375-8.019532-6.074219-27.601563-16.59375-28.785157-17.171875-1.925781-7.84375 18.511719-5.054688 26.316407 6.390625 17.871093 12.035157 36.03125 17.730469 54.128906-22.128906-17.109375-43.28125-38.65625-51.746094-66.042969-8.175781-26.457031-1.585937-53.082031 8.335938-78.085937 52.070312 30.136718 87.253906 81.429687 63.546875 142.59375-8.199219-26.195313 0 0 0 0zm0 0\"></path></svg>"
+          }
+        },
+        "16401741757b04c8d5-1": {
+          "type": "service",
+          "settings": {
+            "bgblock": "rgba(0,0,0,0)",
+            "title": "",
+            "description": "<h5>High-quality products for your vineyard</h5>",
+            "icon": "<svg height=\"512pt\" viewbox=\"-84 0 512 512\" width=\"512pt\" xmlns=\"http://www.w3.org/2000/svg\" data-old_color=\"#000000\" fill=\"#92a06b\"><path d=\"m320.96875 5.570312c-1.683594-3.410156-5.160156-5.570312-8.964844-5.570312h-280.230468c-3.804688 0-7.28125 2.160156-8.964844 5.570312-14.921875 30.210938-22.808594 64.703126-22.808594 99.753907 0 8.042969.421875 16.199219 1.253906 24.238281 9.988282 96.441406 78.179688 170.070312 160.636719 175.613281v186.824219h-71.714844c-5.523437 0-10 4.476562-10 10s4.476563 10 10 10h163.429688c5.523437 0 10-4.476562 10-10s-4.476563-10-10-10h-71.714844v-186.824219c82.457031-5.542969 150.644531-79.171875 160.632813-175.613281.832031-8.039062 1.253906-16.191406 1.253906-24.238281 0-35.050781-7.886719-69.542969-22.808594-99.753907zm-282.867188 14.429688h267.574219c11.859375 26.109375 18.101563 55.472656 18.101563 85.324219 0 4.378906-.136719 8.796875-.410156 13.207031h-25.078126c.300782-4.367188.457032-8.769531.457032-13.207031 0-18.214844-2.589844-36.101563-7.699219-53.164063-1.582031-5.289062-7.160156-8.292968-12.449219-6.710937-5.289062 1.585937-8.292968 7.160156-6.710937 12.449219 4.554687 15.199218 6.859375 31.15625 6.859375 47.425781 0 4.441406-.171875 8.847656-.507813 13.207031h-257.828125c-.273437-4.410156-.410156-8.828125-.410156-13.207031 0-29.851563 6.242188-59.214844 18.101562-85.324219zm133.789063 265.523438c-73.449219 0-136.046875-62.449219-149.308594-146.992188h252.90625c-4.984375 24.851562-15.578125 47.460938-31.03125 65.617188-9.667969 11.355468-22.082031 21.164062-34.953125 27.617187-4.941406 2.472656-6.9375 8.480469-4.460937 13.417969 1.753906 3.5 5.28125 5.523437 8.949219 5.523437 1.503906 0 3.035156-.34375 4.472656-1.0625 15.21875-7.628906 29.855468-19.179687 41.222656-32.535156 18.484375-21.714844 30.863281-48.871094 36.148438-78.578125h25.359374c-13.261718 84.542969-75.859374 146.992188-149.304687 146.992188zm0 0\"></path><path d=\"m181.078125 246.675781c-1.636719-3.996093-5.828125-6.527343-10.125-6.136719-4.136719.375-7.683594 3.363282-8.765625 7.367188-1.066406 3.960938.492188 8.335938 3.839844 10.710938 3.425781 2.433593 8.042968 2.472656 11.507812.09375 3.828125-2.625 5.328125-7.753907 3.542969-12.035157zm0 0\"></path></svg>"
+          }
+        },
+        "16401741757b04c8d5-2": {
+          "type": "service",
+          "settings": {
+            "bgblock": "rgba(0,0,0,0)",
+            "title": "",
+            "description": "<h5>Free shipping and delivery services</h5>",
+            "icon": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?> <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewbox=\"0 0 512 512\" style=\"enable-background:new 0 0 512 512;\" data-old_color=\"#000000\" fill=\"#92a06b\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\"> <g> \t<g> \t\t<path d=\"M476.158,231.363l-13.259-53.035c3.625-0.77,6.345-3.986,6.345-7.839v-8.551c0-18.566-15.105-33.67-33.67-33.67h-60.392 \t\t\tV110.63c0-9.136-7.432-16.568-16.568-16.568H50.772c-9.136,0-16.568,7.432-16.568,16.568V256c0,4.427,3.589,8.017,8.017,8.017 \t\t\tc4.427,0,8.017-3.589,8.017-8.017V110.63c0-0.295,0.239-0.534,0.534-0.534h307.841c0.295,0,0.534,0.239,0.534,0.534v145.372 \t\t\tc0,4.427,3.589,8.017,8.017,8.017c4.427,0,8.017-3.589,8.017-8.017v-9.088h94.569c0.008,0,0.014,0.002,0.021,0.002 \t\t\tc0.008,0,0.015-0.001,0.022-0.001c11.637,0.008,21.518,7.646,24.912,18.171h-24.928c-4.427,0-8.017,3.589-8.017,8.017v17.102 \t\t\tc0,13.851,11.268,25.119,25.119,25.119h9.086v35.273h-20.962c-6.886-19.883-25.787-34.205-47.982-34.205 \t\t\ts-41.097,14.322-47.982,34.205h-3.86v-60.393c0-4.427-3.589-8.017-8.017-8.017c-4.427,0-8.017,3.589-8.017,8.017v60.391H192.817 \t\t\tc-6.886-19.883-25.787-34.205-47.982-34.205s-41.097,14.322-47.982,34.205H50.772c-0.295,0-0.534-0.239-0.534-0.534v-17.637 \t\t\th34.739c4.427,0,8.017-3.589,8.017-8.017s-3.589-8.017-8.017-8.017H8.017c-4.427,0-8.017,3.589-8.017,8.017 \t\t\ts3.589,8.017,8.017,8.017h26.188v17.637c0,9.136,7.432,16.568,16.568,16.568h43.304c-0.002,0.178-0.014,0.355-0.014,0.534 \t\t\tc0,27.996,22.777,50.772,50.772,50.772s50.772-22.776,50.772-50.772c0-0.18-0.012-0.356-0.014-0.534h180.67 \t\t\tc-0.002,0.178-0.014,0.355-0.014,0.534c0,27.996,22.777,50.772,50.772,50.772c27.995,0,50.772-22.776,50.772-50.772 \t\t\tc0-0.18-0.012-0.356-0.014-0.534h26.203c4.427,0,8.017-3.589,8.017-8.017v-85.511C512,251.989,496.423,234.448,476.158,231.363z \t\t\t M375.182,144.301h60.392c9.725,0,17.637,7.912,17.637,17.637v0.534h-78.029V144.301z M375.182,230.881v-52.376h71.235 \t\t\tl13.094,52.376H375.182z M144.835,401.904c-19.155,0-34.739-15.583-34.739-34.739s15.584-34.739,34.739-34.739 \t\t\tc19.155,0,34.739,15.583,34.739,34.739S163.99,401.904,144.835,401.904z M427.023,401.904c-19.155,0-34.739-15.583-34.739-34.739 \t\t\ts15.584-34.739,34.739-34.739c19.155,0,34.739,15.583,34.739,34.739S446.178,401.904,427.023,401.904z M495.967,299.29h-9.086 \t\t\tc-5.01,0-9.086-4.076-9.086-9.086v-9.086h18.171V299.29z\"></path> \t</g> </g> <g> \t<g> \t\t<path d=\"M144.835,350.597c-9.136,0-16.568,7.432-16.568,16.568c0,9.136,7.432,16.568,16.568,16.568 \t\t\tc9.136,0,16.568-7.432,16.568-16.568C161.403,358.029,153.971,350.597,144.835,350.597z\"></path> \t</g> </g> <g> \t<g> \t\t<path d=\"M427.023,350.597c-9.136,0-16.568,7.432-16.568,16.568c0,9.136,7.432,16.568,16.568,16.568 \t\t\tc9.136,0,16.568-7.432,16.568-16.568C443.591,358.029,436.159,350.597,427.023,350.597z\"></path> \t</g> </g> <g> \t<g> \t\t<path d=\"M332.96,316.393H213.244c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017H332.96 \t\t\tc4.427,0,8.017-3.589,8.017-8.017S337.388,316.393,332.96,316.393z\"></path> \t</g> </g> <g> \t<g> \t\t<path d=\"M127.733,282.188H25.119c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h102.614 \t\t\tc4.427,0,8.017-3.589,8.017-8.017S132.16,282.188,127.733,282.188z\"></path> \t</g> </g> <g> \t<g> \t\t<path d=\"M278.771,173.37c-3.13-3.13-8.207-3.13-11.337,0.001l-71.292,71.291l-37.087-37.087c-3.131-3.131-8.207-3.131-11.337,0 \t\t\tc-3.131,3.131-3.131,8.206,0,11.337l42.756,42.756c1.565,1.566,3.617,2.348,5.668,2.348s4.104-0.782,5.668-2.348l76.96-76.96 \t\t\tC281.901,181.576,281.901,176.501,278.771,173.37z\"></path> \t</g> </g> </svg>"
+          }
+        }
+      },
+      "block_order": [
+        "16401741757b04c8d5-0",
+        "16401741757b04c8d5-1",
+        "16401741757b04c8d5-2"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "paddingsection": "30px 0px 30px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#f7f6f0",
+        "bgsectionsub": "rgba(0,0,0,0)",
+        "paddingbox": "0px 0px 0px 0px",
+        "iconcolor": "#969e46",
+        "titlecolor": "#222222",
+        "subcolor": "#999999",
+        "layout": "style-4",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "arrows": false,
+        "draggable": true,
+        "dots": true,
+        "infinite": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16401889532c23c742",
+    "1640018956d681f39c",
+    "1640170714625bf900",
+    "1640170719e0805a8d",
+    "083fdb5c-d073-4726-b885-ed360c1fe382",
+    "16401724400eb02a59",
+    "1640186585f943e747",
+    "16401741754ceda94b"
+  ]
+}

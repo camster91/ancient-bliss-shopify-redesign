@@ -1,0 +1,236 @@
+{% schema %}
+{
+  "name": "Lab Testing Section",
+  "tag": "section",
+  "class": "lab-testing-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "html_id",
+      "label": "Custom HTML ID"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom CSS Class"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "Nothing to Hide. Everything to Trust."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "At Ancient Bliss, we don’t take chances with your health. Every ingredient and every batch goes through rigorous testing to ensure purity, accuracy, and safety — because trust starts with transparency.\nWe test raw materials, in-process samples, and finished products, ensuring what’s on the label is exactly what’s in your bottle. Our controlled manufacturing environment keeps quality consistent at every step."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Our In-House Testing Includes"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "Lab technicians testing plant samples in a laboratory"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "test_item",
+      "name": "Testing Item",
+      "settings": [
+        {
+          "type": "html",
+          "id": "html_label",
+          "label": "Icon & Text (HTML)",
+          "default": "<span>✔ FTIR Spectrometry</span>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lab Testing Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.lab-testing-wrapper {
+  padding: 60px 20px 0px;
+  text-align: center;
+}
+.lab-testing-wrapper h2 {
+	margin-bottom: 20px;
+	font-size: 56px;
+	line-height: 100%;
+	letter-spacing: -.2px;
+	text-align: center;
+	max-width: 610px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.lab-testing-wrapper .description {
+	max-width: 800px;
+	margin: 0 auto 30px;
+	font-size: 18px;
+	line-height: 150%;
+	color: rgba(24, 27, 24, 0.8);
+}
+
+
+
+.lab-testing-wrapper .subheading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #aa2e2e;
+  margin-bottom: 20px;
+}
+.lab-testing-wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+.lab-testing-wrapper li {
+	background: transparent;
+	border: 1px solid rgba(0, 0, 0, 0.13);
+	border-radius: 30px;
+	padding: 4px 14px;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+}
+.lab-testing-wrapper picture {
+  display: block;
+  max-width: 100%;
+}
+.lab-testing-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.lab-testing-wrapper li span {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 600;
+	color: rgba(24, 27, 24, 1);
+} 
+.lab-testing-wrapper li svg {
+	width: 24px;
+	height: 24px;
+} 
+
+.lab-testing-section {
+	position: relative;
+}
+
+.lab-testing-section::before, .lab-testing-section::after {
+	content: "";
+	position: absolute;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 999;
+}
+.lab-testing-section::before {
+	background-image: url(/cdn/shop/files/nothing-hide-left-leaf.webp?v=1755308652);
+	width: 88px;
+	height: 188px;
+	top: 130px;
+} 
+
+.lab-testing-section::after {
+	background-image: url(/cdn/shop/files/nothing-hide-right-leaf.webp?v=1755308884);
+	width: 128px;
+	height: 187px;
+	top: 80px;
+	right: 0;
+} 
+
+
+  @media screen and (max-width: 1160px) {
+.lab-testing-wrapper h2 {
+	font-size: 48px;
+}
+}
+
+  @media screen and (max-width: 767px) {
+.lab-testing-wrapper h2 {
+	font-size: 32px;
+}
+.lab-testing-wrapper .description {
+	font-size: 16px;
+}
+.lab-testing-wrapper li {
+	font-size: 16px;
+}
+.lab-testing-wrapper ul {
+	gap: 10px;
+}
+.lab-testing-section::before {
+	display: none;
+}
+.lab-testing-section::after {
+	background-image: url(/cdn/shop/files/nothing-hide-right-leaf.webp?v=1755308884);
+	width: 58px;
+	height: 137px;
+	top: 20px;
+	right: 0;
+	background-size: 100%;
+}
+ 
+}
+
+
+{% endstylesheet %}
+
+<div id="{{ section.settings.html_id | escape }}" class="lab-testing-wrapper {{ section.settings.custom_class }}">
+  <h2>{{ section.settings.heading }}</h2>
+
+  <div class="description">
+    {{ section.settings.description | newline_to_br }}
+  </div>
+
+  <div class="subheading">{{ section.settings.subheading }}</div>
+
+  <ul>
+    {% for block in section.blocks %}
+      <li>{{ block.settings.html_label }}</li>
+    {% endfor %}
+  </ul>
+
+  {% if section.settings.desktop_image or section.settings.mobile_image %}
+    <picture>
+      {% if section.settings.mobile_image %}
+        <source media="(max-width: 767px)" srcset="{{ section.settings.mobile_image | image_url: width: 800 }}">
+      {% endif %}
+      {% if section.settings.desktop_image %}
+        <source media="(min-width: 768px)" srcset="{{ section.settings.desktop_image | image_url: width: 1200 }}">
+        <img src="{{ section.settings.desktop_image | image_url: width: 1200 }}" alt="{{ section.settings.image_alt | escape }}">
+      {% endif %}
+    </picture>
+  {% endif %}
+</div>

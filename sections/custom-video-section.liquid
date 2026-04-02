@@ -1,0 +1,245 @@
+<section id="{{ section.settings.custom_id }}" class="video-hero state-of-art-facility {{ section.settings.custom_class }} page-width" style="position: relative;">
+  <div class="section-content">
+    <div class="title_wrapper">
+      <!-- Title -->
+      <h2 class="section-title">{{ section.settings.title }}</h2>
+      <!-- Qualifications -->
+      <div class="qualifications">
+        <ul class="qualification-list">
+          <li>🌿 GMP Certified</li>
+          <li>🔬 Lab Tested</li>
+          <li>🇺🇸 USA Facility</li>
+        </ul>
+      </div>
+    </div>
+
+    {% if section.settings.video_embed_code != blank %}
+      <!-- Embed Video -->
+      <div class="facility-video-embed" style="position: relative; width: 100%; height: {{ section.settings.video_height }}; overflow: hidden;">
+        {{ section.settings.video_embed_code }}
+      </div>
+
+    {% elsif section.settings.video_url != blank %}
+      <!-- MP4 Video -->
+      <div class="facility-video" style="overflow: hidden; position: relative;">
+        <video
+          id="custom-video"
+          {% if section.settings.muted and section.settings.autoplay %}autoplay{% endif %}
+          {% if section.settings.muted %}muted{% endif %}
+          {% if section.settings.loop %}loop{% endif %}
+          {% if section.settings.playsinline %}playsinline{% endif %}
+          {% if section.settings.show_controls or section.settings.muted == false %}controls{% endif %}
+          preload="metadata"
+          {% if section.settings.fallback_image != blank %}
+            poster="{{ section.settings.fallback_image | image_url: width: 2000 }}"
+          {% endif %}
+          style="width: 100%; height: {{ section.settings.video_height }}; object-fit: cover;"
+        >
+          <source src="{{ section.settings.video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        {% if section.settings.muted %}
+          <button id="unmute-btn"
+            style="position: absolute; bottom: 20px; right: 20px; background: rgba(0, 0, 0, 0.6); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; z-index: 2;">
+            🔊 Play with Sound
+          </button>
+        {% endif %}
+      </div>
+
+    {% elsif section.settings.fallback_image != blank %}
+      <!-- Fallback Image -->
+      <div class="fallback-image" style="width: 100%;">
+        <img src="{{ section.settings.fallback_image | image_url: width: 2000 }}" alt="Video fallback image" style="width: 100%; height: {{ section.settings.video_height }}; object-fit: cover;" loading="lazy">
+      </div>
+    {% endif %}
+
+    {% if section.settings.overlay_text != blank %}
+      <div class="video-overlay-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: {{ section.settings.overlay_text_color }}; text-align: center; font-size: 2rem;">
+        {{ section.settings.overlay_text }}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const video = document.getElementById('custom-video');
+    const btn = document.getElementById('unmute-btn');
+
+    if (btn) {
+      btn.style.display = 'block'; // show button if muted
+      btn.addEventListener('click', function () {
+        video.muted = false;
+        video.play().catch(function (e) {
+          console.log('Autoplay with sound blocked:', e);
+        });
+        btn.style.display = 'none';
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Custom Video",
+  "tag": "section",
+  "class": "section-custom-video",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Ancient Bliss's State of The Art Facility in ATL"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video MP4 URL",
+      "default": "/"
+    },
+    {
+      "type": "textarea",
+      "id": "video_embed_code",
+      "label": "Video Embed Code (TikTok, YouTube, etc.)",
+      "default": "/"
+    },
+    {
+      "type": "image_picker",
+      "id": "fallback_image",
+      "label": "Mobile Fallback Image"
+    },
+    {
+      "type": "text",
+      "id": "video_height",
+      "label": "Video Height (e.g., 500px or 70vh)",
+      "default": "70vh"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay Video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "muted",
+      "label": "Mute Video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop Video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "playsinline",
+      "label": "Plays Inline on Mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_controls",
+      "label": "Show Video Controls",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "overlay_text",
+      "label": "Overlay Text",
+      "default": "Overlay Text"
+    },
+    {
+      "type": "color",
+      "id": "overlay_text_color",
+      "label": "Overlay Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Video Section"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.state-of-art-facility {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 100% !important;
+  width: 100%;
+  margin-top: 120px;
+}
+
+.facility-video video {
+  width: 100%;
+  max-width: 100% !important;
+}
+
+.facility-video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.qualifications {
+  margin-top: 0px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.qualification-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.state-of-art-facility .title_wrapper {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.state-of-art-facility .title_wrapper .section-title {
+  line-height: 100%;
+  margin-bottom: 20px;
+  font-size: 52px;
+}
+
+.qualification-list li {
+  color: #404040;
+}
+
+#unmute-btn {
+  display: none;
+}
+
+.facility-video-embed blockquote {
+	max-width: 100% !important;
+} 
+
+@media (max-width: 767px) {
+  .state-of-art-facility .title_wrapper .section-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    line-height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .cstm-works-sct.howItWorks {
+    padding-bottom: 30px !important;
+  }
+  .state-of-art-facility {
+    margin-top: 60px;
+  }
+}
+</style>

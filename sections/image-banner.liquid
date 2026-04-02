@@ -1,0 +1,298 @@
+{% if section.settings.heading_line1 != blank or section.settings.description != blank or section.settings.button_text_1 != blank or section.settings.button_text_2 != blank or section.settings.bg_image_desktop != blank or section.settings.bg_image_mobile != blank %}
+<section
+  class="{{ section.settings.custom_class }} ancient-bliss-hero {{ section.settings.vertical_align }} {{ section.settings.horizontal_align }}"
+  style="background-color: {{ section.settings.bg_color }}; position: relative; overflow: hidden;"
+>
+{% unless section.settings.useout_side %}
+  {% if section.settings.bg_image_desktop != blank or section.settings.bg_image_mobile != blank %}
+    <picture class="hero-img-bg" style="position: absolute; inset: 0; z-index: 0;">
+      {% if section.settings.bg_image_desktop != blank %}
+        <source media="(min-width: 768px)" srcset="{{ section.settings.bg_image_desktop | image_url }}">
+      {% endif %}
+      {% if section.settings.bg_image_mobile != blank %}
+        <source media="(max-width: 767px)" srcset="{{ section.settings.bg_image_mobile | image_url }}">
+      {% endif %}
+      <img
+        src="{% if section.settings.bg_image_desktop != blank %}{{ section.settings.bg_image_desktop | image_url }}{% elsif section.settings.bg_image_mobile != blank %}{{ section.settings.bg_image_mobile | image_url }}{% else %}{{ 'placeholder-image.jpg' | asset_url }}{% endif %}"
+        alt="Hero background"
+        style="width: 100%; height: 100%; object-fit: cover;"
+        loading="lazy"
+      >
+    </picture>
+  {% endif %}
+{% endunless %}
+  
+  {% if section.settings.right_side_image != blank and section.settings.useout_side %}
+    <div class="right-side-banner-image mob-none-custom">
+      {{ section.settings.right_side_image | img_url:"master" | img_tag }}
+    </div>
+      {% endif %}
+  {% if section.settings.bg_image_mobile != blank and section.settings.useout_side_mob %}
+    <div class="right-side-banner-image dsk-none-custom">
+      {{ section.settings.bg_image_mobile | img_url:"master" | img_tag }}
+    </div>
+      {% endif %}
+  <div class="container">
+    <div class="banner-content-inner">
+    <div class="hero-content" style="max-width: 800px; margin: 0 auto;">
+      {% if section.settings.heading_line1 != blank %}
+        <h2 class="hero-title" style="color: {{ section.settings.content_color }};">
+          <span style="color: {{ section.settings.content_color }};">{{ section.settings.heading_line1 }}</span>
+        </h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="hero-richtext" style="color: {{ section.settings.content_color }};">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+      <div class="hero-buttons" style="margin-top: 25px;">
+        {% if section.settings.button_text_1 != blank and section.settings.button_url_1 != blank %}
+          <a
+            href="{{ section.settings.button_url_1 }}"
+            class="hero-btn hero-btn-1"
+            style="background-color: {{ section.settings.button_bg_color_1 }}; color: {{ section.settings.button_text_color_1 }};"
+          >
+            {{ section.settings.button_text_1 }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.button_text_2 != blank and section.settings.button_url_2 != blank %}
+          <a
+            href="{{ section.settings.button_url_2 }}"
+            class="hero-btn hero-btn-2"
+            style="background-color: {{ section.settings.button_bg_color_2 }}; color: {{ section.settings.button_text_color_2 }}; margin-left: 10px;"
+          >
+            {{ section.settings.button_text_2 }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+    {% if section.settings.right_side_image != blank and section.settings.useout_side == false %}
+    <div class="right-side-banner-image">
+      {{ section.settings.right_side_image | img_url:"master" | img_tag }}
+    </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Image Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label":"Custom Class"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Fallback Background Color",
+      "default": "#8E3132"
+    },
+     {
+      "type": "image_picker",
+      "id": "right_side_image",
+      "label": "Right Side Image"
+    },
+    {
+     "type": "checkbox",
+      "id": "useout_side",
+      "label": "Use as background",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_desktop",
+      "label": "Background Image - Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Background Image - Mobile"
+    },
+    {
+     "type": "checkbox",
+      "id": "useout_side_mob",
+      "label": "Use as background",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "vertical_align",
+      "label": "Vertical Alignment",
+      "default": "align-middle",
+      "options": [
+        { "value": "align-top", "label": "Top" },
+        { "value": "align-middle", "label": "Middle" },
+        { "value": "align-bottom", "label": "Bottom" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "horizontal_align",
+      "label": "Horizontal Alignment",
+      "default": "align-center",
+      "options": [
+        { "value": "align-left", "label": "Left" },
+        { "value": "align-center", "label": "Center" },
+        { "value": "align-right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading Line 1",
+      "default": "Join Thousands Choosing"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "description(Rich Text)",
+      "default": "<p>Premium herbal supplements rooted in tradition.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text_1",
+      "label": "Button 1 Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_url_1",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color_1",
+      "label": "Button 1 Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color_1",
+      "label": "Button 1 Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "button_text_2",
+      "label": "Button 2 Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url_2",
+      "label": "Button 2 Link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color_2",
+      "label": "Button 2 Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color_2",
+      "label": "Button 2 Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Content Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Banner"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+.ancient-bliss-hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  padding: 20px;
+}
+
+.ancient-bliss-hero.align-top {
+  align-items: flex-start;
+}
+.ancient-bliss-hero.align-middle {
+  align-items: center;
+}
+.ancient-bliss-hero.align-bottom {
+  align-items: flex-end;
+}
+
+.ancient-bliss-hero.align-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+.ancient-bliss-hero.align-center {
+  justify-content: center;
+  text-align: center;
+}
+.ancient-bliss-hero.align-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* .ancient-bliss-hero .container {
+  max-width: 1200px;
+  width: 100%;
+} */
+
+.hero-content {
+  text-align: inherit;
+}
+
+.hero-title {
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.hero-richtext {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+.nature_wisdom_section::before {
+	width: 76px;
+}
+.nature_wisdom_section::after {
+	width: 85px;
+}
+}
+@media (max-width: 767px) {
+  .ancient-bliss-hero {
+    padding: 60px 20px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+}
+{% endstyle %}

@@ -1,0 +1,183 @@
+<!-- product-grid-7.liquid -->
+<div class="product-card js-product-card product-card--style7" data-price="{{ product.price }}" >
+    <div class="product-card__image-wr overflow-hidden">
+      {%- assign image = product.featured_image -%}
+      <a class="product-card__image js image-content__image-wrapper" href="{{ product.url | within: collection }}" style="max-width: 680px;padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;" data-image-id="{{ image.id }}">
+        {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <img class="lazyload transition first-image"
+             data-src="{{ img_url }}"
+             src="{%- include 'srcBlank' -%}"
+             data-sizes="auto"
+             alt="{{ image.alt | escape }}"
+             loading="lazy"
+             width="{{ image.width }}"
+             height="{{ image.height }}">
+             {% include 'second-image'%}
+      </a>
+  
+      <div class="product-card__overlay d-flex justify-content-center flex-column">
+        {%- if settings.enable_wishlsit -%}
+      <span data-toggle="tooltip" data-placement="left" data-tooltipalltimes="true" class="btn btn-theme gradient-theme-vertical product-card__overlay-btn js-btn-wishlist" title="{{ 'products.product.wishlist_text' | t }}" data-handle="{{product.handle}}">
+        {%- include 'icon-heart' -%}
+      </span>
+      {%- endif -%}
+
+      {%- if settings.enable_compare -%}
+      <span data-tooltip="true" data-placement="left" class="btn btn-theme gradient-theme-vertical product-card__overlay-btn js-btn-compare" title="{{ 'products.product.compare_text' | t }}" data-handle="{{product.handle}}">
+        {%- include 'icon-exchange' -%}
+        {%- include 'icon-close' -%}
+        <span>{{ 'products.product.compare_text' | t }}</span>
+      </span>
+      {%- endif -%}
+      
+      </div>
+      {%- if settings.qv_box -%}
+      <span  class="btn btn-theme gradient-theme-vertical js-btn-quickview" data-toggle="modal" data-target="#jsQuickview" data-handle="{{product.handle}}" data-pavailable="{% if product.available %}true{% else %}false{% endif %}">
+        <span>{{ 'products.product.quickview_text' | t }}</span>
+        {% if product.metafields.info.shortdesc != blank %}
+          <span class=" txt-short hide" >
+            {{product.metafields.info.shortdesc | strip_html | truncatewords: 12 }}
+          </span>
+        {%- endif -%}
+      </span>
+      {%- endif -%}
+  
+      {%- if settings.enable_countdown_card -%}{%- include 'product-countdown' -%}{%- endif -%}
+  
+      {%- if settings.enablevideo -%}
+      {% for media in product.media %}
+      {% render 'productVideo', media: media %}
+    {% endfor %}
+      {%- endif -%}
+  
+      {% include 'product-label' %}
+    </div>
+    <div class="product-card__info  {% unless product.available %} disabled{% endunless %}">
+      {%- if settings.enable_type -%}
+      <div class="text-uppercase small mb-2 gift" style="opacity: 0.8;">{{ product.type }}</div>
+      {%- endif -%}
+      <a href="{{ product.url | within: collection }}" title="{{product.title}}" class="product-card__name d-block">
+  <div class="product-tab-cards" style="display: flex; gap: 8px; flex-wrap: wrap;">
+     <div class="cards-product-title">
+      {{ product.title }}
+    </div> 
+    {% comment %} <div class="product-card__price font-family-1" style="font-weight: bold;">
+      {{ product.price | money }}
+    </div>
+    {% endcomment %}
+
+    <div class="product-card__price font-family-1" style="font-weight: bold;">
+  {% if product.compare_at_price > product.price %}
+    <span class="product-card__price--compare" style="text-decoration: line-through; color: #888;">
+      {{ product.compare_at_price | money }}
+    </span>
+    <span class="product-card__price--sale" style="color: #d00; margin-left: 5px;">
+      {{ product.price | money }}
+    </span>
+  {% else %}
+    <span class="product-card__price--regular">
+      {{ product.price | money }}
+    </span>
+  {% endif %}
+</div>
+
+  </div>
+</a>
+
+        
+      {%- include 'swatch-grid-1' -%}
+      <!-- NEW CONTENT BELOW -->
+
+      <!-- Price before Title -->
+{% comment %} <div style="margin-bottom: 8px;">
+    <h3 class="product-title" style="display: inline-block; font-size: 16px; margin: 0;">
+    {{ product.title }}
+  </h3>
+
+  <div class="product-price" style="font-weight: bold; display: inline-block; margin-right: 8px;">
+    {{ product.price | money }}
+  </div>
+
+</div> {% endcomment %}
+
+<!-- Star Rating -->
+<div class="product-rating" style="font-size:14px; color: #FFA500; margin-top: 5px;">
+  {% comment %} ⭐️⭐️⭐️⭐️⭐️ <span>4.8</span> {% endcomment %}
+<!-- Start of Judge.me code --> 
+  <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'> 
+    {{ product.metafields.judgeme.badge }} 
+  </div> 
+<!-- End of Judge.me code -->
+</div>
+
+<!-- Subscription Badge -->
+<div class="subscription-badge" style="background-color: #f3f3f3; padding: 4px 8px; font-size: 13px; margin-top: 5px; border-radius: 20px; display: inline-block;">
+  
+<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.5554 2.50467L8.73208 2.5C8.55845 2.50008 8.38656 2.5346 8.22636 2.60154C8.06615 2.66848 7.92081 2.76653 7.79874 2.89L2.91208 7.81933C2.66677 8.06872 2.5293 8.40452 2.5293 8.75433C2.5293 9.10415 2.66677 9.43995 2.91208 9.68933L7.29408 14.11C7.41592 14.2338 7.56122 14.332 7.72147 14.399C7.88173 14.4659 8.05373 14.5003 8.22741 14.5C8.40104 14.4999 8.57293 14.4654 8.73313 14.3985C8.89333 14.3315 9.03867 14.2335 9.16074 14.11L14.1001 9.12533C14.2338 9.00097 14.3406 8.85047 14.4137 8.68316C14.4869 8.51584 14.5249 8.33528 14.5254 8.15267V4.486C14.5258 3.96237 14.3187 3.45992 13.9495 3.08859C13.5803 2.71727 13.079 2.50731 12.5554 2.50467ZM10.9207 6.79667C10.7439 6.79667 10.5744 6.72643 10.4493 6.60141C10.3243 6.47638 10.2541 6.30681 10.2541 6.13C10.2541 5.95319 10.3243 5.78362 10.4493 5.6586C10.5744 5.53357 10.7439 5.46333 10.9207 5.46333C11.0976 5.46333 11.2671 5.53357 11.3921 5.6586C11.5172 5.78362 11.5874 5.95319 11.5874 6.13C11.5874 6.30681 11.5172 6.47638 11.3921 6.60141C11.2671 6.72643 11.0976 6.79667 10.9207 6.79667Z" fill="#A33C3F"/>
+</svg>
+ Save 25% with Subscription
+</div>
+
+<!-- Bullet Features -->
+{% comment %} <ul class="product-features" style="list-style: none; padding-left: 0; margin-top: 10px; text-align: left;">
+  <li style="margin-bottom: 4px;">
+<svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.76197 6.2539L9.7907 0.213809C9.93297 0.0712696 10.099 0 10.2886 0C10.4783 0 10.6443 0.0712696 10.7866 0.213809C10.9289 0.356348 11 0.525731 11 0.72196C11 0.918189 10.9289 1.08733 10.7866 1.2294L4.25992 7.78619C4.11765 7.92873 3.95166 8 3.76197 8C3.57228 8 3.40629 7.92873 3.26402 7.78619L0.205198 4.7216C0.0629276 4.57906 -0.00536252 4.40992 0.000328317 4.21416C0.00601915 4.01841 0.0802369 3.84903 0.222982 3.70601C0.365727 3.563 0.534793 3.49173 0.730178 3.4922C0.925563 3.49268 1.09439 3.56395 1.23666 3.70601L3.76197 6.2539Z" fill="#18661D"/>
+</svg>
+ Enhances night vision during full moon phases</li>
+  <li style="margin-bottom: 4px;">
+<svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.76197 6.2539L9.7907 0.213809C9.93297 0.0712696 10.099 0 10.2886 0C10.4783 0 10.6443 0.0712696 10.7866 0.213809C10.9289 0.356348 11 0.525731 11 0.72196C11 0.918189 10.9289 1.08733 10.7866 1.2294L4.25992 7.78619C4.11765 7.92873 3.95166 8 3.76197 8C3.57228 8 3.40629 7.92873 3.26402 7.78619L0.205198 4.7216C0.0629276 4.57906 -0.00536252 4.40992 0.000328317 4.21416C0.00601915 4.01841 0.0802369 3.84903 0.222982 3.70601C0.365727 3.563 0.534793 3.49173 0.730178 3.4922C0.925563 3.49268 1.09439 3.56395 1.23666 3.70601L3.76197 6.2539Z" fill="#18661D"/>
+</svg>
+ Supports rapid hair color change naturally over time</li>
+</ul> {% endcomment %}
+
+{% comment %} {% if product.metafields.custom.features %}
+  <ul class="product-features" style="list-style: none; padding-left: 0; margin-top: 10px; text-align: left;">
+    {% for feature in product.metafields.custom.features %}
+      <li style="margin-bottom: 4px;">
+        <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.76197 6.2539L9.7907 0.213809C9.93297 0.0712696 10.099 0 10.2886 0C10.4783 0 10.6443 0.0712696 10.7866 0.213809C10.9289 0.356348 11 0.525731 11 0.72196C11 0.918189 10.9289 1.08733 10.7866 1.2294L4.25992 7.78619C4.11765 7.92873 3.95166 8 3.76197 8C3.57228 8 3.40629 7.92873 3.26402 7.78619L0.205198 4.7216C0.0629276 4.57906 -0.00536252 4.40992 0.000328317 4.21416C0.00601915 4.01841 0.0802369 3.84903 0.222982 3.70601C0.365727 3.563 0.534793 3.49173 0.730178 3.4922C0.925563 3.49268 1.09439 3.56395 1.23666 3.70601L3.76197 6.2539Z" fill="#18661D"/>
+        </svg>
+        {{ feature }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %} {% endcomment %}
+
+{% comment %} {% if product.metafields.custom.product_features %}
+  <ul class="product-features" style="list-style: none; padding-left: 0; margin-top: 10px; text-align: left;">
+    <li style="margin-bottom: 4px;">
+      <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.76197 6.2539L9.7907 0.213809C9.93297 0.0712696 10.099 0 10.2886 0C10.4783 0 10.6443 0.0712696 10.7866 0.213809C10.9289 0.356348 11 0.525731 11 0.72196C11 0.918189 10.9289 1.08733 10.7866 1.2294L4.25992 7.78619C4.11765 7.92873 3.95166 8 3.76197 8C3.57228 8 3.40629 7.92873 3.26402 7.78619L0.205198 4.7216C0.0629276 4.57906 -0.00536252 4.40992 0.000328317 4.21416C0.00601915 4.01841 0.0802369 3.84903 0.222982 3.70601C0.365727 3.563 0.534793 3.49173 0.730178 3.4922C0.925563 3.49268 1.09439 3.56395 1.23666 3.70601L3.76197 6.2539Z" fill="#18661D"/>
+      </svg>
+      {{ product.metafields.custom.product_features }}
+    </li>
+  </ul>
+{% endif %} {% endcomment %}
+
+{% if product.metafields.custom.product_features.value %}
+  <ul class="product-features" style="list-style: none; padding-left: 0; margin-top: 10px; text-align: left;">
+    {% for feature in product.metafields.custom.product_features.value %}
+      <li style="margin-bottom: 4px;">
+        <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.76197 6.2539L9.7907 0.213809C9.93297 0.0712696 10.099 0 10.2886 0C10.4783 0 10.6443 0.0712696 10.7866 0.213809C10.9289 0.356348 11 0.525731 11 0.72196C11 0.918189 10.9289 1.08733 10.7866 1.2294L4.25992 7.78619C4.11765 7.92873 3.95166 8 3.76197 8C3.57228 8 3.40629 7.92873 3.26402 7.78619L0.205198 4.7216C0.0629276 4.57906 -0.00536252 4.40992 0.000328317 4.21416C0.00601915 4.01841 0.0802369 3.84903 0.222982 3.70601C0.365727 3.563 0.534793 3.49173 0.730178 3.4922C0.925563 3.49268 1.09439 3.56395 1.23666 3.70601L3.76197 6.2539Z" fill="#18661D"/>
+        </svg>
+        {{ feature }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<!-- Add to Cart Button -->
+<form method="post" action="/cart/add" style="margin-top: 10px;">
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+  <button type="submit" class="btn btn-theme gradient-theme-vertical" style="width: 100%;">
+    Add to Cart
+  </button>
+</form>
+      
+      
+    </div>
+  </div>

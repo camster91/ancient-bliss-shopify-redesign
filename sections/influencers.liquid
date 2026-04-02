@@ -1,0 +1,168 @@
+{% schema %}
+{
+  "name": "Influencers Favorites",
+  "tag": "section",
+  "class": "influencers-favorites-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID",
+      "default": "influencers-favorites"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class",
+      "default": "influencers-favorites-wrapper"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "influencer",
+      "name": "Influencer Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Influencer Image"
+        },
+        {
+        "type": "text",
+        "id": "alt_text",
+        "label": "Image Alt Text",
+        "default": "Influencer image"
+       },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image Link (opens in new tab)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Influencer's Favorites"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Enter description here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Influencers Favorites",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+
+<section 
+  id="{{ section.settings.custom_id | default: 'influencers-favorites' }}" 
+  class="{{ section.settings.custom_class }}">
+
+<div class="container">
+  <div class="influencers-grid">
+    {% for block in section.blocks %}
+      <div class="influencer-card" {{ block.shopify_attributes }}>
+       {% if block.settings.image != blank %}
+  <a href="{{ block.settings.link }}" target="_blank" rel="noopener">
+    <img 
+      src="{{ block.settings.image | img_url: '600x' }}" 
+      alt="{{ block.settings.alt_text | escape }}">
+  </a>
+{% endif %}
+        {% if block.settings.title != blank %}
+          <h2 class="influencer-title">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.description != blank %}
+          <p class="influencer-desc">{{ block.settings.description }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+<style>
+.influencers-favorites-wrapper {
+	padding: 60px 20px;
+	margin: 80px 0 0;
+}
+.influencers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+.influencer-card {
+  text-align: left;
+}
+.influencer-card img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+.influencer-title {
+	font-size: 32px;
+	font-weight: 600;
+	margin: 30px 0 8px;
+	color: rgba(24, 27, 24, 1);
+	line-height: 100%;
+	letter-spacing: -0.2px;
+}
+
+.influencer-desc {
+	font-size: 18px;
+	line-height: 150%;
+	color: rgba(24, 27, 24, 0.8);
+	font-weight: 400;
+} 
+.explore_products_section .section-block {
+	position: relative;
+}
+.explore_products_section .section-block .view-product {
+	position: absolute;
+	top: 0px;
+	right: 0;
+	padding: 0 0;
+}
+
+.explore_products_section .section-block .view-product a {
+	color: #fff;
+	padding: 12px 30px;
+	display: block;
+	border-radius: 10px !important;
+	background: rgb(163, 60, 63);
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.explore_products_section .section-block .section-title-2 {
+	text-align: left;
+	margin: 0 !important;
+} 
+.explore_products_section .section-block .nav-tabs .nav-item {
+	display: none; 
+} 
+
+@media(max-width: 767px) {
+  .influencers-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .explore_products_section .section-block .view-product {
+	display: none;
+}
+
+.explore_products_section.cstm-product-tav {
+	padding: 64px 0 40px !important;
+	margin-bottom: 0;
+} 
+
+}
+</style>

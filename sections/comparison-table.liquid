@@ -1,0 +1,346 @@
+<section 
+  id="{{ section.settings.custom_id | escape }}" 
+  class="comparison-section {{ section.settings.custom_class }}">
+  
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h2 class="comparison-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="comparison-holder">
+      <!-- Column Headers -->
+      <div class="comparison-header">
+        <div class="comparison-col comparison-col-feature"></div>
+        <div class="comparison-col comparison-col-1" style="background-color: {{ section.settings.column1_bg }}; color: {{ section.settings.column1_text_color }};">
+          {{ section.settings.column1_title }}
+        </div>
+        <div class="comparison-col comparison-col-2" style="background-color: {{ section.settings.column2_bg }}; color: {{ section.settings.column2_text_color }};">
+          {{ section.settings.column2_title }}
+        </div>
+      </div>
+
+      <!-- Feature Rows -->
+      {% for block in section.blocks %}
+        {% if block.type == 'feature' %}
+          <div class="comparison-row">
+            <div class="comparison-col comparison-col-feature">
+              <strong>{{ block.settings.feature_title }}</strong>
+              {% if block.settings.feature_subtext != blank %}
+                <p>{{ block.settings.feature_subtext }}</p>
+              {% endif %}
+            </div>
+            <div class="comparison-col comparison-col-1" style="background-color: {{ section.settings.column1_bg }}">
+              {% if block.settings.icon1 != blank %}
+                <img src="{{ block.settings.icon1 | img_url: '40x' }}" alt="Ancient Bliss">
+              {% endif %}
+            </div>
+            <div class="comparison-col comparison-col-2" style="background-color: {{ section.settings.column2_bg }}">
+              {% if block.settings.icon2 != blank %}
+                <img src="{{ block.settings.icon2 | img_url: '40x' }}" alt="Others">
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_as_seen_on %}
+      <div class="as-seen-on">
+        {% if section.settings.as_seen_heading != blank %}
+          <h3>{{ section.settings.as_seen_heading }}</h3>
+        {% endif %}
+        <div class="as-seen-logos">
+          {% for block in section.blocks %}
+            {% if block.type == 'as_seen_logo' and block.settings.logo != blank %}
+              <img src="{{ block.settings.logo | img_url: '200x' }}" alt="As Seen On Logo" />
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+
+.comparison-heading {
+	margin-bottom: 1.5em;
+	text-align: center;
+	font-size: 56px;
+	color: #181b18;
+	/* text-align: center; */
+	letter-spacing: -1px;
+	line-height: 100%;
+}
+
+.comparison_section_wrapper .comparison-holder .comparison-header .comparison-col-1 {
+	border-radius: 15px 15px 0 0px;
+	font-size: 32px;
+	line-height: 100%;
+	letter-spacing: -0.2px;
+	font-weight: bold;
+	padding-left: 0;
+	padding-right: 0;
+	min-width: 350px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-header .comparison-col-2 {
+	border-radius: 0px 15px 0 0px;
+	font-size: 32px;
+	line-height: 100%;
+	letter-spacing: -0.2px;
+	font-weight: bold;
+	color: rgba(24, 27, 24, 1);
+	background: #fff !important;
+}
+.comparison_section_wrapper .comparison-holder  .comparison-row .comparison-col {
+	border-radius: 0px 0px 0 0px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-col {
+	padding: 20px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.comparison_section_wrapper .comparison-holder .comparison-col-1 {
+	max-width: 350px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-col-feature {
+	background-color: #fff8e7;
+	justify-content: flex-start;
+	text-align: left;
+	flex-wrap: wrap;
+	padding-left: 20px !important;
+}
+.comparison_section_wrapper .comparison-holder .comparison-header .comparison-col-feature {
+	background-color: #fff;
+} 
+.comparison_section_wrapper .comparison-holder .comparison-col-feature strong {
+	width: 100%;
+	color: rgba(24, 27, 24, 1);
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 100%;
+	letter-spacing: -0.2px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-col-feature p {
+	margin: 0;
+	color: rgba(24, 27, 24, 0.8);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 150%;
+	letter-spacing: -0.1px;
+} 
+.comparison_section_wrapper .comparison-holder .comparison-header .comparison-col {
+	border-bottom: 0px;
+} 
+.comparison_section_wrapper .comparison-holder .comparison-row:nth-child(2) .comparison-col-feature:nth-child(1) {
+	border-radius: 15px 0 0 0;
+} 
+.comparison_section_wrapper .comparison-holder .comparison-row:nth-child(2) .comparison-col-2 {
+	border-radius: 0 15px 0 0;
+} 
+.comparison_section_wrapper .comparison-row:nth-last-child(1) .comparison-col {
+	border-bottom: 0;
+	padding-bottom: 50px;
+}
+.comparison_section_wrapper .comparison-row:nth-last-child(1) .comparison-col-feature, .comparison_section_wrapper .comparison-row:nth-last-child(1) .comparison-col-2 {
+	background-color: #fff !important;
+} 
+.comparison_section_wrapper .comparison-row:nth-last-child(1) .comparison-col-1 {
+	border-radius: 0 0 15px 15px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-row:nth-last-child(2) .comparison-col{
+	border-bottom: 0 !important;
+}
+.comparison_section_wrapper .comparison-holder .comparison-row:nth-last-child(2) .comparison-col-feature {
+	border-radius: 0 0 0 15px;
+}
+
+.comparison_section_wrapper .comparison-holder .comparison-row:nth-last-child(2) .comparison-col-2 {
+	border-radius: 0px 0px 15px 0px;
+} 
+
+.comparison-holder {
+  display: flex;
+  flex-direction: column;
+}
+
+.comparison-header,
+.comparison-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.comparison-col {
+  flex: 1;
+  padding: 1em;
+  text-align: center;
+}
+
+.comparison-col-feature {
+  text-align: left;
+}
+
+.comparison-col-feature p {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 0.3em;
+}
+
+.comparison-col img {
+	max-width: 40px;
+	height: auto;
+}
+
+
+.as-seen-on {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.as-seen-logos {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.as-seen-logos img {
+  max-height: 40px;
+}
+
+
+/* Mobile Responsive */
+
+@media (max-width: 1170px) {
+.comparison_section_wrapper .comparison-holder .comparison-header .comparison-col-1 {
+	min-width: auto;
+}
+}
+
+
+@media (max-width: 991px) {
+.comparison_section_wrapper .comparison-holder .comparison-header .comparison-col-1 {
+	font-size: 22px;
+	min-width: auto;
+}
+.comparison_section_wrapper .comparison-holder .comparison-header .comparison-col-2 {
+	font-size: 22px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-col-feature strong {
+	font-size: 18px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-col-feature p {
+	font-size: 14px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-col-feature {
+	padding-right: 20px;
+}
+.comparison-col img {
+	max-width: 30px;
+	height: auto;
+} 
+.comparison_section_wrapper .comparison-row:nth-last-child(1) .comparison-col {
+	padding-bottom: 20px;
+} 
+.glp_section .banner-content-inner .hero-content .hero-title, .glp_section .banner-content-inner .hero-content .hero-title span {
+	font-size: 32px;
+	line-height: 100% !important;
+}
+
+
+}
+@media (max-width: 575px) {
+  .comparison-header,
+  .comparison-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .comparison-col-feature {
+    text-align: center;
+  }
+.comparison-heading {
+	margin-bottom: 30px;
+}
+.comparison-heading {
+	font-size: 32px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-header .comparison-col-1 {
+	font-size: 13px;
+	min-width: auto;
+}
+.comparison_section_wrapper .comparison-holder .comparison-header .comparison-col-2 {
+	font-size: 13px;
+	line-height: 100%;
+}
+.comparison-header {
+	flex-direction: row;
+} 
+.comparison-row {
+	flex-direction: row !important;
+}   
+.comparison_section_wrapper .comparison-holder .comparison-col-feature strong {
+	font-size: 13px;
+}
+.comparison_section_wrapper .comparison-holder .comparison-col-feature p {
+	font-size: 9px;
+}
+.comparison-col img {
+	max-width: 22px;
+	height: auto;
+}
+.comparison_section_wrapper .comparison-holder .comparison-col {
+	padding: 15px 0;
+}
+.comparison_section_wrapper .comparison-holder .comparison-col-feature {
+	padding-left: 10px !important;
+	padding-right: 10px;
+}
+.comparison_section_wrapper .comparison-row:nth-last-child(1) .comparison-col {
+	padding-bottom: 15px;
+}
+
+}
+</style>
+
+{% schema %}
+{
+  "name": "Comparison Div Layout",
+  "settings": [
+    { "type": "text", "id": "custom_id", "label": "Custom Section ID" },
+    { "type": "text", "id": "custom_class", "label": "Custom CSS Class" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Blood Sugar Support That Works" },
+    { "type": "text", "id": "column1_title", "label": "Column 1 Title", "default": "Ancient Bliss" },
+    { "type": "color", "id": "column1_bg", "label": "Column 1 Background Color", "default": "#1E5B23" },
+    { "type": "color", "id": "column1_text_color", "label": "Column 1 Text Color", "default": "#ffffff" },
+    { "type": "text", "id": "column2_title", "label": "Column 2 Title", "default": "Others" },
+    { "type": "color", "id": "column2_bg", "label": "Column 2 Background Color", "default": "#FFF8E7" },
+    { "type": "color", "id": "column2_text_color", "label": "Column 2 Text Color", "default": "#000000" },
+    { "type": "checkbox", "id": "show_as_seen_on", "label": "Show 'As Seen On' Section", "default": true },
+    { "type": "text", "id": "as_seen_heading", "label": "'As Seen On' Heading", "default": "As Seen On" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Row",
+      "settings": [
+        { "type": "text", "id": "feature_title", "label": "Feature Title" },
+        { "type": "text", "id": "feature_subtext", "label": "Feature Subtext" },
+        { "type": "image_picker", "id": "icon1", "label": "Ancient Bliss Icon" },
+        { "type": "image_picker", "id": "icon2", "label": "Others Icon" }
+      ]
+    },
+    {
+      "type": "as_seen_logo",
+      "name": "As Seen On Logo",
+      "settings": [
+        { "type": "image_picker", "id": "logo", "label": "Logo Image" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Comparison Div Layout", "category": "Custom" }
+  ]
+}
+{% endschema %}

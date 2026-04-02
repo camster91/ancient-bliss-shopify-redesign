@@ -1,0 +1,207 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "7bc84008-b397-4d79-9c80-05d13ecaed6e": {
+      "type": "rich-text",
+      "settings": {
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#fefefe",
+        "title_top": "Our Services",
+        "title": "Exceptional wellness supplements curated for your temple.",
+        "des": "Based out of Austin, Texas, Ancient Bliss has been founded on the wisdom of our ancient indigenous Ancestors backed with Modern Medical Science. We aim to help heal and strengthen the core of your body so you can enjoy a prosperous life filled with certainty and inner joy.",
+        "setwidth": "container",
+        "text": ""
+      }
+    },
+    "6004e7a0-a335-4d8c-8339-2f3a90e1989a": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#fefefe",
+        "setwidth": "container",
+        "button_label": "",
+        "video_url": "https://youtu.be/UOl6Kv32GLg",
+        "cover_image": "shopify://shop_images/services-video.png",
+        "show_overlay": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "69e084f4-6736-4687-91e4-c757628664cb": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--15971032891543__69e084f4-6736-4687-91e4-c757628664cb-167307671226a1afb5-0": {
+          "type": "html",
+          "settings": {
+            "code": "<img src=\"https://cdn.shopify.com/s/files/1/0618/4543/8615/files/services-video.png?v=1672981062\">",
+            "width": "100%",
+            "align": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "template--15971032891543__69e084f4-6736-4687-91e4-c757628664cb-167307671226a1afb5-0"
+      ],
+      "settings": {
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "setwidth": "container",
+        "padding": true,
+        "col_center": false,
+        "bgsection": "#fefefe",
+        "rangebg": 0,
+        "bgbefore": "transparent",
+        "e_size": "auto",
+        "e_repeat": "no-repeat"
+      }
+    },
+    "0ae5f272-3ab2-45f7-9681-c241f417de4b": {
+      "type": "masonry-banner",
+      "blocks": {
+        "template--15971032891543__0ae5f272-3ab2-45f7-9681-c241f417de4b-167298026847a4fc3b-0": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/brand-9.png",
+            "width": 33,
+            "description": "<h3 class=\"mb-2\">Made in the USA\n</h3><p>100% of our products are formulated and blended right here in the United States.</p>",
+            "max-width": 290,
+            "button_text": "",
+            "button_icon": "",
+            "button_link": "",
+            "vertical": "bottom",
+            "horizontal": "center",
+            "text_align": "center"
+          }
+        },
+        "d15f5643-df16-4abe-9eee-4368297e189d": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/bg-services.png",
+            "width": 33,
+            "description": "<h3 class=\"mb-2\">Accountable & Responsible\n</h3><p>We strive to operate as responsibly as possible for the health and benefit of both the planet and our consumers.</p>",
+            "max-width": 290,
+            "button_text": "",
+            "button_icon": "",
+            "button_link": "",
+            "vertical": "mid",
+            "horizontal": "center",
+            "text_align": "center"
+          }
+        },
+        "template--15971032891543__0ae5f272-3ab2-45f7-9681-c241f417de4b-167298026847a4fc3b-2": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/brand-7.png",
+            "width": 33,
+            "description": "<h3 class=\"mb-2\">GMP Certified</h3><p>We proudly execute and honor the FDA’s Good Manufacturing Practices to ensure consumer satisfaction and high performing blends.</p>",
+            "max-width": 290,
+            "button_text": "",
+            "button_icon": "",
+            "button_link": "",
+            "vertical": "bottom",
+            "horizontal": "center",
+            "text_align": "center"
+          }
+        },
+        "f54ec795-bed3-45f9-be85-1131176f406b": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/bg-services.png",
+            "width": 33,
+            "description": "<h3 class=\"mb-2\">Fresh Mixes</h3><p>Original blends made from fresh herbs and concentrated ingredients.</p>",
+            "max-width": 290,
+            "button_text": "",
+            "button_icon": "",
+            "button_link": "",
+            "vertical": "mid",
+            "horizontal": "center",
+            "text_align": "center"
+          }
+        },
+        "template--15971032891543__0ae5f272-3ab2-45f7-9681-c241f417de4b-167298026847a4fc3b-1": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/brand-8.png",
+            "width": 33,
+            "description": "<h3 class=\"mb-2\">FDA Approved\n</h3><p>We make following FDA standards and regulations a main priority.</p>",
+            "max-width": 290,
+            "button_text": "",
+            "button_icon": "",
+            "button_link": "",
+            "vertical": "bottom",
+            "horizontal": "center",
+            "text_align": "center"
+          }
+        },
+        "46f43d9c-aa92-45b6-8db9-3eb8fd39eadf": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/bg-services.png",
+            "width": 33,
+            "description": "<h3 class=\"mb-2\">Information Driven\n</h3><p>We care about matching the right consumer with the right product, so keeping those informed on what each supplement includes and what it can help with is essential to us.</p>",
+            "max-width": 290,
+            "button_text": "",
+            "button_icon": "",
+            "button_link": "",
+            "vertical": "mid",
+            "horizontal": "center",
+            "text_align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15971032891543__0ae5f272-3ab2-45f7-9681-c241f417de4b-167298026847a4fc3b-0",
+        "d15f5643-df16-4abe-9eee-4368297e189d",
+        "template--15971032891543__0ae5f272-3ab2-45f7-9681-c241f417de4b-167298026847a4fc3b-2",
+        "f54ec795-bed3-45f9-be85-1131176f406b",
+        "template--15971032891543__0ae5f272-3ab2-45f7-9681-c241f417de4b-167298026847a4fc3b-1",
+        "46f43d9c-aa92-45b6-8db9-3eb8fd39eadf"
+      ],
+      "settings": {
+        "animation": "",
+        "paddingsection": "0px 0px 0px 0px",
+        "marginsection": "50px 0px 0px 0px",
+        "bgsection": "#fefefe",
+        "title": "Distinguishing ourselves from competition since we started.",
+        "des": "We strive to establish absolute trust with those we serve through honest ingredients, efficient communication, and mindful blends.",
+        "setwidth": "container"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "7bc84008-b397-4d79-9c80-05d13ecaed6e",
+    "6004e7a0-a335-4d8c-8339-2f3a90e1989a",
+    "69e084f4-6736-4687-91e4-c757628664cb",
+    "0ae5f272-3ab2-45f7-9681-c241f417de4b"
+  ]
+}

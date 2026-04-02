@@ -1,0 +1,124 @@
+<style>
+/* --- LAYOUT --- */
+.tiktok-row {
+  display: flex;
+  gap: 16px;
+  padding: 0 12px;
+  overflow-x: auto !important;            /* force scroll */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pinch-zoom;
+}
+.tiktok-row::-webkit-scrollbar { display: none; }
+
+/* 3 cards per view on desktop (approx) */
+.tiktok-card {
+  flex: 0 0 clamp(280px, calc((100% - 32px) / 3), 360px);
+  scroll-snap-align: start;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+/* 1 card per view on mobile */
+@media (max-width: 768px) {
+  .tiktok-card { flex: 0 0 88vw; }
+}
+
+/* Keep 9:16 shape */
+.tiktok-card .frame {
+  position: relative;
+  width: 100%;
+  padding-top: 177.78%; /* 9:16 */
+}
+.tiktok-card iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+/* Click-to-play overlay (prevents autoplay and sound) */
+.tiktok-play {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55));
+  color: #fff; font: 600 14px/1 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  cursor: pointer; transition: opacity .2s ease;
+}
+.tiktok-play.hidden { opacity: 0; pointer-events: none; }
+.tiktok-play .btn {
+  padding: .6rem 1rem; border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.25);
+  backdrop-filter: blur(6px);
+}
+</style>
+
+<div class="tiktok-row" id="tiktokRow">
+  <!-- Just list your IDs here -->
+  <div class="tiktok-card" data-id="7319625708676926762"><div class="frame"></div></div>
+  <div class="tiktok-card" data-id="7328931542124727595"><div class="frame"></div></div>
+  <div class="tiktok-card" data-id="7442072395206102328"><div class="frame"></div></div>
+  <div class="tiktok-card" data-id="7464302637421251847"><div class="frame"></div></div>
+  <div class="tiktok-card" data-id="7448850346597715246"><div class="frame"></div></div>
+</div>
+
+<script>
+/* Build lightweight TikTok players:
+   - No autoplay (we do not request play)
+   - Muted on click before play
+   - Horizontal scroll works on desktop & mobile
+*/
+(function(){
+  const cards = document.querySelectorAll('.tiktok-card');
+
+  function build(id) {
+    const wrap = document.createElement('div'); wrap.className = 'wrap';
+    const iframe = document.createElement('iframe');
+
+    // No autoplay permission in "allow"; player won't auto-start.
+    iframe.src = `https://www.tiktok.com/player/v1/${id}?controls=1`;
+    iframe.allow = 'fullscreen; picture-in-picture';
+    iframe.loading = 'lazy';
+
+    const overlay = document.createElement('div');
+    overlay.className = 'tiktok-play';
+    overlay.innerHTML = '<div class="btn">Play (muted)</div>';
+
+    overlay.addEventListener('click', () => {
+      // pause others first
+      document.querySelectorAll('.tiktok-card iframe').forEach(f => {
+        try { f.contentWindow.postMessage({type:'pause','x-tiktok-player':true}, '*'); } catch(e){}
+      });
+      // mute + play this one
+      try {
+        iframe.contentWindow.postMessage({type:'mute','x-tiktok-player':true}, '*');
+        iframe.contentWindow.postMessage({type:'play','x-tiktok-player':true}, '*');
+      } catch(e){}
+      overlay.classList.add('hidden');
+    });
+
+    // If scrolled away, pause and show overlay again
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if (!entry.isIntersecting) {
+          try { iframe.contentWindow.postMessage({type:'pause','x-tiktok-player':true}, '*'); } catch(e){}
+          overlay.classList.remove('hidden');
+        }
+      });
+    }, {threshold: 0.2});
+    io.observe(overlay);
+
+    return { iframe, overlay };
+  }
+
+  cards.forEach(card => {
+    const id = card.dataset.id;
+    const frame = card.querySelector('.frame');
+    const { iframe, overlay } = build(id);
+    frame.appendChild(iframe);
+    card.appendChild(overlay);
+  });
+})();
+</script>

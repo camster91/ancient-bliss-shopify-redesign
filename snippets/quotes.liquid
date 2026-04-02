@@ -1,0 +1,93 @@
+<!-- snippets/quotes.liquid -->
+<style>
+  .customstyle{{ section.id }} {
+    background-position:center !important;
+    background-repeat:no-repeat !important;
+    background-size:cover !important;
+  }
+</style>
+<div class="{{ section.settings.cstm_class }} customstyle{{ section.id }} {% if section.settings.image_bg != blank %} lazyload {% endif %}" 
+  data-aos={{section.settings.animation}} 
+  style="{% if section.settings.image_bg != blank %}background-image:url({%- include 'srcBlank' -%}){% endif %}"
+  data-bg="{{ section.settings.image_bg | img_url:"1920x" }}">
+
+  {%- include 'style-section' -%}
+
+  <div class="{{ section.settings.setwidth }}">
+    <div class="section-block">
+      {%- include 'section-heading' -%}
+
+      {%- if section.blocks.size > 0 -%}
+      <div class="quotes-wrapper dots-negative " data-aos={{section.settings.animation}} data-aos-delay="200"> 
+        <div class="quotes-slider row" id="Quotes-{{ section.id }}" 
+            data-rows="{{section.settings.rows}}"
+            data-slidesToShow="{{section.settings.show}}"
+            data-slidestoscroll="{{section.settings.show}}"
+            data-arrows="{{ section.settings.arrows }}"
+            data-dots="{{ section.settings.dots }}" 
+            data-draggable="{{ section.settings.draggable }}" 
+            data-infinite="{{ section.settings.infinite }}" 
+            data-section-id="{{ section.id }}" 
+            data-section-type="slickCarousels">
+
+          {%- for block in section.blocks -%}
+          <div class="quote__slide-wrapper carousel__slide-wrapper--{{ block.id }}" {{ block.shopify_attributes }}>
+            <div class="quote__slide {{section.settings.aligntext}} ">
+              <div class="quote-wrap">
+
+                {% if section.settings.show_rating_first == true %}
+                  {%- if block.settings.rate > 0 -%}
+                  <ul class="rating">
+                    {%- for i in (1..5) -%}
+                      {%- assign iMax = block.settings.rate -%}
+                      <li class="{% if i <= iMax %}rated{% endif %}"></li>
+                    {%- endfor -%}
+                  </ul>
+                  {%- endif -%}
+                {% endif %}
+
+                <div class="cstm-testimonial-content-sct">
+                  {%- if block.settings.title != blank -%}
+                  <h4>{{ block.settings.title }}</h4>
+                  {%- endif -%}
+                  <div class="py-2"><p>"{{ block.settings.quote }}"</p></div>
+                </div>
+
+                {%- unless block.settings.rate > 0 and section.settings.show_rating_first == true -%}
+                <ul class="rating">
+                  {%- for i in (1..5) -%}
+                    {%- assign iMax = block.settings.rate -%}
+                    <li class="{% if i <= iMax %}rated{% endif %}"></li>
+                  {%- endfor -%}
+                </ul>
+                {%- endunless -%}
+
+                <div class="cstm-testimonial-auth-sct">
+                  {%- if block.settings.avatar != blank -%}
+                  <div class="author-avatar">
+                    <img class="lazyload" src="{%- include 'srcBlank' -%}" data-src="{{ block.settings.avatar | img_url: '300x' }}" />
+                  </div>
+                  {%- endif -%}
+                  <div class="mt-4 text-uppercase font-weight-bold">
+                    {{ block.settings.author }}
+                    {%- if block.settings.info != blank -%}
+                      <span class="text-secondary capitalize small pl-2"> / {{ block.settings.info }}</span>
+                    {%- endif -%}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          {%- endfor -%}
+
+        </div>
+      </div>
+      {%- endif -%}
+
+      {%- if section.blocks.size == 0 -%}
+        {%- include 'no-blocks' -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

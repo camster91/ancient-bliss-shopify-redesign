@@ -1,0 +1,34 @@
+{% schema %}
+{
+  "name": "Find in Store",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_find_in_store",
+      "label": "Show Find in Store",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "store_locator_heading",
+      "label": "Heading",
+      "default": "Find in Store"
+    },
+    {
+      "type": "html",
+      "id": "store_locator_code",
+      "label": "Store Locator Embed Code",
+      "default": "<p>Add your store locator embed or map code here.</p>"
+    }
+  ]
+}
+{% endschema %}
+
+{% if section.settings.show_find_in_store %}
+  <div class="find-in-store-section">
+    <h3>{{ section.settings.store_locator_heading }}</h3>
+    <div class="find-in-store-content">
+      {{ section.settings.store_locator_code }}
+    </div>
+  </div>
+{% endif %}

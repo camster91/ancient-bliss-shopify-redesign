@@ -1,0 +1,89 @@
+{% schema %}
+{
+  "name": "heading image skin health",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "An Effective Support to Vital Systems!"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading Tag",
+      "default": "h2",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "Section illustration"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom CSS Class"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom Section ID"
+    }
+  ],
+  "presets": [
+    {
+      "name": "heading image skin health",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section 
+  id="{{ section.settings.custom_id | escape }}" 
+  class="heading-image-section {{ section.settings.custom_class }}">
+  <div class="container text-center">
+    
+    {% if section.settings.heading != blank %}
+      <{{ section.settings.heading_tag }} class="section-heading">
+        {{ section.settings.heading }}
+      </{{ section.settings.heading_tag }}>
+    {% endif %}
+    
+    {% if section.settings.image %}
+      <div class="section-image">
+        <img src="{{ section.settings.image | img_url: '1200x' }}" 
+             alt="{{ section.settings.image_alt | escape }}">
+      </div>
+    {% endif %}
+    
+  </div>
+</section>
+
+<style>
+.heading-image-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+.heading-image-section .section-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.heading-image-section .section-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+</style>

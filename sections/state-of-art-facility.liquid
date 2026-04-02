@@ -1,0 +1,176 @@
+{% comment %}
+  State of The Art Facility Section
+{% endcomment %}
+
+<section id="{{ section.settings.custom_id }}" class="state-of-art-facility {{ section.settings.custom_class }} page-width">
+  <div class="section-content">
+  <div class="title_wrapper">
+  <!-- Title -->
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <!-- Qualifications -->
+    <div class="qualifications">
+      <ul class="qualification-list">
+        <li>🌿 GMP Certified</li>
+        <li>🔬 Lab Tested</li>
+        <li>🇺🇸 USA Facility</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- Video -->
+    <div class="facility-video">
+      {% if section.settings.video_type == 'youtube' %}
+        <iframe 
+          width="100%" 
+          height="450" 
+          src="https://www.youtube.com/embed/{{ section.settings.youtube_id }}?autoplay={{ section.settings.autoplay | default: false | json }}&loop={{ section.settings.loop | default: false | json }}&mute={{ section.settings.mute | default: false | json }}&controls={{ section.settings.controls | default: true | json }}" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      {% elsif section.settings.video_type == 'upload' and section.settings.video_upload != blank %}
+        {{ section.settings.video_upload | video_tag: 
+            autoplay: section.settings.autoplay,
+            loop: section.settings.loop,
+            muted: section.settings.mute,
+            controls: section.settings.controls }}
+
+            
+      {% endif %}
+    </div> 
+
+  </div>
+</section>
+
+<style>
+.state-of-art-facility {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 100% !important;
+  width: 100%;
+  margin: 80px 0 50px;
+}
+
+ .state-of-art-facility .section-title {
+	font-size: 50px;
+	margin-bottom: 30px;
+	max-width: 70%;
+	line-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.facility-video video {
+	width: 100%;
+    max-width: 100% !important;
+} 
+.facility-video #unmute-btn {
+	display: none;
+} 
+.qualifications {
+	margin-top: 0px;
+	display: block;
+	margin-bottom: 30px;
+}
+.qualification-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	list-style: none;
+}
+{% comment %} .state-of-art-facility .title_wrapper {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+} {% endcomment %}
+
+.qualification-list li {
+	color: #404040;
+} 
+#unmute-btn {
+	display: none;
+}
+</style>
+
+{% schema %}
+{
+  "name": "State of The Art Facility",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Ancient Bliss's State of The Art Facility in ATL"
+    },
+    {
+      "type": "select",
+      "id": "video_type",
+      "label": "Video Type",
+      "default": "youtube",
+      "options": [
+        { "value": "youtube", "label": "YouTube" },
+        { "value": "upload", "label": "Upload (MP4)" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "youtube_id",
+      "label": "YouTube Video ID",
+      "default": "YOUR_VIDEO_ID",
+      "info": "Paste only the video ID, e.g. for https://youtu.be/abc123, enter abc123"
+    },
+    {
+      "type": "video",
+      "id": "video_upload",
+      "label": "Upload Video (MP4)"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "mute",
+      "label": "Mute",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "controls",
+      "label": "Show Controls",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom Section ID",
+      "default": "facility-section"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Section Class",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "State of The Art Facility"
+    }
+  ]
+}
+{% endschema %}
+
+
