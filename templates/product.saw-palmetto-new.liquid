@@ -1,1 +1,14 @@
-{% section 'product-template-1' %}
+{%- section 'product-template-coming-soon' -%}
+{%- section 'brand-list' -%}
+{%- section 'product-tab' -%}
+
+<style>
+.container.px-0.information-tab_wrapper {
+	display: none;
+}
+</style> 
+
+<div style='clear:both'></div>
+<div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-product-title='{{ product.title | escape }}' data-id='{{ product.id }}'>
+  {{ product.metafields.judgeme.widget }}
+</div>

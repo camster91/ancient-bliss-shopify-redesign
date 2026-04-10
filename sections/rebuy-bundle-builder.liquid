@@ -1,19 +1,437 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 <div class="rebuy-bundle-container" data-rebuy-id="custom-bundle-widget">
-  <!-- Rebuy Widget Injection Point -->
+  <!-- Rebuy Bundle Builder Widget Injection Point -->
+  <div data-rebuy-widget="bundle-builder"></div>
+  
+  <!-- Custom Wrapper for Tiered Discounts & Progress -->
   <div class="legendairy-bundle-layout">
-    <h2>Build Your Custom Wellness Bundle</h2>
-    <p>Select your supplements and save. The more you add, the more you save!</p>
-    <div class="rebuy-tier-discounts">
-      <div class="tier" data-items="2">Buy 2, Save 10%</div>
-      <div class="tier" data-items="3">Buy 3, Save 15%</div>
-      <div class="tier" data-items="4">Buy 4+, Save 20%</div>
+    <div class="bundle-header">
+      <h2>Build Your Custom Wellness Bundle</h2>
+      <p>Select your supplements and save. The more you add, the more you save!</p>
     </div>
+    
+    <!-- Tiered Discounts Display -->
+    <div class="rebuy-tier-discounts" id="bundleTierDisplay">
+      <div class="tier" data-min-items="3" data-discount="10">
+        <span class="tier-icon">🌿</span>
+        <span class="tier-items">3 Items</span>
+        <span class="tier-discount">Save 10%</span>
+      </div>
+      <div class="tier" data-min-items="5" data-discount="15">
+        <span class="tier-icon">🌳</span>
+        <span class="tier-items">5 Items</span>
+        <span class="tier-discount">Save 15%</span>
+      </div>
+      <div class="tier" data-min-items="7" data-discount="20">
+        <span class="tier-icon">🌲</span>
+        <span class="tier-items">7+ Items</span>
+        <span class="tier-discount">Save 20%</span>
+      </div>
+    </div>
+    
+    <!-- Bundle Progress Bar -->
+    <div class="bundle-progress-wrapper" id="bundleProgressWrapper">
+      <div class="bundle-progress-label">
+        <span id="bundleItemCount">0</span> items in your bundle
+        <span class="bundle-next-tier" id="bundleNextTier"> — Add <span id="itemsToNextTier">3</span> more for 10% off!</span>
+      </div>
+      <div class="bundle-progress-container">
+        <div class="bundle-progress-bar" id="bundleProgressBar" style="width: 0%"></div>
+        <div class="bundle-progress-markers">
+          <span class="marker" data-items="3" style="left: 30%">3</span>
+          <span class="marker" data-items="5" style="left: 50%">5</span>
+          <span class="marker" data-items="7" style="left: 70%">7</span>
+        </div>
+      </div>
+      <div class="bundle-progress-tiers">
+        <span class="tier-milestone" id="tier3Status">○ Buy 3</span>
+        <span class="tier-milestone" id="tier5Status">○ Buy 5</span>
+        <span class="tier-milestone" id="tier7Status">○ Buy 7</span>
+      </div>
+    </div>
+    
+    <!-- Rebuy Widget Container -->
     <div data-rebuy-widget="placeholder" class="rebuy-product-grid"></div>
   </div>
 </div>
 
 <style>
-.legendairy-bundle-layout { text-align: center; padding: 40px 20px; }
-.rebuy-tier-discounts { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
-.rebuy-tier-discounts .tier { padding: 10px 20px; border: 1px solid #ccc; border-radius: 5px; }
+/* Reset and Font Application */
+.legendairy-bundle-layout {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Work Sans', sans-serif;
+  background-color: #ffffff;
+}
+
+.bundle-header h2 {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 2.5rem;
+  color: #404e2d; /* Olive Green */
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.bundle-header p {
+  font-size: 1.15rem;
+  color: #6b7280;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Tiered Discounts */
+.rebuy-tier-discounts {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.rebuy-tier-discounts .tier {
+  padding: 24px 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.rebuy-tier-discounts .tier:hover {
+  border-color: #404e2d;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(64, 78, 45, 0.1);
+}
+
+.rebuy-tier-discounts .tier.active {
+  border-color: #404e2d;
+  background-color: #f2ebd8; /* Tan Background */
+  box-shadow: 0 8px 20px rgba(64, 78, 45, 0.15);
+}
+
+.rebuy-tier-discounts .tier.reached {
+  border-color: #404e2d;
+  background-color: #404e2d;
+}
+
+.rebuy-tier-discounts .tier.reached .tier-items,
+.rebuy-tier-discounts .tier.reached .tier-discount {
+  color: #ffffff;
+}
+
+.tier-icon {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.tier-items {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tier-discount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #404e2d;
+}
+
+/* Bundle Progress Bar */
+.bundle-progress-wrapper {
+  background-color: #f9fafb;
+  border: 1px solid #f2ebd8;
+  border-radius: 24px;
+  padding: 32px;
+  margin: 40px auto;
+  max-width: 700px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.bundle-progress-label {
+  font-size: 1.1rem;
+  color: #374151;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.bundle-next-tier {
+  color: #404e2d;
+  font-weight: 700;
+}
+
+.bundle-progress-container {
+  position: relative;
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.bundle-progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #404e2d;
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 12px rgba(64, 78, 45, 0.3);
+}
+
+.bundle-progress-markers .marker {
+  position: absolute;
+  top: -30px;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-weight: 700;
+  background: #fff;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+}
+
+.bundle-progress-markers .marker.reached {
+  color: #404e2d;
+  border-color: #404e2d;
+  background: #f2ebd8;
+}
+
+.bundle-progress-tiers {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.tier-milestone {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tier-milestone.active {
+  color: #404e2d;
+}
+
+.tier-milestone.reached {
+  color: #404e2d;
+}
+
+/* Product Grid Placeholder */
+.rebuy-product-grid {
+  margin-top: 50px;
+  border-top: 1px solid #f2ebd8;
+  padding-top: 40px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .legendairy-bundle-layout {
+    padding: 40px 16px;
+  }
+  
+  .bundle-header h2 {
+    font-size: 1.85rem;
+  }
+  
+  .rebuy-tier-discounts {
+    gap: 12px;
+  }
+  
+  .rebuy-tier-discounts .tier {
+    padding: 16px;
+    min-width: 100px;
+    flex: 1;
+  }
+  
+  .tier-icon {
+    font-size: 1.5rem;
+  }
+  
+  .tier-discount {
+    font-size: 1rem;
+  }
+  
+  .bundle-progress-wrapper {
+    padding: 24px 16px;
+  }
+}
 </style>
+
+<script>
+(function() {
+  // Bundle Progress Tracking
+  const BUNDLE_TIERS = [
+    { minItems: 3, discount: 10 },
+    { minItems: 5, discount: 15 },
+    { minItems: 7, discount: 20 }
+  ];
+  
+  let currentItemCount = 0;
+  let currentDiscount = 0;
+  
+  function initBundleProgress() {
+    const rebuyWidget = document.querySelector('[data-rebuy-widget]');
+    if (rebuyWidget) {
+      if (typeof Rebuy !== 'undefined') {
+        Rebuy.App.on('cart.updated', updateBundleProgress);
+      }
+    }
+    
+    document.addEventListener('cart:updated', handleCartUpdate);
+    document.addEventListener('cart:refreshed', handleCartUpdate);
+    
+    // Initial fetch to sync with current cart
+    handleCartUpdate();
+  }
+  
+  function updateBundleProgress(cartData) {
+    if (cartData && cartData.items) {
+      currentItemCount = cartData.items.reduce((acc, item) => acc + item.quantity, 0);
+      
+      let newDiscount = 0;
+      let nextTierItems = 0;
+      
+      for (let i = BUNDLE_TIERS.length - 1; i >= 0; i--) {
+        if (currentItemCount >= BUNDLE_TIERS[i].minItems) {
+          newDiscount = BUNDLE_TIERS[i].discount;
+          break;
+        }
+      }
+      
+      for (const tier of BUNDLE_TIERS) {
+        if (currentItemCount < tier.minItems) {
+          nextTierItems = tier.minItems - currentItemCount;
+          break;
+        }
+      }
+      
+      currentDiscount = newDiscount;
+      updateUI(nextTierItems);
+    }
+  }
+  
+  function handleCartUpdate() {
+    fetch('/cart.js')
+      .then(response => response.json())
+      .then(data => {
+        updateBundleProgress({ items: data.items });
+      })
+      .catch(console.error);
+  }
+  
+  function updateUI(nextTierItems) {
+    const itemCountEl = document.getElementById('bundleItemCount');
+    if (itemCountEl) itemCountEl.textContent = currentItemCount;
+    
+    const progressBar = document.getElementById('bundleProgressBar');
+    if (progressBar) {
+      const percentage = Math.min((currentItemCount / 7) * 100, 100);
+      progressBar.style.width = percentage + '%';
+    }
+    
+    const nextTierEl = document.getElementById('bundleNextTier');
+    const itemsToNextEl = document.getElementById('itemsToNextTier');
+    if (nextTierEl && itemsToNextEl) {
+      if (currentDiscount >= 20) {
+        nextTierEl.innerHTML = ' — <strong>Maximum discount unlocked!</strong>';
+      } else if (nextTierItems > 0) {
+        nextTierEl.style.display = 'inline';
+        itemsToNextEl.textContent = nextTierItems;
+        
+        // Update discount target in message
+        let nextDiscount = 10;
+        if (currentItemCount >= 3 && currentItemCount < 5) nextDiscount = 15;
+        if (currentItemCount >= 5) nextDiscount = 20;
+        
+        const tierText = nextTierEl.innerHTML;
+        if (tierText.includes('%')) {
+            nextTierEl.innerHTML = nextTierEl.innerHTML.replace(/[0-9]+%/, nextDiscount + '%');
+        }
+      } else {
+        nextTierEl.style.display = 'none';
+      }
+    }
+    
+    updateTierStatus('tier3Status', 3);
+    updateTierStatus('tier5Status', 5);
+    updateTierStatus('tier7Status', 7);
+    updateTierBadges();
+  }
+  
+  function updateTierStatus(elementId, threshold) {
+    const el = document.getElementById(elementId);
+    if (el) {
+      el.classList.remove('reached', 'active');
+      if (currentItemCount >= threshold) {
+        el.classList.add('reached');
+        el.textContent = el.textContent.replace('○', '●').replace('◉', '●');
+      } else {
+        // If close to next tier, mark as active
+        let prevThreshold = 0;
+        if (threshold === 5) prevThreshold = 3;
+        if (threshold === 7) prevThreshold = 5;
+        
+        if (currentItemCount >= prevThreshold) {
+            el.classList.add('active');
+        }
+        el.textContent = el.textContent.replace('●', '○').replace('◉', '○');
+      }
+    }
+  }
+  
+  function updateTierBadges() {
+    const tiers = document.querySelectorAll('.rebuy-tier-discounts .tier');
+    tiers.forEach(tier => {
+      const minItems = parseInt(tier.dataset.minItems);
+      tier.classList.remove('active', 'reached');
+      
+      if (currentItemCount >= minItems) {
+        tier.classList.add('reached');
+      } else {
+        let prevThreshold = 0;
+        if (minItems === 5) prevThreshold = 3;
+        if (minItems === 7) prevThreshold = 5;
+        
+        if (currentItemCount >= prevThreshold) {
+            tier.classList.add('active');
+        }
+      }
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBundleProgress);
+  } else {
+    initBundleProgress();
+  }
+  
+  window.updateBundleItemCount = function(count) {
+    currentItemCount = count;
+    handleCartUpdate(); // Re-sync with cart to be safe
+  };
+})();
+</script>

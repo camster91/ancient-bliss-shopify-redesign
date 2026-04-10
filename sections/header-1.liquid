@@ -86,7 +86,7 @@
 
 .site-header {
 	background-color: var(--header-background);
-	color: var(--header-text);
+	color: #181b18 !important;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: position 10s;
 	-ms-transition: position 10s;
@@ -97,6 +97,37 @@
 	background: -moz-linear-gradient(120deg, #fdf7eb 0%, #e9f7f0 100%);
 	background: linear-gradient(120deg, #fdf7eb 0%, #e9f7f0 100%);
 } 
+.site-header a, 
+.site-header .site-nav__link, 
+.site-header .site-header__link,
+.site-header .site-header__logo a,
+.site-header .site-header__cart .js-toggle-cart span {
+    color: #181b18 !important;
+}
+.site-header .site-nav__link:hover,
+.site-header .site-header__link:hover {
+    color: #404e2d !important;
+}
+.site-header .icon {
+    fill: #181b18 !important;
+}
+
+/* Fix Dropdown Visibility */
+.site-nav__dropdown {
+    background-color: #ffffff !important;
+}
+.site-nav__dropdown a {
+    color: #181b18 !important;
+    padding: 10px 20px;
+    display: block;
+}
+.site-nav__dropdown a:hover {
+    background-color: #f9f9f9;
+    color: #404e2d !important;
+}
+.meganav__list {
+    background-color: #ffffff !important;
+}
 
   
 

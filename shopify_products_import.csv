@@ -1,0 +1,11 @@
+Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Variant Inventory Tracker,Variant Inventory Qty,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Image Src
+blood-sugar-bundle,Blood Sugar Bundle,"Contains Berberine, ACV, Alpha Lipoic Acid",Ancient Bliss,Bundle,"Bundle,Wellness",TRUE,Title,Default Title,shopify,100,59.99,79.99,TRUE,TRUE,assets/blood-sugar-bundle.png
+metabolic-fat-burn-bundle,Metabolic Fat Burn Bundle,"Contains Berberine, Saffron, ACV",Ancient Bliss,Bundle,"Bundle,Weight Loss",TRUE,Title,Default Title,shopify,100,64.99,84.99,TRUE,TRUE,assets/metabolic-fat-burn-bundle.png
+hormone-pcos-kit,Hormone & PCOS Wellness Kit,"Contains Inositol, Vitex, Mag Glycinate, Zinc",Ancient Bliss,Bundle,"Bundle,Hormone",TRUE,Title,Default Title,shopify,100,69.99,99.99,TRUE,TRUE,assets/hormone-pcos-kit.png
+beauty-from-within-bundle,Beauty From Within Bundle,"Contains Marine Collagen, Sea Moss, Zinc",Ancient Bliss,Bundle,"Bundle,Beauty",TRUE,Title,Default Title,shopify,100,54.99,74.99,TRUE,TRUE,assets/beauty-from-within-bundle.png
+anti-aging-longevity-bundle,Anti-Aging & Longevity Bundle,"Contains NAD+, Resveratrol, Liposomal Glutathione",Ancient Bliss,Bundle,"Bundle,Anti-Aging",TRUE,Title,Default Title,shopify,100,89.99,119.99,TRUE,TRUE,assets/anti-aging-longevity-bundle.png
+blissed-out-bundle,Blissed Out Bundle,"Contains Ashwagandha, Mag Glycinate, Saffron",Ancient Bliss,Bundle,"Bundle,Stress",TRUE,Title,Default Title,shopify,100,49.99,69.99,TRUE,TRUE,assets/blissed-out-bundle.png
+ultimate-liver-health-bundle,Ultimate Liver Health Bundle,"Liver support",Ancient Bliss,Bundle,"Bundle,Liver",TRUE,Title,Default Title,shopify,100,59.99,79.99,TRUE,TRUE,assets/ultimate-liver-health-bundle.png
+saw-palmetto,Saw Palmetto,"Premium Saw Palmetto",Ancient Bliss,Supplement,"Supplement",TRUE,Title,Default Title,shopify,100,24.99,,TRUE,TRUE,
+vitex-berry-new,Vitex Berry (Coming Soon),"Coming soon",Ancient Bliss,Supplement,"Supplement",FALSE,Title,Default Title,shopify,0,29.99,,TRUE,TRUE,
+meno-balance-new,Meno Balance (Coming Soon),"Coming soon",Ancient Bliss,Supplement,"Supplement",FALSE,Title,Default Title,shopify,0,34.99,,TRUE,TRUE,

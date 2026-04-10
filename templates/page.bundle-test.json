@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "rebuy-bundle-builder",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
